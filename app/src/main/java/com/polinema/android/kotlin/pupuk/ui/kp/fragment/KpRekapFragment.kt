@@ -17,6 +17,7 @@ import com.polinema.android.kotlin.pupuk.model.UsulanKT
 import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference
 import com.polinema.android.kotlin.pupuk.viewmodel.KpRekapViewModel
 import kotlinx.android.synthetic.main.kp_rekap_fragment.*
+import nz.co.trademe.covert.Covert
 import java.text.SimpleDateFormat
 
 class KpRekapFragment : Fragment() {
@@ -32,14 +33,30 @@ class KpRekapFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(KpRekapViewModel::class.java)
+
+        val covertConfig = Covert.Config(
+                iconRes = R.drawable.ic_star_border_black_24dp, // The icon to show
+                iconDefaultColorRes = R.color.colorBlack,            // The color of the icon
+                actionColorRes = R.color.colorPrimary           // The color of the background
+        )
+        val covert = Covert.with(covertConfig)
+//                .setIsActiveCallback {
+//                    // This is a callback to check if the item is active, i.e checked
+//                    Log.e("sa", it.adapterPosition.toString())
+//                }
+//                .doOnSwipe { viewHolder, _ ->
+//                    // This callback is fired when a ViewHolder is swiped
+//                    repository.toggleActiveState(viewHolder.adapterPosition)
+//                }
+                .attachTo(rvKPR)
         viewModel.rekap(SaveSharedPreference.getUser(context)).observe(viewLifecycleOwner, Observer {
             rvKPR.layoutManager = LinearLayoutManager(this.context)
-            val adapter = RekapKTAdapter(it)
+            val adapter = RekapKTAdapter(covert, it)
             rvKPR.adapter = adapter
         })
     }
 
-    inner class RekapKTAdapter(private val dataUsulan: List<UsulanKT>) :
+    inner class RekapKTAdapter(private val covert: Covert, private val dataUsulan: List<UsulanKT>) :
         RecyclerView.Adapter<RekapKTAdapter.HolderUserKT>() {
         inner class HolderUserKT(iv: View): RecyclerView.ViewHolder(iv) {
             val no = iv.findViewById<TextView>(R.id.textView)
@@ -56,6 +73,7 @@ class KpRekapFragment : Fragment() {
 
         @SuppressLint("ResourceType", "RtlHardcoded", "SimpleDateFormat")
         override fun onBindViewHolder(holder: HolderUserKT, position: Int) {
+            covert.drawCornerFlag(holder)
             var x = ""
             if ((dataUsulan.size - position) < 10) x = """0${dataUsulan.size - position}"""
             else { x = (dataUsulan.size - position).toString() }
