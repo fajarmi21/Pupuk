@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="df_transparent_black_background">#80000000</color>
+    <color name="whiteCardColor">#fff</color>
+    <color name="whiteTextColor">#fff</color>
+    <color name="blackTextColor">#000</color>
+    <color name="text_color">#222222</color>
+    <color name="colorBlue">#28A2CF</color>
+    <color name="colorBlueT">#6428A2CF</color>
+    <color name="colorPurple">#A130FF</color>
+    <color name="colorPurpleT">#64a130ff</color>
+    <color name="bottomNavigationTintColor">#B2B2B2</color>
+    <color name="bottomNavigationSelectedColor">#FC4926</color>
+    <color name="whiteBodyColor">#FCFCFC</color>
+    <color name="darkTextColor">#020000</color>
+    <color name="primaryTextColor">#019AE8</color>
+    <color name="frutorial_title">#000</color>
+    <color name="mtrl_textinput_default_box_stroke_color">#fff</color>
+
+    <!--random-->
+    <color name="rand_mistyrose">#FFE4E1</color>
+    <color name="rand_lavenderblush">#FFF0F5</color>
+    <color name="rand_azure">#F0FFFF</color>
+    <color name="rand_chocolate">#D2691E</color>
+    <color name="rand_sandybrown">#F4A460</color>
+    <color name="rand_bisque">#FFE4C4</color>
+    <color name="rand_aqua">#00FFFF</color>
+    <color name="rand_darkgrey">#A9A9A9</color>
+</resources>
