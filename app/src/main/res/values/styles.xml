@@ -62,6 +62,12 @@
         <item name="android:layout_marginRight">@dimen/micro_padding</item>
     </style>
 
+    <style name="button_bootstrap">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingHorizontal">15dp</item>
+    </style>
+
     <style name="AppThemeMaterial" parent="@style/Theme.MaterialComponents">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -88,6 +94,15 @@
     <style name="popupStyle" parent="Widget.AppCompat.PopupMenu.Overflow">
         <item name="android:dropDownHorizontalOffset">-4dp</item>
         <item name="android:dropDownVerticalOffset">4dp</item>
-<!--        <item name="android:itemBackground">@drawable/popup_menu</item>-->
+        <!--        <item name="android:itemBackground">@drawable/popup_menu</item>-->
     </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

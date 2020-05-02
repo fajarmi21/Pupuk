@@ -16,30 +16,32 @@
             android:orientation="horizontal"
             android:padding="10dp"
             app:layout_constraintBottom_toTopOf="@+id/cv1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:weightSum="2"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:weightSum="2">
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_weight="1"
-                    android:background="@color/colorBlack"  />
+                    android:background="@color/colorBlack" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
                     android:fontFamily="cursive"
                     android:text="USULAN"
                     android:textColor="@color/blackTextColor"
                     android:textSize="24sp"
-                    android:textStyle="bold"
-                    android:layout_marginHorizontal="5dp"/>
+                    android:textStyle="bold" />
 
                 <View
                     android:layout_width="match_parent"
@@ -52,12 +54,14 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cv1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             app:cardBackgroundColor="#FAEBD7"
             app:cardCornerRadius="30dp"
             app:cardElevation="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_default="wrap"
+            app:layout_constraintHeight_max="600dp"
             app:layout_constraintStart_toStartOf="parent">
 
             <LinearLayout
@@ -66,13 +70,13 @@
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="20dp"
                 android:background="@drawable/border_black"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:padding="10dp">
 
@@ -82,9 +86,24 @@
                         android:id="@+id/rvKPR"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        app:layout_constrainedHeight="true"
                         android:nestedScrollingEnabled="true" />
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:id="@+id/btCheck"
+            style="@style/wrapping_button"
+            android:layout_above="@id/cv1"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="16dp"
+            app:bootstrapBrand="primary"
+            app:bootstrapText="{fa-tasks}"
+            app:layout_constraintBottom_toTopOf="@+id/cv1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/cv1"
+            app:roundedCorners="true"
+            app:showOutline="true" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

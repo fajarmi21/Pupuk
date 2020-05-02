@@ -1,8 +1,6 @@
 package com.polinema.android.kotlin.pupuk.ui.kp.fragment
 
-import android.R.attr.name
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,7 +13,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.polinema.android.kotlin.pupuk.R
 import com.polinema.android.kotlin.pupuk.databinding.KpPetaniUpdateFragmentBinding
-import com.polinema.android.kotlin.pupuk.model.UserKT
 import com.polinema.android.kotlin.pupuk.viewmodel.KpPetaniUpdateViewModel
 import kotlinx.android.synthetic.main.kp_petani_update_fragment.*
 import java.util.*

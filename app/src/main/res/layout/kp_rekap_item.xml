@@ -3,28 +3,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:padding="5dp">
+    android:paddingHorizontal="5dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="2dp">
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.5"
             android:gravity="center"
             android:text="Tgl"
-            android:layout_weight="0.5"
             android:textColor="@color/blackTextColor" />
+
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
             android:layout_marginStart="3dp"
             android:background="@color/colorBlack" />
+
         <TextView
             android:id="@+id/textView2"
             android:layout_width="0dp"
@@ -33,11 +36,13 @@
             android:gravity="center"
             android:text="Petani"
             android:textColor="@color/blackTextColor" />
+
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
             android:layout_marginStart="3dp"
             android:background="@color/colorBlack" />
+
         <TextView
             android:id="@+id/textView3"
             android:layout_width="0dp"
@@ -46,26 +51,70 @@
             android:gravity="center"
             android:text="TextView"
             android:textColor="@color/blackTextColor" />
+
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
             android:layout_marginStart="3dp"
             android:background="@color/colorBlack" />
-        <TextView
-            android:id="@+id/textView4"
+
+        <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:gravity="center"
             android:layout_weight="1"
-            android:text="Status"
-            android:textColor="@color/blackTextColor" />
+            android:gravity="center">
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Status"
+                android:layout_alignParentTop="true"
+                android:textColor="@color/blackTextColor"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"/>
+            <com.github.okdroid.checkablechipview.CheckableChipView
+                android:id="@+id/btnVARKP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:color="#FFC107"
+                app:ccv_outlineColor="#FFC107"
+                android:layout_centerInParent="true"
+                android:text="All"
+                android:visibility="gone" />
+<!--            <com.google.android.material.button.MaterialButton-->
+<!--                android:id="@+id/btnVARKP"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                style="@style/Widget.MaterialComponents.Button"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textColor="@color/colorBlack"-->
+<!--                app:strokeColor="@color/colorYellow"-->
+<!--                app:cornerRadius="20dp"-->
+<!--                android:text="Press Me"-->
+<!--                android:visibility="visible"/>-->
+<!--            <RelativeLayout-->
+<!--                android:id="@+id/btnVARKP"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:visibility="gone">-->
+<!--                <com.beardedhen.androidbootstrap.BootstrapButton-->
+<!--                    android:text="Verificate All"-->
+<!--                    app:bootstrapBrand="warning"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="5dp"-->
+<!--                    app:roundedCorners="true"-->
+<!--                    app:showOutline="true"-->
+<!--                    app:bootstrapSize="sm"-->
+<!--                    android:gravity="center"/>-->
+<!--            </RelativeLayout>-->
+        </RelativeLayout>
     </LinearLayout>
 
     <View
         android:id="@+id/divider5"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_weight="1"
         android:layout_marginHorizontal="2dp"
+        android:layout_weight="1"
         android:background="@color/blackTextColor" />
 </LinearLayout>

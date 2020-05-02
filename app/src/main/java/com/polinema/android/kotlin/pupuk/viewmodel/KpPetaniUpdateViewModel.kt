@@ -5,7 +5,6 @@ import androidx.databinding.ObservableBoolean
 import androidx.databinding.ObservableField
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.polinema.android.kotlin.pupuk.model.KelompokTani
 import com.polinema.android.kotlin.pupuk.model.UserKT
 import com.polinema.android.kotlin.pupuk.network.BackEndApi
 import com.polinema.android.kotlin.pupuk.network.WebServiceClient

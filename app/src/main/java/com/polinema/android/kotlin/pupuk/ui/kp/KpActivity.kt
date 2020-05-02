@@ -89,22 +89,16 @@ class KpActivity : AppCompatActivity(), AnkoLogger {
         }
 
         contextMenuDialogFragment = ContextMenuDialogFragment.newInstance(menu).apply {
-            setItemClickListener { view, position ->
+            setItemClickListener { _, position ->
 //                Toast.makeText(
 //                    this@KpActivity,
 //                    "Clicked on position: $position",
 //                    Toast.LENGTH_SHORT
 //                ).show()
                 when(position) {
-                    0 -> { if (fragmentManager!!.findFragmentById(R.id.FrameKP) !is KpDashboardFragment) addFragment(
-                        KpDashboardFragment()
-                    )}
-                    1 -> { if (fragmentManager!!.findFragmentById(R.id.FrameKP) !is KpRekapFragment) addFragment(
-                        KpRekapFragment()
-                    )}
-                    2 -> { if (fragmentManager!!.findFragmentById(R.id.FrameKP) !is KpPetaniFragment) addFragment(
-                        KpPetaniFragment()
-                    )}
+                    0 -> { if (fragmentManager!!.findFragmentById(R.id.FrameKP) !is KpDashboardFragment) addFragment(KpDashboardFragment())}
+                    1 -> { if (fragmentManager!!.findFragmentById(R.id.FrameKP) !is KpRekapFragment) addFragment(KpRekapFragment())}
+                    2 -> { if (fragmentManager!!.findFragmentById(R.id.FrameKP) !is KpPetaniFragment) addFragment(KpPetaniFragment())}
                     3 -> {
                         Toast.makeText(context, "Logout Sukses", Toast.LENGTH_LONG).show()
                         startActivity(intentFor<LoginActivity>().clearTask().clearTop())

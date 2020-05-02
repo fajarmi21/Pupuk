@@ -78,7 +78,7 @@ class KpPetaniFragment : Fragment() {
             val swipeHandler = object : SwipeToDeleteCallback(this.context!!) {
                 override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                     if (direction == ItemTouchHelper.LEFT) {
-                        MaterialAlertDialogBuilder(context)
+                        MaterialAlertDialogBuilder(context!!)
                             .setTitle("Delete '${it[viewHolder.adapterPosition].nama_petani}'")
                             .setMessage("Are you sure delete this record?")
                             .setNegativeButton("NO", null)
@@ -123,8 +123,10 @@ class KpPetaniFragment : Fragment() {
         @SuppressLint("ResourceType", "RtlHardcoded")
         override fun onBindViewHolder(holder: HolderUserKT, position: Int) {
             var x = ""
-            if ((dataUser.size - position) < 10) x = """0${dataUser.size - position}"""
-            else { x = (dataUser.size - position).toString() }
+            x = if ((dataUser.size - position) < 10) """0${dataUser.size - position}"""
+            else {
+                (dataUser.size - position).toString()
+            }
             holder.no.text = x
             holder.nama.text = dataUser[position].nama_petani
             holder.alamat.text = dataUser[position].alamat

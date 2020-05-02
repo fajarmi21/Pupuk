@@ -28,7 +28,8 @@ data class UsulanKT(
     val status_ppl: String,
     val status_admin: String,
     val keterangan: String,
-    val timestamp: String
+    val timestamp: String,
+    var isSelected: Boolean = false
 )
 class tanam(
     val sda: String

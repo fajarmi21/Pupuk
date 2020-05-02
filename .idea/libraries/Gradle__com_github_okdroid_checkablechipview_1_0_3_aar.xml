@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.okdroid:checkablechipview:1.0.3@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/61f96f78c1e0c7649f6873674a1b931f/jetified-checkablechipview-1.0.3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/61f96f78c1e0c7649f6873674a1b931f/jetified-checkablechipview-1.0.3/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/61f96f78c1e0c7649f6873674a1b931f/jetified-checkablechipview-1.0.3/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.okdroid/checkablechipview/1.0.3/985f8243686494ad68f7a886a0447b47854b4915/checkablechipview-1.0.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
