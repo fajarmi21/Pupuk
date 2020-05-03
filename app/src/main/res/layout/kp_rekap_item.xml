@@ -61,7 +61,7 @@
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="1.2"
             android:gravity="center">
             <TextView
                 android:id="@+id/textView4"
@@ -81,32 +81,6 @@
                 android:layout_centerInParent="true"
                 android:text="All"
                 android:visibility="gone" />
-<!--            <com.google.android.material.button.MaterialButton-->
-<!--                android:id="@+id/btnVARKP"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                style="@style/Widget.MaterialComponents.Button"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:textColor="@color/colorBlack"-->
-<!--                app:strokeColor="@color/colorYellow"-->
-<!--                app:cornerRadius="20dp"-->
-<!--                android:text="Press Me"-->
-<!--                android:visibility="visible"/>-->
-<!--            <RelativeLayout-->
-<!--                android:id="@+id/btnVARKP"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:visibility="gone">-->
-<!--                <com.beardedhen.androidbootstrap.BootstrapButton-->
-<!--                    android:text="Verificate All"-->
-<!--                    app:bootstrapBrand="warning"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_margin="5dp"-->
-<!--                    app:roundedCorners="true"-->
-<!--                    app:showOutline="true"-->
-<!--                    app:bootstrapSize="sm"-->
-<!--                    android:gravity="center"/>-->
-<!--            </RelativeLayout>-->
         </RelativeLayout>
     </LinearLayout>
 

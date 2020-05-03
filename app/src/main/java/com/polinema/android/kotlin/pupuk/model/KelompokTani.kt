@@ -15,13 +15,14 @@ data class UserKT(
     val email: String,
     val password: String
 )
+
 data class UsulanKT(
     val status: Int,
     val message: String,
     val id_usulan: String,
     val nama_petani: String,
     val luas_lahan: String,
-    val m1: tanam,
+    val m1: Any,
     val m2: String,
     val m3: String,
     val status_poktan: String,
@@ -30,7 +31,9 @@ data class UsulanKT(
     val keterangan: String,
     val timestamp: String,
     var isSelected: Boolean = false
-)
+) {
+}
+
 class tanam(
-    val sda: String
+    val sd: String
 )
