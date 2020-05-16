@@ -16,12 +16,6 @@ import com.polinema.android.kotlin.pupuk.viewmodel.KpDashboardViewModel
 import kotlinx.android.synthetic.main.kp_dashboard_fragment.*
 
 class KpDashboardFragment : Fragment() {
-
-//    companion object {
-//        private var newInstance() =
-//            KpDashboardViewModel()
-//    }
-
     private lateinit var binding: KpDashboardFragmentBinding
     private lateinit var viewModel: KpDashboardViewModel
 

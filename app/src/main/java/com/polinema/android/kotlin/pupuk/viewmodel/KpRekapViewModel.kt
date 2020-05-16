@@ -30,20 +30,18 @@ class KpRekapViewModel : ViewModel() {
         return data
     }
 
-    fun verifikasi(poktan : String): MutableLiveData<MutableList<UsulanKT>> {
-        val data = MutableLiveData<MutableList<UsulanKT>>()
-        WebServiceClient.client.create(BackEndApi::class.java).KpRe(poktan = poktan)
-                .enqueue(object : Callback<MutableList<UsulanKT>> {
-                    override fun onFailure(call: Call<MutableList<UsulanKT>>, t: Throwable) {
+    fun verifikasi(id : HashMap<String,String>): MutableLiveData<UsulanKT> {
+        val data = MutableLiveData<UsulanKT>()
+        WebServiceClient.client.create(BackEndApi::class.java).KpReU(id = id)
+                .enqueue(object : Callback<UsulanKT>{
+                    override fun onFailure(call: Call<UsulanKT>, t: Throwable) {
                         Log.e("gagal", t.message!!)
                     }
 
-                    override fun onResponse(
-                            call: Call<MutableList<UsulanKT>>,
-                            response: Response<MutableList<UsulanKT>>
-                    ) {
+                    override fun onResponse(call: Call<UsulanKT>, response: Response<UsulanKT>) {
                         data.value = response.body()
                     }
+
                 })
         return data
     }

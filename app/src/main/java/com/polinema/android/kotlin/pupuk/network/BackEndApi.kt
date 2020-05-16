@@ -61,6 +61,10 @@ interface BackEndApi {
     @POST("poktan/usulan")
     fun KpRe(@Field("poktan") poktan: String): Call<MutableList<UsulanKT>>
 
+    @FormUrlEncoded
+    @POST("poktan/usulanU")
+    fun KpReU(@FieldMap id:HashMap<String,String>): Call<UsulanKT>
+
     //petani
     @get:GET("petani")
     val posts: Observable<List<Petani>>

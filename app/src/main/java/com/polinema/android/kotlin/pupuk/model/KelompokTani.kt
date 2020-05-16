@@ -25,15 +25,10 @@ data class UsulanKT(
     val m1: Any,
     val m2: String,
     val m3: String,
-    val status_poktan: String,
+    var status_poktan: String,
     val status_ppl: String,
     val status_admin: String,
     val keterangan: String,
     val timestamp: String,
     var isSelected: Boolean = false
-) {
-}
-
-class tanam(
-    val sd: String
 )

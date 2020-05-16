@@ -66,10 +66,10 @@ class KpActivity : AppCompatActivity(), AnkoLogger {
     private fun initToolbar() {
         setSupportActionBar(findViewById(R.id.ToolbarKp))
 
-        supportActionBar?.apply {
-            setDisplayHomeAsUpEnabled(true)
-            setDisplayShowTitleEnabled(false)
-        }
+//        supportActionBar?.apply {
+//            setDisplayHomeAsUpEnabled(true)
+//            setDisplayShowTitleEnabled(false)
+//        }
 
 //        ToolbarKp.apply {
 //            setNavigationIcon(R.drawable.ic_arrow_back)

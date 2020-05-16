@@ -18,6 +18,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.polinema.android.kotlin.pupuk.R
 import com.polinema.android.kotlin.pupuk.databinding.ActivityLoginBinding
 import com.polinema.android.kotlin.pupuk.ui.kp.KpActivity
+import com.polinema.android.kotlin.pupuk.ui.petani.PtActivity
 import com.polinema.android.kotlin.pupuk.util.CustomProgressDialog
 import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference
 import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference.getLevel
@@ -49,6 +50,10 @@ class LoginActivity : AppCompatActivity(), AnkoLogger {
                         startActivity(intentFor<KpActivity>().clearTask().clearTop())
                         finish()
                     }
+                    5 -> {
+                        startActivity(intentFor<PtActivity>().clearTask().clearTop())
+                        finish()
+                    }
                 }
             }
             initObservables()
@@ -68,6 +73,11 @@ class LoginActivity : AppCompatActivity(), AnkoLogger {
                 "4" -> {
                     startActivity(intentFor<KpActivity>().clearTask().clearTop())
                     SaveSharedPreference.setLoggedIn(applicationContext, true, user.username, 4)
+                    finish()
+                }
+                "5" -> {
+                    startActivity(intentFor<PtActivity>().clearTask().clearTop())
+                    SaveSharedPreference.setLoggedIn(applicationContext, true, user.username, 5)
                     finish()
                 }
             }

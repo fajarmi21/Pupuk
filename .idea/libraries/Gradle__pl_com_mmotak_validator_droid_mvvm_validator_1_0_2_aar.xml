@@ -4,8 +4,10 @@
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3a326f67c8a9627f31a2352d1f163495/jetified-droid-mvvm-validator-1.0.2/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a1c6560dc81f3bd8be415513399b48e4/jetified-droid-mvvm-validator-1.0.2/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/53eab2793f9b8fc205eefa72eaf6ba71/jetified-droid-mvvm-validator-1.0.2/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/53eab2793f9b8fc205eefa72eaf6ba71/jetified-droid-mvvm-validator-1.0.2/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/53eab2793f9b8fc205eefa72eaf6ba71/jetified-droid-mvvm-validator-1.0.2/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d7aaf04c220029079072d1f357340a12/jetified-droid-mvvm-validator-1.0.2/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/358d0e2746ec54a876a7c22ebe10d0a9/jetified-droid-mvvm-validator-1.0.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/358d0e2746ec54a876a7c22ebe10d0a9/jetified-droid-mvvm-validator-1.0.2/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/358d0e2746ec54a876a7c22ebe10d0a9/jetified-droid-mvvm-validator-1.0.2/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/pl.com.mmotak.validator/droid-mvvm-validator/1.0.2/93fedd5276ad89c3f5eaee91a163dceda47d9b4/droid-mvvm-validator-1.0.2-javadoc.jar!/" />
