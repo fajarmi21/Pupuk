@@ -14,7 +14,7 @@ object WebServiceClient {
     private lateinit var okHttpClient: OkHttpClient
     private var retrofit: Retrofit? = null
     private var ourInstance: Retrofit? = null
-    private val http = "https://f6b23b6e.ngrok.io/"
+    private val http = "https://a851dc7b.ngrok.io/"
 
     val client: Retrofit
         get() {

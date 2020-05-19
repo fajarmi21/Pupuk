@@ -70,12 +70,12 @@ class LoginActivity : AppCompatActivity(), AnkoLogger {
         viewmodel?.userLogin?.observe(this, Observer { user ->
             Toast.makeText(this, user?.message, Toast.LENGTH_LONG).show()
             when(user?.level) {
-                "4" -> {
+                "ADMIN" -> {
                     startActivity(intentFor<KpActivity>().clearTask().clearTop())
                     SaveSharedPreference.setLoggedIn(applicationContext, true, user.username, 4)
                     finish()
                 }
-                "5" -> {
+                "PETANI" -> {
                     startActivity(intentFor<PtActivity>().clearTask().clearTop())
                     SaveSharedPreference.setLoggedIn(applicationContext, true, user.username, 5)
                     finish()

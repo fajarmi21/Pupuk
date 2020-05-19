@@ -66,6 +66,7 @@ interface BackEndApi {
     fun KpReU(@FieldMap id:HashMap<String,String>): Call<UsulanKT>
 
     //petani
-    @get:GET("petani")
-    val posts: Observable<List<Petani>>
+    @FormUrlEncoded
+    @POST("petani")
+    fun PTD(@Field("nama_petani") nama_petani: String): Call<Petani>
 }

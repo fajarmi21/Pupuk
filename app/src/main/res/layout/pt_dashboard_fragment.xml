@@ -1,323 +1,326 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_marginHorizontal="10dp"
-    tools:context=".ui.petani.fragment.PtDashboardFragment">
-    <LinearLayout
+<layout>
+    <data>
+        <variable
+            name="petani"
+            type="com.polinema.android.kotlin.pupuk.model.Petani" />
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="10dp"
+        tools:context=".ui.petani.fragment.PtDashboardFragment">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dashboard"
+                android:textColor="#5E5E5E"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="24dp" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Dashboard"
-            android:textColor="#5E5E5E"
-            android:fontFamily="@font/roboto_bold"
-            android:textSize="24dp" />
-    </LinearLayout>
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selamat Datang "
+                android:textColor="#5E5E5E"
+                android:textSize="18dp" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/tx_userNamePT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/aclonica"
+                android:textColor="#5E5E5E"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv1"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Selamat Datang "
-            android:textColor="#5E5E5E"
-            android:textSize="18dp" />
+            android:layout_marginTop="22dp"
+            app:cardBackgroundColor="#00000000"
+            app:cardElevation="0dp">
 
-        <TextView
-            android:id="@+id/tx_userNamePT"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/aclonica"
-            android:textColor="#5E5E5E"
-            android:textSize="18dp" />
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg2"
+                android:layout_gravity="center"
+                android:padding="10dp">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cv1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
-        app:cardBackgroundColor="#00000000"
-        app:cardElevation="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_mediumitalic"
+                        android:text="Usulan"
+                        android:textColor="#ffff"
+                        android:textSize="18dp" />
+
+                    <View
+                        android:id="@+id/divider2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.8dp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="3dp"
+                        android:background="@color/whiteTextColor" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginVertical="10dp">
+                    <TextView
+                        android:id="@+id/ptU"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#ffff"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textSize="40dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Luas Lahan"
+                            android:gravity="center"
+                            android:textColor="#ffff" />
+
+                        <TextView
+                            android:id="@+id/ptLL"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#ffff"
+                            android:textSize="18dp"
+                            android:gravity="center"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Tanaman"
+                            android:textColor="#ffff"
+                            android:gravity="center" />
+
+                        <TextView
+                            android:id="@+id/ptTanam"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#ffff"
+                            android:textSize="18dp"
+                            android:gravity="center" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Status"
+                            android:textColor="#ffff"
+                            android:gravity="center" />
+
+                        <TextView
+                            android:id="@+id/ptSt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#ffff"
+                            android:textSize="18dp"
+                            android:gravity="center" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/bg2"
-            android:layout_gravity="center"
-            android:padding="10dp">
+            android:layout_marginTop="14dp"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:layout_gravity="center"
+                android:text="start new vacation"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="#5E5E5E"
+                android:textSize="18dp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_mediumitalic"
-                    android:text="Usulan"
-                    android:textColor="#ffff"
-                    android:textSize="18dp" />
-
-                <View
-                    android:id="@+id/divider2"
-                    android:layout_width="match_parent"
-                    android:layout_height="0.8dp"
-                    android:layout_weight="1"
-                    android:layout_marginTop="3dp"
-                    android:background="@color/whiteTextColor" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_marginVertical="10dp">
-                <TextView
-                    android:id="@+id/UAll"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="dsad"
-                    android:textColor="#ffff"
-                    android:fontFamily="@font/roboto_bold"
-                    android:textSize="40dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Luas Lahan"
-                        android:gravity="center"
-                        android:textColor="#ffff" />
-
-                    <TextView
-                        android:id="@+id/UDaftar"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="sda"
-                        android:textColor="#ffff"
-                        android:textSize="18dp"
-                        android:gravity="center"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Status"
-                        android:textColor="#ffff"
-                        android:gravity="center" />
-
-                    <TextView
-                        android:id="@+id/UBelum"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="dsad"
-                        android:textColor="#ffff"
-                        android:textSize="18dp"
-                        android:gravity="center" />
-                </LinearLayout>
-
-<!--                <LinearLayout-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_weight="1"-->
-<!--                    android:orientation="vertical">-->
-
-<!--                    <TextView-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:text="Tidak"-->
-<!--                        android:textColor="#ffff"-->
-<!--                        android:gravity="center" />-->
-
-<!--                    <TextView-->
-<!--                        android:id="@+id/UTidak"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:text="dsa"-->
-<!--                        android:textColor="#ffff"-->
-<!--                        android:textSize="18dp"-->
-<!--                        android:gravity="center" />-->
-<!--                </LinearLayout>-->
-            </LinearLayout>
+            <View
+                android:id="@+id/divider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_weight="1"
+                android:background="@color/blackTextColor" />
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="start new vacation"
-            android:fontFamily="@font/roboto_medium"
-            android:textColor="#5E5E5E"
-            android:textSize="18dp" />
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
 
-        <View
-            android:id="@+id/divider"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_marginHorizontal="10dp"
-            android:layout_weight="1"
-            android:background="@color/blackTextColor" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="120dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Walking"
+                        android:textColor="#5E5E5E"
+                        android:textSize="18dp" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="120dp"
+                android:layout_marginLeft="18dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cycling"
+                        android:textColor="#5E5E5E"
+                        android:textSize="18dp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="80dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="120dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Driving"
+                        android:textColor="#5E5E5E"
+                        android:textSize="18dp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="80dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="120dp"
+                android:layout_marginLeft="18dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Train"
+                        android:textColor="#5E5E5E"
+                        android:textSize="18dp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="80dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:orientation="horizontal">
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="160dp"
-            android:layout_height="120dp"
-            android:layout_weight="1"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="2dp">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="8dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Walking"
-                    android:textColor="#5E5E5E"
-                    android:textSize="18dp" />
-            </RelativeLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="160dp"
-            android:layout_height="120dp"
-            android:layout_marginLeft="18dp"
-            android:layout_weight="1"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="2dp">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="8dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Cycling"
-                    android:textColor="#5E5E5E"
-                    android:textSize="18dp" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="80dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentBottom="true" />
-
-            </RelativeLayout>
-
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal">
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="160dp"
-            android:layout_height="120dp"
-            android:layout_weight="1"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="2dp">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="8dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Driving"
-                    android:textColor="#5E5E5E"
-                    android:textSize="18dp" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="80dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentBottom="true" />
-
-            </RelativeLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="160dp"
-            android:layout_height="120dp"
-            android:layout_marginLeft="18dp"
-            android:layout_weight="1"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="2dp">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="8dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Train"
-                    android:textColor="#5E5E5E"
-                    android:textSize="18dp" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="80dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentBottom="true" />
-
-            </RelativeLayout>
-
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
-</LinearLayout>
+</layout>
