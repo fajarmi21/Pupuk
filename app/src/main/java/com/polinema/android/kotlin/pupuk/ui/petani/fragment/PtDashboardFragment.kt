@@ -37,10 +37,15 @@ class PtDashboardFragment : Fragment() {
 
         viewModel = ViewModelProvider(this).get(PtDashboardViewModel::class.java)
         viewModel.ptD(tx_userNamePT.text.toString()).observe(viewLifecycleOwner, Observer {
-            binding.ptLL.text = """${it.luas_usulan}/${it.luas_lahan} ha"""
-            if (it.m1 != "false" && it.m1 != "null") {
-                val getrow = it.m1 as LinkedTreeMap<*, *>
-                binding.ptU.text = ""
+            val thp = it.tahap
+            if (thp != "false" && thp != "null") {
+                val getrow = thp as LinkedTreeMap<*, *>
+                binding.ptU.text = thp
+                binding.ptLL.text = """${getrow["luas_usulan"]}/${it.luas_lahan} ha"""
+                binding.ptTanam.text = getrow["sektor"].toString()
+                when {
+                    it.status_admin != "null" -> binding.ptSt.text = "Sukses"
+                }
             }
         })
     }

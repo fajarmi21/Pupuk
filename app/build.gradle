@@ -57,11 +57,11 @@ dependencies {
     //noinspection LifecycleAnnotationProcessorWithJava8
     kapt "android.arch.lifecycle:compiler:2.3.0-alpha01"
     kapt "com.android.databinding:compiler:4.1.0-alpha05"
-    implementation 'com.squareup.retrofit2:retrofit:2.8.1'
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.6.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.8.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.8.2'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.7.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.8.2'
     implementation 'com.google.code.gson:gson:2.8.6'
-    implementation 'com.squareup.okhttp3:okhttp:4.6.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.7.1'
     implementation 'com.google.android.gms:play-services-auth:18.0.0'
     implementation "org.jetbrains.anko:anko-commons:0.10.4"
     implementation 'com.github.okdroid:checkablechipview:1.0.3'
@@ -69,8 +69,8 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxjava:2.2.19"
     implementation "io.reactivex.rxjava2:rxandroid:2.1.1"
     //retrofit2
-    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.8.1'
-    implementation 'com.squareup.retrofit2:converter-gson:2.8.1'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.8.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.8.2'
     //ContextMenu
     implementation 'com.yalantis:contextmenu:1.0.7'
     //Bootstrap

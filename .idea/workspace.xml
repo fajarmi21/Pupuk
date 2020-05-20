@@ -21,14 +21,11 @@
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/model/Petani.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/model/Petani.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/network/BackEndApi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/network/BackEndApi.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/network/WebServiceClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/network/WebServiceClient.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/ui/login/LoginActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/ui/login/LoginActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/ui/petani/fragment/PtDashboardFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/ui/petani/fragment/PtDashboardFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/viewmodel/PtDashboardViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/viewmodel/PtDashboardViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pt_dashboard_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pt_dashboard_fragment.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,11 +84,11 @@
     <property name="memory.settings.postsync.last.time.stamp" value="1588034920747" />
     <property name="method" value="Automatic" />
     <property name="multi-representation-previewA:/package/kotlin/Pupuk/app/src/main/java/com/polinema/android/kotlin/pupuk/ui/kp/fragment/KpRekap.kt_selected" value="Compose" />
-    <property name="project.structure.last.edited" value="SDK Location" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="resolutions" value="HDPI&#10;XXXHDPI&#10;MDPI&#10;XHDPI&#10;XXHDPI" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
     <property name="show.migrate.to.gradle.popup" value="false" />
     <property name="sourceResolution" value="XHDPI" />
   </component>
@@ -277,14 +274,14 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="361" y="90" key="#Inspections/0.0.1536.864@0.0.1536.864" timestamp="1586623919386" />
-    <state x="361" y="91" key="#Notifications" timestamp="1588772675841">
+    <state x="361" y="91" key="#Notifications" timestamp="1589886286941">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="361" y="91" key="#Notifications/0.0.1536.864@0.0.1536.864" timestamp="1588772675841" />
-    <state x="286" y="163" key="#PSD" timestamp="1589686612558">
+    <state x="361" y="91" key="#Notifications/0.0.1536.864@0.0.1536.864" timestamp="1589886286941" />
+    <state x="286" y="163" key="#PSD" timestamp="1589908941820">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="286" y="163" key="#PSD/0.0.1536.864@0.0.1536.864" timestamp="1589686612557" />
+    <state x="286" y="163" key="#PSD/0.0.1536.864@0.0.1536.864" timestamp="1589908941820" />
     <state x="488" y="84" key="#Pupuk.app" timestamp="1589548355201">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -345,22 +342,22 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="186" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1589686702774" />
-    <state width="1491" height="202" key="GridCell.Tab.0.bottom" timestamp="1589722712733">
+    <state width="1491" height="202" key="GridCell.Tab.0.bottom" timestamp="1589862683035">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1491" height="202" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1589722712733" />
-    <state width="1491" height="202" key="GridCell.Tab.0.center" timestamp="1589722712733">
+    <state width="1491" height="202" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1589862683035" />
+    <state width="1491" height="202" key="GridCell.Tab.0.center" timestamp="1589862683035">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1491" height="202" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1589722712733" />
-    <state width="1491" height="202" key="GridCell.Tab.0.left" timestamp="1589722712733">
+    <state width="1491" height="202" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1589862683035" />
+    <state width="1491" height="202" key="GridCell.Tab.0.left" timestamp="1589862683035">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1491" height="202" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1589722712733" />
-    <state width="1491" height="202" key="GridCell.Tab.0.right" timestamp="1589722712733">
+    <state width="1491" height="202" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1589862683035" />
+    <state width="1491" height="202" key="GridCell.Tab.0.right" timestamp="1589862683035">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1491" height="202" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1589722712733" />
+    <state width="1491" height="202" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1589862683035" />
     <state width="1491" height="254" key="GridCell.Tab.1.bottom" timestamp="1586880719613">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -381,10 +378,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="349" y="174" key="IDE.errors.dialog/0.0.1536.864@0.0.1536.864" timestamp="1589548116602" />
-    <state x="181" y="100" width="1235" height="707" key="SettingsEditor" timestamp="1589686711744">
+    <state x="165" y="15" width="1235" height="707" key="SettingsEditor" timestamp="1589908810595">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="181" y="100" width="1235" height="707" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1589686711744" />
+    <state x="165" y="15" width="1235" height="707" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1589908810595" />
     <state x="584" y="209" key="chooseDestDirectoryDialog" timestamp="1589171135166">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
