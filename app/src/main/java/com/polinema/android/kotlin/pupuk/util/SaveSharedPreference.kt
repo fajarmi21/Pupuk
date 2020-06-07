@@ -5,9 +5,8 @@ import android.content.SharedPreferences
 
 import android.preference.PreferenceManager
 
-
 object SaveSharedPreference {
-    fun getPreferences(context: Context?): SharedPreferences {
+    private fun getPreferences(context: Context?): SharedPreferences {
         return PreferenceManager.getDefaultSharedPreferences(context)
     }
 
@@ -25,6 +24,20 @@ object SaveSharedPreference {
         editor.apply()
     }
 
+    fun setTime(context: Context?, left: Long, time: Boolean, end: Long) {
+        val editor = getPreferences(context).edit()
+        editor.putLong("millisLeft", left)
+        editor.putBoolean("timeMode", time)
+        editor.putLong("endTime", end)
+        editor.apply()
+    }
+
+    fun reset(context: Context?) {
+        getPreferences(context).edit().remove("millisLeft").apply()
+        getPreferences(context).edit().remove("timeMode").apply()
+        getPreferences(context).edit().remove("endTime").apply()
+    }
+
     /**
      * Get the Login Status
      * @param context
@@ -40,5 +53,17 @@ object SaveSharedPreference {
 
     fun getUser(context: Context?): String {
         return getPreferences(context).getString("logged_in_username", null)!!
+    }
+
+    fun getLeft(context: Context?, def: Long): Long {
+        return getPreferences(context).getLong("millisLeft", def)
+    }
+
+    fun getTime(context: Context?, def: Boolean): Boolean {
+        return getPreferences(context).getBoolean("timeMode", def)
+    }
+
+    fun getEnd(context: Context?, def: Long): Long {
+        return getPreferences(context).getLong("endTime", def)
     }
 }

@@ -1,9 +1,9 @@
 package com.polinema.android.kotlin.pupuk.ui.petani
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.KeyEvent
 import android.view.Menu
 import android.view.MenuItem
@@ -11,7 +11,9 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.polinema.android.kotlin.pupuk.R
 import com.polinema.android.kotlin.pupuk.ui.login.LoginActivity
+import com.polinema.android.kotlin.pupuk.ui.petani.fragment.PtAddUsulanFragment
 import com.polinema.android.kotlin.pupuk.ui.petani.fragment.PtDashboardFragment
+import com.polinema.android.kotlin.pupuk.util.MyIntentService
 import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference
 import com.yalantis.contextmenu.lib.ContextMenuDialogFragment
 import com.yalantis.contextmenu.lib.MenuObject
@@ -28,6 +30,9 @@ class PtActivity : AppCompatActivity(), AnkoLogger {
         initMenuFragment()
 
         addFragment(PtDashboardFragment())
+
+        val intent = Intent(this, MyIntentService::class.java)
+        startService(intent)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -70,8 +75,8 @@ class PtActivity : AppCompatActivity(), AnkoLogger {
         contextMenuDialogFragment = ContextMenuDialogFragment.newInstance(menu).apply {
             setItemClickListener { _, position ->
                 when(position) {
-//                    0 -> { if (fragmentManager!!.findFragmentById(R.id.FramePT) !is KpDashboardFragment) addFragment(KpDashboardFragment())}
-//                    1 -> { if (fragmentManager!!.findFragmentById(R.id.FramePT) !is KpRekapFragment) addFragment(KpRekapFragment())}
+                    0 -> { if (fragmentManager!!.findFragmentById(R.id.FramePT) !is PtDashboardFragment) addFragment(PtDashboardFragment())}
+                    1 -> { if (fragmentManager!!.findFragmentById(R.id.FramePT) !is PtAddUsulanFragment) addFragment(PtAddUsulanFragment())}
 //                    2 -> { if (fragmentManager!!.findFragmentById(R.id.FramePT) !is KpPetaniFragment) addFragment(KpPetaniFragment())}
                     3 -> {
                         Toast.makeText(context, "Logout Sukses", Toast.LENGTH_LONG).show()

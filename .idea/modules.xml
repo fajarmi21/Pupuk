@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Pupuk.iml" filepath="$PROJECT_DIR$/.idea/modules/Pupuk.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Pupuk.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Pupuk.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fliptimerviewlibrary/Pupuk.fliptimerviewlibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/fliptimerviewlibrary/Pupuk.fliptimerviewlibrary.iml" />
     </modules>
   </component>
 </project>

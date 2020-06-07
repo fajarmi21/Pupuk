@@ -49,6 +49,7 @@ class LoginViewModel(application: Application) : AndroidViewModel(application), 
 
     override fun onFailure(call: Call<Login>?, t: Throwable?) {
         progressDialog?.value = false
+        Log.e("error", t!!.message.toString())
     }
 
 }

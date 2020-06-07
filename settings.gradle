@@ -1,2 +1,3 @@
+include ':fliptimerviewlibrary'
 include ':app'
 rootProject.name = "Pupuk"

@@ -11,4 +11,5 @@
     -->
     <string name="hello_world">Hello Square World!</string>
     <string name="title_activity_kp_rekap">My Compose App</string>
+    <string name="resend_otp_formatted">%1$d</string>
 </resources>

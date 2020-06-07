@@ -69,4 +69,22 @@ interface BackEndApi {
     @FormUrlEncoded
     @POST("petani")
     fun PTD(@Field("nama_petani") nama_petani: String): Call<Petani>
+
+    @GET("petani/sektor")
+    fun PTS(): Call<MutableList<Sektor>>
+
+    @FormUrlEncoded
+    @POST("petani/usulan")
+    fun PTU(
+        @Field("petani") petani: String,
+        @Field("sektor") sektor: String,
+        @Field("luas") luas: String,
+        @Field("urea") urea: String,
+        @Field("sp36") sp36: String,
+        @Field("za") za: String,
+        @Field("npk") npk: String,
+        @Field("organik") organik: String,
+        @Field("date") date: String,
+        @Field("tahap") tahap: String
+    ): Call<Pesan>
 }

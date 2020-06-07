@@ -1,4 +1,6 @@
 package com.polinema.android.kotlin.pupuk.model
+import com.google.gson.annotations.SerializedName
+
 
 data class Petani(
     val alamat: String,
@@ -20,4 +22,13 @@ data class Petani(
     val status_ppl: Any,
     val tahap: String,
     val timestamp: String
+)
+
+class Sektor(
+    val nama_tanaman: String
+)
+
+data class Pesan(
+    val status: Int,
+    val message: String
 )
