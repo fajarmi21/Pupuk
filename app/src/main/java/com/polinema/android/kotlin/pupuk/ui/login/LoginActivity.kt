@@ -19,6 +19,7 @@ import com.polinema.android.kotlin.pupuk.R
 import com.polinema.android.kotlin.pupuk.databinding.ActivityLoginBinding
 import com.polinema.android.kotlin.pupuk.ui.kp.KpActivity
 import com.polinema.android.kotlin.pupuk.ui.petani.PtActivity
+import com.polinema.android.kotlin.pupuk.ui.ppl.PplActivity
 import com.polinema.android.kotlin.pupuk.util.CustomProgressDialog
 import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference
 import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference.getLevel
@@ -46,6 +47,10 @@ class LoginActivity : AppCompatActivity(), AnkoLogger {
         if (InternetDialog(this).internetStatus) {
             if (getLoggedStatus(applicationContext)) {
                 when(getLevel(applicationContext)) {
+                    3 -> {
+                        startActivity(intentFor<PplActivity>().clearTask().clearTop())
+                        finish()
+                    }
                     4 -> {
                         startActivity(intentFor<KpActivity>().clearTask().clearTop())
                         finish()
@@ -70,7 +75,12 @@ class LoginActivity : AppCompatActivity(), AnkoLogger {
         viewmodel?.userLogin?.observe(this, Observer { user ->
             Toast.makeText(this, user?.message, Toast.LENGTH_LONG).show()
             when(user?.level) {
-                "ADMIN" -> {
+                "PPL" -> {
+                    startActivity(intentFor<PplActivity>().clearTask().clearTop())
+                    SaveSharedPreference.setLoggedIn(applicationContext, true, user.username, 3)
+                    finish()
+                }
+                "POKTAN" -> {
                     startActivity(intentFor<KpActivity>().clearTask().clearTop())
                     SaveSharedPreference.setLoggedIn(applicationContext, true, user.username, 4)
                     finish()

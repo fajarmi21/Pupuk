@@ -17,11 +17,13 @@ import com.asp.fliptimerviewlibrary.CountDownClock
 import com.google.gson.internal.LinkedTreeMap
 import com.polinema.android.kotlin.pupuk.R
 import com.polinema.android.kotlin.pupuk.databinding.PtDashboardFragmentBinding
+import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference.getCode
 import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference.getEnd
 import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference.getLeft
 import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference.getTime
 import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference.getUser
 import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference.reset
+import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference.setCode
 import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference.setTime
 import com.polinema.android.kotlin.pupuk.viewmodel.PtDashboardViewModel
 import kotlinx.android.synthetic.main.pt_dashboard_fragment.*
@@ -36,6 +38,7 @@ class PtDashboardFragment : Fragment() {
     private var mTimerRunning = false
     private var mTimeLeftInMillis: Long = 0
     private var mEndTime: Long = 0
+    private var mCode = 1
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -51,9 +54,7 @@ class PtDashboardFragment : Fragment() {
         tx_userNamePT.text = getUser(context)
         tx_userNamePT.paintFlags = Paint.UNDERLINE_TEXT_FLAG
 
-        binding.bt.setOnClickListener {
-            startTimer()
-        }
+//        reset(context)
 
         viewModel = ViewModelProvider(this).get(PtDashboardViewModel::class.java)
         viewModel.ptD(tx_userNamePT.text.toString()).observe(viewLifecycleOwner, Observer {
@@ -107,10 +108,18 @@ class PtDashboardFragment : Fragment() {
 //                Toast.makeText(context, "Data Kosong", Toast.LENGTH_SHORT).show()
             }
         })
+
+        binding.btnAddUsulanPT.setOnClickListener { addFragment(PtAddUsulanFragment()) }
+    }
+
+    private fun addFragment(fragment: Fragment) {
+        activity!!.supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.FramePT, fragment, fragment.javaClass.simpleName)
+                .commit()
     }
 
     private fun startTimer() {
-        if (binding.bt.visibility == View.VISIBLE) binding.bt.visibility = View.GONE
         mEndTime = System.currentTimeMillis() + mTimeLeftInMillis
         timer.startCountDown(mTimeLeftInMillis)
         timer.setCountdownListener(object : CountDownClock.CountdownCallBack {
@@ -120,8 +129,16 @@ class PtDashboardFragment : Fragment() {
 
             override fun countdownFinished() {
                 reset(context)
-                bt.visibility = View.VISIBLE
-                START_TIME_IN_MILLIS = 10000
+                when(mCode) {
+                    1 -> {
+                        START_TIME_IN_MILLIS = 30000
+                        setCode(context, 0)
+                    }
+                    0 -> {
+                        START_TIME_IN_MILLIS = 40000
+                        setCode(context, 1)
+                    }
+                }
                 onStart()
             }
         })
@@ -133,41 +150,35 @@ class PtDashboardFragment : Fragment() {
 
         mTimeLeftInMillis = getLeft(context, START_TIME_IN_MILLIS)
         mTimerRunning = getTime(context, false)
-        if (mTimerRunning) {
-            mEndTime = getEnd(context, 0)
-            mTimeLeftInMillis = mEndTime - System.currentTimeMillis()
-            Toast.makeText(context, mTimeLeftInMillis.toString(), Toast.LENGTH_SHORT).show()
-            if (mTimeLeftInMillis < 0) {
-                mTimeLeftInMillis = 0
-                mTimerRunning = false
-            } else {
-                startTimer()
+        mCode = getCode(context, mCode)
+//        Toast.makeText(context, "$mTimerRunning , $mTimeLeftInMillis", Toast.LENGTH_SHORT).show()
+        when(mCode) {
+            1 -> btnAddUsulanPT.visibility = View.GONE
+            0 -> btnAddUsulanPT.visibility = View.VISIBLE
+        }
+        when {
+            mTimerRunning -> {
+                mEndTime = getEnd(context, 0)
+                mTimeLeftInMillis = mEndTime - System.currentTimeMillis()
+                if (mTimeLeftInMillis < 0) {
+                    mTimeLeftInMillis = getLeft(context, START_TIME_IN_MILLIS)
+                    mTimerRunning = false
+                    startTimer()
+                } else {
+                    startTimer()
+                }
             }
+            !mTimerRunning && mTimeLeftInMillis == 0L -> {
+                reset(context)
+                onStart()
+            }
+            else -> startTimer()
         }
     }
 
     override fun onStop() {
         super.onStop()
-        setTime(context, mTimeLeftInMillis, mTimerRunning, mEndTime)
+        setTime(context, mTimeLeftInMillis, mTimerRunning, mEndTime, mCode)
         timer.pauseCountDownTimer()
-    }
-
-    fun timer1() {
-        val t : Long = 30000
-        binding.timer.startCountDown(t)
-        binding.timer.setCountdownListener(object : CountDownClock.CountdownCallBack {
-            override fun countdownAboutToFinish() {
-                //TODO Add your code here
-            }
-
-            override fun countdownFinished() {
-                Log.e("sas", "1")
-                Toast.makeText(context, "Finished", Toast.LENGTH_SHORT).show()
-//                binding.timer.visibility = View.GONE
-//                binding.timer2.visibility = View.VISIBLE
-////                SaveSharedPreference.setTime(context, true)
-//                timer2()
-            }
-        })
     }
 }

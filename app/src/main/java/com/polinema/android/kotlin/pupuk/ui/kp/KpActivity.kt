@@ -50,32 +50,12 @@ class KpActivity : AppCompatActivity(), AnkoLogger {
             R.id.context_menu -> {
                 showContextMenuDialogFragment()
             }
-//            R.id.action_logout -> {
-//                startActivity(intentFor<LoginActivity>().clearTask().clearTop())
-//                finish()
-//                return true
-//            }
-//            R.id.action_addProduct -> {
-////                startActivity(intentFor<AddProductActivity>().clearTask().clearTop())
-//                return true
-//            }
         }
         return true
     }
 
     private fun initToolbar() {
         setSupportActionBar(findViewById(R.id.ToolbarKp))
-
-//        supportActionBar?.apply {
-//            setDisplayHomeAsUpEnabled(true)
-//            setDisplayShowTitleEnabled(false)
-//        }
-
-//        ToolbarKp.apply {
-//            setNavigationIcon(R.drawable.ic_arrow_back)
-//            setNavigationOnClickListener { onBackPressed() }
-//        }
-
         tvToolbarTitle.text = "Kelompok Tani"
     }
 

@@ -11,6 +11,11 @@ interface BackEndApi {
     @POST("login")
     fun LOGIN(@Field("email") email: String, @Field("password") password: String): Call<Login>
 
+    //PPL
+    @FormUrlEncoded
+    @POST("ppl")
+    fun PD(@Field("desa") desa: String): Call<PPL>
+
     //kelompoktani
     @FormUrlEncoded
     @POST("poktan")

@@ -23,6 +23,16 @@
     <color name="frutorial_title">#000</color>
     <color name="mtrl_textinput_default_box_stroke_color">#fff</color>
 
+    <!--expandable-->
+    <color name="separatorColor">#18102C</color>
+    <color name="pink">#FF308E</color>
+    <color name="orange">#FA9301</color>
+    <color name="yellow">#F8D411</color>
+    <color name="blue">#20CBF3</color>
+    <color name="purple">#6F26FA</color>
+    <color name="green">#49CC56</color>
+    <color name="white">#FFFFFF</color>
+
     <!--random-->
     <color name="rand_mistyrose">#FFE4E1</color>
     <color name="rand_lavenderblush">#FFF0F5</color>
@@ -32,6 +42,7 @@
     <color name="rand_bisque">#FFE4C4</color>
     <color name="rand_aqua">#00FFFF</color>
     <color name="rand_darkgrey">#A9A9A9</color>
+    <color name="rand_palegreen">#98FB98</color>
 
     <!--colors for folding cell-->
     <color name="bgBackSideColor">#f4f0ff</color>

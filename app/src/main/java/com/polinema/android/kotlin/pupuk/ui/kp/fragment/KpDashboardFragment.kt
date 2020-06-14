@@ -1,7 +1,6 @@
 package com.polinema.android.kotlin.pupuk.ui.kp.fragment
 
 import android.graphics.Paint
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.polinema.android.kotlin.pupuk.R
 import com.polinema.android.kotlin.pupuk.databinding.KpDashboardFragmentBinding
 import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference
@@ -25,7 +25,6 @@ class KpDashboardFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.kp_dashboard_fragment, container, false)
         return binding.root
-//        return inflater.inflate(R.layout.kp_dashboard_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -35,7 +34,7 @@ class KpDashboardFragment : Fragment() {
         tx_userName.text = SaveSharedPreference.getUser(context)
         tx_userName.paintFlags = Paint.UNDERLINE_TEXT_FLAG
 
-        viewModel = ViewModelProviders.of(this).get(KpDashboardViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(KpDashboardViewModel::class.java)
 //        binding.user = viewModel
         viewModel.poktan = tx_userName.text.toString()
         // TODO: Use the ViewModel

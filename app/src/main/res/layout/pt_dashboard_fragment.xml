@@ -79,28 +79,28 @@
                 android:gravity="center"
                 />
 
-            <com.asp.fliptimerviewlibrary.CountDownClock
-                android:id="@+id/timer2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:layout_alignParentEnd="true"
-                android:layout_gravity="center"
-                android:clipChildren="false"
-                android:clipToPadding="false"
-                flipTimer:almostFinishedCallbackTimeInSeconds="5"
-                flipTimer:animationDuration="850"
-                flipTimer:countdownTickInterval="1000"
-                flipTimer:digitBottomDrawable="@drawable/background_bottom"
-                flipTimer:digitDividerColor="@color/transparent"
-                flipTimer:digitTextColor="@color/black"
-                flipTimer:digitTextSize="24sp"
-                flipTimer:digitTopDrawable="@drawable/background_top"
-                flipTimer:digitWidth="28dp"
-                flipTimer:halfDigitHeight="22dp"
-                flipTimer:resetSymbol="0"
-                flipTimer:splitterPadding="0dp"
-                />
+<!--            <com.asp.fliptimerviewlibrary.CountDownClock-->
+<!--                android:id="@+id/timer2"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:visibility="gone"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:clipChildren="false"-->
+<!--                android:clipToPadding="false"-->
+<!--                flipTimer:almostFinishedCallbackTimeInSeconds="5"-->
+<!--                flipTimer:animationDuration="850"-->
+<!--                flipTimer:countdownTickInterval="1000"-->
+<!--                flipTimer:digitBottomDrawable="@drawable/background_bottom"-->
+<!--                flipTimer:digitDividerColor="@color/transparent"-->
+<!--                flipTimer:digitTextColor="@color/black"-->
+<!--                flipTimer:digitTextSize="24sp"-->
+<!--                flipTimer:digitTopDrawable="@drawable/background_top"-->
+<!--                flipTimer:digitWidth="28dp"-->
+<!--                flipTimer:halfDigitHeight="22dp"-->
+<!--                flipTimer:resetSymbol="0"-->
+<!--                flipTimer:splitterPadding="0dp"-->
+<!--                />-->
         </LinearLayout>
 
         <androidx.cardview.widget.CardView
@@ -151,7 +151,8 @@
                             app:buttonGradientStartColor="@color/colorPrimary"
                             app:buttonGradientEndColor="@color/colorAccent"
                             app:buttonCornerRadius="20dp"
-                            app:textAllCaps="true" />
+                            app:textAllCaps="true"
+                            android:visibility="gone" />
                     </RelativeLayout>
 
                     <View
@@ -399,11 +400,5 @@
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>
-
-        <Button
-            android:id="@+id/bt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Button"/>
     </LinearLayout>
 </layout>

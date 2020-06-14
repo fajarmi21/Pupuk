@@ -1,29 +1,23 @@
 package com.polinema.android.kotlin.pupuk.ui.petani.fragment
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.text.Editable
 import android.text.InputFilter
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
 import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.polinema.android.kotlin.pupuk.R
 import com.polinema.android.kotlin.pupuk.databinding.PtAddUsulanFragmentBinding
-import com.polinema.android.kotlin.pupuk.model.Petani
 import com.polinema.android.kotlin.pupuk.util.MinMaxFilter
 import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference
 import com.polinema.android.kotlin.pupuk.viewmodel.PtAddUsulanViewModel
-import kotlinx.android.synthetic.main.pt_add_usulan_fragment.*
 import java.math.RoundingMode
-import java.text.DecimalFormat
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
@@ -58,24 +52,25 @@ class PtAddUsulanFragment : Fragment() {
 
         viewModel.ptD(binding.txaIdUser.text.toString()).observe(viewLifecycleOwner, Observer {
             if (it != null) {
-                thp = when(it.tahap) {
-                    "m1" -> "m2"
-                    "m2" -> "m3"
-                    else -> "m1"
-                }
+//                thp = when(it.tahap) {
+//                    "m1" -> "m2"
+//                    "m2" -> "m3"
+//                    else -> "m1"
+//                }
+                thp = "m1"
 
                 binding.idLuas.helperText = """max : ${it.luas_lahan}/ha"""
                 binding.txaLuas.filters = arrayOf(MinMaxFilter(0.0, it.luas_lahan.toDouble()), InputFilter.LengthFilter(6))
 
                 binding.txaLuas.doOnTextChanged { text, _, _, _ ->
                     if (!text.isNullOrEmpty()) {
-                        if (text.toString() == "0") {
-                            binding.txaUrea.setText("0")
-                            binding.txaSp36.setText("0")
-                            binding.txaZa.setText("0")
-                            binding.txaNpk.setText("0")
-                            binding.txaOrganik.setText("0")
-                        }
+//                        if (text.toString() == "0") {
+//                            binding.txaUrea.setText("0")
+//                            binding.txaSp36.setText("0")
+//                            binding.txaZa.setText("0")
+//                            binding.txaNpk.setText("0")
+//                            binding.txaOrganik.setText("0")
+//                        }
 
                         val urea = roundOfDecimal(text.toString().toDouble() * 300.00)
                         val sp36 = roundOfDecimal(text.toString().toDouble() * 50.00)
@@ -101,13 +96,33 @@ class PtAddUsulanFragment : Fragment() {
                         binding.txaZa.filters = arrayOf(MinMaxFilter(0.0, za), InputFilter.LengthFilter(6))
                         binding.txaNpk.filters = arrayOf(MinMaxFilter(0.0, npk), InputFilter.LengthFilter(6))
                         binding.txaOrganik.filters = arrayOf(MinMaxFilter(0.0, organik), InputFilter.LengthFilter(6))
+
+                        binding.txaUrea.setText(urea.toString())
+                        binding.txaSp36.setText(sp36.toString())
+                        binding.txaZa.setText(za.toString())
+                        binding.txaNpk.setText(npk.toString())
+                        binding.txaOrganik.setText(organik.toString())
                     } else {
                         reset()
                     }
                 }
             }
         })
-        binding.btTAdd.setOnClickListener { add() }
+        binding.btTAdd.setOnClickListener {
+            add()
+//            val pd = PtDashboardFragment()
+//            val mBundle = Bundle()
+//            mBundle.putString("status", "1")
+//            addFragment(pd)
+        }
+        binding.btTCancel.setOnClickListener { addFragment(PtDashboardFragment()) }
+    }
+
+    private fun addFragment(fragment: Fragment) {
+        activity!!.supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.FramePT, fragment, fragment.javaClass.simpleName)
+                .commit()
     }
 
     private fun add() {

@@ -1,7 +1,6 @@
 package com.polinema.android.kotlin.pupuk.ui.petani
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.KeyEvent
@@ -13,7 +12,7 @@ import com.polinema.android.kotlin.pupuk.R
 import com.polinema.android.kotlin.pupuk.ui.login.LoginActivity
 import com.polinema.android.kotlin.pupuk.ui.petani.fragment.PtAddUsulanFragment
 import com.polinema.android.kotlin.pupuk.ui.petani.fragment.PtDashboardFragment
-import com.polinema.android.kotlin.pupuk.util.MyIntentService
+import com.polinema.android.kotlin.pupuk.ui.petani.fragment.PtRekapFragment
 import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference
 import com.yalantis.contextmenu.lib.ContextMenuDialogFragment
 import com.yalantis.contextmenu.lib.MenuObject
@@ -30,9 +29,6 @@ class PtActivity : AppCompatActivity(), AnkoLogger {
         initMenuFragment()
 
         addFragment(PtDashboardFragment())
-
-        val intent = Intent(this, MyIntentService::class.java)
-        startService(intent)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -76,8 +72,8 @@ class PtActivity : AppCompatActivity(), AnkoLogger {
             setItemClickListener { _, position ->
                 when(position) {
                     0 -> { if (fragmentManager!!.findFragmentById(R.id.FramePT) !is PtDashboardFragment) addFragment(PtDashboardFragment())}
-                    1 -> { if (fragmentManager!!.findFragmentById(R.id.FramePT) !is PtAddUsulanFragment) addFragment(PtAddUsulanFragment())}
-//                    2 -> { if (fragmentManager!!.findFragmentById(R.id.FramePT) !is KpPetaniFragment) addFragment(KpPetaniFragment())}
+                    1 -> { if (fragmentManager!!.findFragmentById(R.id.FramePT) !is PtRekapFragment) addFragment(PtRekapFragment())}
+                    2 -> { if (fragmentManager!!.findFragmentById(R.id.FramePT) !is PtAddUsulanFragment) addFragment(PtAddUsulanFragment())}
                     3 -> {
                         Toast.makeText(context, "Logout Sukses", Toast.LENGTH_LONG).show()
                         startActivity(intentFor<LoginActivity>().clearTask().clearTop())

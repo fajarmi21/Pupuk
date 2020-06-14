@@ -63,7 +63,7 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'com.squareup.okhttp3:okhttp:4.7.2'
     implementation 'com.google.android.gms:play-services-auth:18.0.0'
-    implementation "org.jetbrains.anko:anko-commons:0.10.4"
+    implementation "org.jetbrains.anko:anko-commons:0.10.8"
     implementation 'com.github.okdroid:checkablechipview:1.0.3'
     //Rx
     implementation "io.reactivex.rxjava2:rxjava:2.2.19"
@@ -86,4 +86,6 @@ dependencies {
     implementation project(':fliptimerviewlibrary')
     //button
     implementation 'com.github.sabujak-sabujak:RoundedButton:v0.1.1'
+    //expandable
+    implementation 'com.diegodobelo.expandingview:expanding-view:0.9.4'
 }

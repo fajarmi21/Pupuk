@@ -91,14 +91,14 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
                     android:paddingStart="5dp"
+                    android:text="@={viewmodel.password}"
                     android:textColor="#383838"
                     android:textSize="20sp"
                     app:backgroundTint="#00ce8f"
-                    tools:ignore="RtlSymmetry"
-                    android:imeOptions="actionDone"
-                    android:inputType="textPassword"
-                    android:text="@={viewmodel.password}" />
+                    tools:ignore="RtlSymmetry" />
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
         <Button
