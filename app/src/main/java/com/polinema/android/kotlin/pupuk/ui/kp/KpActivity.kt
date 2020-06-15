@@ -36,8 +36,7 @@ class KpActivity : AppCompatActivity(), AnkoLogger {
         setContentView(R.layout.activity_kp)
         initToolbar()
         initMenuFragment()
-        val fragment = KpDashboardFragment()
-        addFragment(fragment)
+        addFragment(KpRekapFragment())
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

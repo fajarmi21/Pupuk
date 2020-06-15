@@ -12,8 +12,6 @@ import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference
 import com.polinema.android.kotlin.pupuk.viewmodel.PtDetailRekapViewModel
 import kotlinx.android.synthetic.main.pt_detail_rekap_fragment.*
 
-data class SubDetailRekap(val sektor: String, val luas: String, val urea: String, val sp36: String, val za: String, val npk: String, val organik: String, val date: String, val tahap: String? = null)
-
 class PtDetailRekapFragment : Fragment() {
     private lateinit var viewModel: PtDetailRekapViewModel
 

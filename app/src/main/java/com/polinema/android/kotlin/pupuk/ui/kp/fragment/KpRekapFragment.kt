@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -18,6 +19,7 @@ import com.github.okdroid.checkablechipview.CheckableChipView
 import com.google.gson.internal.LinkedTreeMap
 import com.polinema.android.kotlin.pupuk.R
 import com.polinema.android.kotlin.pupuk.model.UsulanKT
+import com.polinema.android.kotlin.pupuk.ui.petani.fragment.PtDetailRekapFragment
 import com.polinema.android.kotlin.pupuk.util.DummySwipeRepository
 import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference
 import com.polinema.android.kotlin.pupuk.viewmodel.KpRekapViewModel
@@ -26,6 +28,7 @@ import kotlinx.android.synthetic.main.kp_rekap_fragment.*
 import kotlinx.android.synthetic.main.kp_rekap_item.*
 import okhttp3.internal.notify
 import okhttp3.internal.notifyAll
+import java.lang.Exception
 import java.text.SimpleDateFormat
 
 
@@ -33,7 +36,7 @@ class KpRekapFragment : Fragment() {
     private lateinit var viewModel: KpRekapViewModel
     private val repository = DummySwipeRepository()
     private var show = 1
-    private var all = 1
+    private var all = 0
     private lateinit var list : MutableList<UsulanKT>
 
     override fun onCreateView(
@@ -48,9 +51,14 @@ class KpRekapFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(KpRekapViewModel::class.java)
         viewModel.rekap(SaveSharedPreference.getUser(context)).observe(viewLifecycleOwner, Observer {
-            list = it
-            rvKPR.layoutManager = LinearLayoutManager(context)
-            rvKPR.adapter = RekapKTAdapter(list)
+            try {
+                Log.e("ss", it.toString())
+                list = it
+                rvKPR.layoutManager = LinearLayoutManager(context)
+                rvKPR.adapter = RekapKTAdapter(list)
+            } catch (e: Exception) {
+
+            }
         })
 
         var x = 0
@@ -107,13 +115,10 @@ class KpRekapFragment : Fragment() {
         inner class HolderRekapKT(iv: View): RecyclerView.ViewHolder(iv) {
             val no = iv.findViewById<TextView>(R.id.textView)
             val nama = iv.findViewById<TextView>(R.id.textView2)
-            val alamat = iv.findViewById<TextView>(R.id.textView3)
-            val luas = iv.findViewById<TextView>(R.id.textView4)
+            val luasUsul = iv.findViewById<TextView>(R.id.textView3)
+            val stat = iv.findViewById<TextView>(R.id.textView4)
             val btn = iv.findViewById<CheckableChipView>(R.id.btnVARKP)
-        }
-
-        fun x(){
-
+            val kpr = iv.findViewById<LinearLayout>(R.id.KPr)
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HolderRekapKT {
@@ -127,21 +132,38 @@ class KpRekapFragment : Fragment() {
             holder.btn.text = "Verifikasi"
             holder.no.text = SimpleDateFormat("dd/\nMM/\nyy").format(SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse(dataUsulan[position].timestamp)!!)
             holder.nama.text = dataUsulan[position].nama_petani
-            holder.alamat.text = dataUsulan[position].luas_lahan
-            if (dataUsulan[position].m1 != null && dataUsulan[position].m1 != "false" && dataUsulan[position].status_poktan != "true") {
-                val getrow = dataUsulan[position].m1 as LinkedTreeMap<*, *>
-                holder.luas.text = getrow["sd"].toString()
+            holder.stat.text = dataUsulan[position].luas_lahan
+            var thp = Any()
+            var i = 0
+            when(dataUsulan[position].tahap) {
+                "m1" -> if (dataUsulan[position].m1 != null && dataUsulan[position].m1 != "false") thp = dataUsulan[position].m1  as ArrayList<*>
+                "m2" -> if (dataUsulan[position].m2 != null && dataUsulan[position].m2 != "false") thp = dataUsulan[position].m2  as ArrayList<*>
+                "m3" -> if (dataUsulan[position].m3 != null && dataUsulan[position].m3 != "false") thp = dataUsulan[position].m3  as ArrayList<*>
+            }
+            if (thp is ArrayList<*>) {
+                val getrow = thp.last() as LinkedTreeMap<*, *>
+                i = thp.lastIndex - 1
+                holder.luasUsul.text = getrow["sektor"].toString()
+                all = 1
+            } else {
+                holder.luasUsul.text = "-"
+                holder.stat.text = "can't\nverificated"
+                if(all == 0) all = 0
+            }
+
+            val sp = dataUsulan[position].status_poktan as ArrayList<String>
+            if (sp[i] != "true" && holder.stat.text != "can't\nverificated") {
                 if (show == 0) {
-                    holder.luas.visibility = View.GONE
+                    holder.stat.visibility = View.GONE
                     holder.btn.visibility = View.VISIBLE
                 } else {
-                    holder.luas.visibility = View.VISIBLE
+                    holder.stat.visibility = View.VISIBLE
                     holder.btn.visibility = View.GONE
                 }
-            } else if (dataUsulan[position].status_poktan == "true") {
-                holder.luas.text = "verificated"
-            } else {
-                holder.luas.text = "can't\nverificated"
+            }
+            else if (sp[i] == "true" && holder.stat.text != "can't\nverificated") {
+                holder.stat.text = "verificated"
+                all = 0
             }
 
             holder.btn.setOnClickListener {
@@ -151,8 +173,8 @@ class KpRekapFragment : Fragment() {
                     Toast.makeText(this@KpRekapFragment.context, it.message, Toast.LENGTH_SHORT).show()
                     if (it.status == 1) {
                         dataUsulan[position].status_poktan = "true"
-                        holder.luas.text = "verificated"
-                        holder.luas.visibility = View.VISIBLE
+                        holder.stat.text = "verificated"
+                        holder.stat.visibility = View.VISIBLE
                         holder.btn.visibility = View.GONE
                         notifyItemChanged(position)
                         if (dataUsulan.filter { s -> s.status_poktan != "true" && s.m1 != "false" }.count() == 0) {
@@ -163,8 +185,33 @@ class KpRekapFragment : Fragment() {
 //                    Log.e("count", dataUsulan.filter { s -> s.status_poktan != "true" && s.m1 != "false" }.count().toString())
                 })
             }
+            holder.kpr.setOnClickListener {
+                if (thp is ArrayList<*>) {
+                    val get = thp.last() as LinkedTreeMap<*, *>
+                    val f = KpDetailRekapFragment()
+                    val b = Bundle()
+                    b.putString("0", get["date"].toString())
+                    b.putString("1", get["sektor"].toString())
+                    b.putString("2", get["luas"].toString())
+                    b.putString("3", get["urea"].toString())
+                    b.putString("4", get["sp36"].toString())
+                    b.putString("5", get["za"].toString())
+                    b.putString("6", get["npk"].toString())
+                    b.putString("7", get["organik"].toString())
+                    f.arguments = b
+                    addFragment(f)
+                }
+            }
         }
 
 
+    }
+
+    private fun addFragment(fragment: Fragment) {
+        activity!!.supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.FrameKP, fragment, fragment.javaClass.simpleName)
+            .addToBackStack("KpRekapFragment")
+            .commit()
     }
 }

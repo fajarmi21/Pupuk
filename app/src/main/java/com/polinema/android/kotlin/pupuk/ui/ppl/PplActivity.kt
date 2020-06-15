@@ -106,7 +106,7 @@ class PplActivity : AppCompatActivity(), AnkoLogger {
             resource = R.drawable.icn_task
             bgColor = R.color.text_color
         }
-        val user = MenuObject("Petani").apply {
+        val user = MenuObject("Kelompok Tani").apply {
             resource = R.drawable.icn_contact
             bgColor = R.color.text_color
         }

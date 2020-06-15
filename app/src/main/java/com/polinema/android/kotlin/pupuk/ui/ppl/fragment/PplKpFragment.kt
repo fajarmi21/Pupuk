@@ -7,13 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.polinema.android.kotlin.pupuk.R
+import com.polinema.android.kotlin.pupuk.viewmodel.PplKpViewModel
 
 class PplKpFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = PplKpFragment()
-    }
-
     private lateinit var viewModel: PplKpViewModel
 
     override fun onCreateView(
