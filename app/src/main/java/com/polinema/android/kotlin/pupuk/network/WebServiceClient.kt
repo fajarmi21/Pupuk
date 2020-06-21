@@ -1,8 +1,5 @@
 package com.polinema.android.kotlin.pupuk.network
 
-import android.app.Activity
-import android.content.Context
-import com.polinema.android.kotlin.pupuk.R
 import okhttp3.ConnectionSpec
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -11,12 +8,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.*
 import java.util.concurrent.TimeUnit
 
-
 object WebServiceClient {
     private lateinit var interceptor: HttpLoggingInterceptor
     private lateinit var okHttpClient: OkHttpClient
     private var retrofit: Retrofit? = null
-    val http = "https://dbc04d55bf23.ngrok.io"
+    val http = "https://2e499b84d926.ngrok.io"
 
     val client: Retrofit
         get() {
@@ -26,6 +22,7 @@ object WebServiceClient {
                 .addInterceptor(interceptor)
                 .connectionSpecs(
                     Arrays.asList(
+                        ConnectionSpec.CLEARTEXT,
                         ConnectionSpec.MODERN_TLS,
                         ConnectionSpec.COMPATIBLE_TLS))
                 .followRedirects(true)

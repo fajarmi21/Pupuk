@@ -1,8 +1,6 @@
 package com.polinema.android.kotlin.pupuk.ui.kp
 
 import android.annotation.SuppressLint
-import android.content.res.Resources
-import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Log.e
 import android.view.KeyEvent
@@ -15,12 +13,12 @@ import com.polinema.android.kotlin.pupuk.R
 import com.polinema.android.kotlin.pupuk.ui.kp.fragment.KpDashboardFragment
 import com.polinema.android.kotlin.pupuk.ui.kp.fragment.KpPetaniFragment
 import com.polinema.android.kotlin.pupuk.ui.kp.fragment.KpRekapFragment
+import com.polinema.android.kotlin.pupuk.ui.kp.fragment.KpUsulFragment
 import com.polinema.android.kotlin.pupuk.ui.login.LoginActivity
 import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference
 import com.yalantis.contextmenu.lib.ContextMenuDialogFragment
 import com.yalantis.contextmenu.lib.MenuObject
 import com.yalantis.contextmenu.lib.MenuParams
-import info.androidhive.fontawesome.FontDrawable
 import kotlinx.android.synthetic.main.activity_kp.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.clearTask
@@ -64,34 +62,23 @@ class KpActivity : AppCompatActivity(), AnkoLogger {
             menuObjects = menu
             isClosableOutside = false
             animationDuration = 500
-            animationDelay = 100
+            animationDelay = 50
         }
 
         contextMenuDialogFragment = ContextMenuDialogFragment.newInstance(menu).apply {
             setItemClickListener { _, position ->
-//                Toast.makeText(
-//                    this@KpActivity,
-//                    "Clicked on position: $position",
-//                    Toast.LENGTH_SHORT
-//                ).show()
                 when(position) {
                     0 -> { if (fragmentManager!!.findFragmentById(R.id.FrameKP) !is KpDashboardFragment) addFragment(KpDashboardFragment())}
-                    1 -> { if (fragmentManager!!.findFragmentById(R.id.FrameKP) !is KpRekapFragment) addFragment(KpRekapFragment())}
-                    2 -> { if (fragmentManager!!.findFragmentById(R.id.FrameKP) !is KpPetaniFragment) addFragment(KpPetaniFragment())}
-                    3 -> {
+                    1 -> { if (fragmentManager!!.findFragmentById(R.id.FrameKP) !is KpUsulFragment) addFragment(KpUsulFragment())}
+                    2 -> { if (fragmentManager!!.findFragmentById(R.id.FrameKP) !is KpPetaniFragment) addFragment(KpRekapFragment())}
+                    3 -> { if (fragmentManager!!.findFragmentById(R.id.FrameKP) !is KpPetaniFragment) addFragment(KpPetaniFragment())}
+                    4 -> {
                         Toast.makeText(context, "Logout Sukses", Toast.LENGTH_LONG).show()
                         startActivity(intentFor<LoginActivity>().clearTask().clearTop())
                         SaveSharedPreference.setLoggedIn(applicationContext, false, null, 0)
                         finish()
                     }
                 }
-            }
-            setItemLongClickListener { _, position ->
-                Toast.makeText(
-                    this@KpActivity,
-                    "Long clicked on position: $position",
-                    Toast.LENGTH_SHORT
-                ).show()
             }
         }
     }
@@ -102,7 +89,11 @@ class KpActivity : AppCompatActivity(), AnkoLogger {
             resource = R.drawable.icn_close
             bgColor = R.color.text_color
         }
-        val list = MenuObject("Rekap").apply {
+        val usul = MenuObject("Usulan").apply {
+            resource = R.drawable.icn_approval
+            bgColor = R.color.text_color
+        }
+        val rekap = MenuObject("Rekap").apply {
             resource = R.drawable.icn_task
             bgColor = R.color.text_color
         }
@@ -114,34 +105,12 @@ class KpActivity : AppCompatActivity(), AnkoLogger {
             resource = R.drawable.icn_signout
             bgColor = R.color.text_color
         }
-//        val like = MenuObject("Like profile").apply {
-//            bitmap = BitmapFactory.decodeResource(resources, R.drawable.icn_2)
-//            bgColor = R.color.text_color
-//        }
-//        val addFriend = MenuObject("Add to friends").apply {
-//            drawable = BitmapDrawable(
-//                resources,
-//                BitmapFactory.decodeResource(resources, R.drawable.icn_3)
-//            )
-//            bgColor = R.color.text_color
-//        }
-//        val addFavorite = MenuObject("Add to favorites").apply {
-//            resource = R.drawable.icn_4
-//            bgColor = R.color.text_color
-//        }
-//        val block = MenuObject("Block user").apply {
-//            resource = R.drawable.icn_5
-//            bgColor = R.color.text_color
-//        }
 
         add(close)
-        add(list)
+        add(usul)
+        add(rekap)
         add(user)
         add(signout)
-//        add(like)
-//        add(addFriend)
-//        add(addFavorite)
-//        add(block)
     }
 
     private fun showContextMenuDialogFragment() {

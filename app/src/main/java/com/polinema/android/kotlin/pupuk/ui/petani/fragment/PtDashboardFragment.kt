@@ -17,12 +17,14 @@ import com.asp.fliptimerviewlibrary.CountDownClock
 import com.google.gson.internal.LinkedTreeMap
 import com.polinema.android.kotlin.pupuk.R
 import com.polinema.android.kotlin.pupuk.databinding.PtDashboardFragmentBinding
+import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference.getAdd
 import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference.getCode
 import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference.getEnd
 import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference.getLeft
 import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference.getTime
 import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference.getUser
 import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference.reset
+import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference.setAdd
 import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference.setCode
 import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference.setTime
 import com.polinema.android.kotlin.pupuk.viewmodel.PtDashboardViewModel
@@ -54,43 +56,53 @@ class PtDashboardFragment : Fragment() {
         tx_userNamePT.text = getUser(context)
         tx_userNamePT.paintFlags = Paint.UNDERLINE_TEXT_FLAG
 
-//        reset(context)
+        setAdd(context, 0)
+        if (getAdd(context) == 1) {
+            binding.btnAddUsulanPT.visibility = View.GONE
+            binding.btnEditUsulanPT.visibility = View.VISIBLE
+        } else {
+            binding.btnAddUsulanPT.visibility = View.VISIBLE
+            binding.btnEditUsulanPT.visibility = View.GONE
+        }
 
         viewModel = ViewModelProvider(this).get(PtDashboardViewModel::class.java)
         viewModel.ptD(tx_userNamePT.text.toString()).observe(viewLifecycleOwner, Observer {
             try {
                 when {
                     it.m3 != null -> {
-                        if (it.m3 == "false") {
+                        val m3 = it.m3 as ArrayList<Any>
+                        if (m3.last() == "false") {
                             binding.ptU.text = it.tahap
                             binding.ptLL.text = """- /${it.luas_lahan} ha"""
                             binding.ptTanam.text = "-"
                         } else {
-                            val getrow = it.m3 as LinkedTreeMap<*, *>
+                            val getrow = m3.last() as LinkedTreeMap<*, *>
                             binding.ptU.text = it.tahap
                             binding.ptLL.text = """${getrow["luas"]}/${it.luas_lahan} ha"""
                             binding.ptTanam.text = getrow["sektor"].toString()
                         }
                     }
                     it.m2 != null -> {
-                        if (it.m2 == "false") {
+                        val m2 = it.m2 as ArrayList<Any>
+                        if (m2.last() == "false") {
                             binding.ptU.text = it.tahap
                             binding.ptLL.text = """- /${it.luas_lahan} ha"""
                             binding.ptTanam.text = "-"
                         } else {
-                            val getrow = it.m2 as LinkedTreeMap<*, *>
+                            val getrow = m2.last() as LinkedTreeMap<*, *>
                             binding.ptU.text = it.tahap
                             binding.ptLL.text = """${getrow["luas"]}/${it.luas_lahan} ha"""
                             binding.ptTanam.text = getrow["sektor"].toString()
                         }
                     }
                     it.m1 != null -> {
-                        if (it.m1 == "false") {
+                        val m1 = it.m1 as ArrayList<Any>
+                        if (m1.last() == "false") {
                             binding.ptU.text = it.tahap
                             binding.ptLL.text = """- /${it.luas_lahan} ha"""
                             binding.ptTanam.text = "-"
                         } else {
-                            val getrow = it.m1 as LinkedTreeMap<*, *>
+                            val getrow = m1.last() as LinkedTreeMap<*, *>
                             binding.ptU.text = it.tahap
                             binding.ptLL.text = """${getrow["luas"]}/${it.luas_lahan} ha"""
                             binding.ptTanam.text = getrow["sektor"].toString()
@@ -110,6 +122,7 @@ class PtDashboardFragment : Fragment() {
         })
 
         binding.btnAddUsulanPT.setOnClickListener { addFragment(PtAddUsulanFragment()) }
+        binding.btnEditUsulanPT.setOnClickListener { addFragment(PtEditUsulanFragment()) }
     }
 
     private fun addFragment(fragment: Fragment) {
@@ -133,6 +146,7 @@ class PtDashboardFragment : Fragment() {
                     1 -> {
                         START_TIME_IN_MILLIS = 30000
                         setCode(context, 0)
+                        setAdd(context, 0)
                     }
                     0 -> {
                         START_TIME_IN_MILLIS = 40000

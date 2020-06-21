@@ -39,6 +39,12 @@ object SaveSharedPreference {
         editor.apply()
     }
 
+    fun setAdd(context: Context?, code: Int) {
+        val editor = getPreferences(context).edit()
+        editor.putInt("Add", code)
+        editor.apply()
+    }
+
     fun reset(context: Context?) {
         getPreferences(context).edit().remove("millisLeft").apply()
         getPreferences(context).edit().remove("timeMode").apply()
@@ -76,5 +82,9 @@ object SaveSharedPreference {
 
     fun getCode(context: Context?, def: Int): Int {
         return getPreferences(context).getInt("Code", def)
+    }
+
+    fun getAdd(context: Context?): Int {
+        return getPreferences(context).getInt("Add", 0)
     }
 }

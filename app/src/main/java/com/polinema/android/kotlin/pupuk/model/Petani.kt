@@ -28,6 +28,17 @@ class Sektor(
     val nama_tanaman: String
 )
 
+class Usul(
+    val sektor: String,
+    val luas: String,
+    val urea: String,
+    val sp36: String,
+    val za: String,
+    val npk: String,
+    val organik: String,
+    val date: String
+)
+
 data class Pesan(
     val status: Int,
     val message: String

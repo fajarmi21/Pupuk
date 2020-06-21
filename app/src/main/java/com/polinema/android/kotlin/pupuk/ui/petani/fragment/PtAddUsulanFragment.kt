@@ -16,6 +16,7 @@ import com.polinema.android.kotlin.pupuk.R
 import com.polinema.android.kotlin.pupuk.databinding.PtAddUsulanFragmentBinding
 import com.polinema.android.kotlin.pupuk.util.MinMaxFilter
 import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference
+import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference.setAdd
 import com.polinema.android.kotlin.pupuk.viewmodel.PtAddUsulanViewModel
 import java.math.RoundingMode
 import java.time.LocalDate
@@ -52,12 +53,11 @@ class PtAddUsulanFragment : Fragment() {
 
         viewModel.ptD(binding.txaIdUser.text.toString()).observe(viewLifecycleOwner, Observer {
             if (it != null) {
-//                thp = when(it.tahap) {
-//                    "m1" -> "m2"
-//                    "m2" -> "m3"
-//                    else -> "m1"
-//                }
-                thp = "m1"
+                thp = when(it.tahap) {
+                    "m1" -> "m2"
+                    "m2" -> "m3"
+                    else -> "m1"
+                }
 
                 binding.idLuas.helperText = """max : ${it.luas_lahan}/ha"""
                 binding.txaLuas.filters = arrayOf(MinMaxFilter(0.0, it.luas_lahan.toDouble()), InputFilter.LengthFilter(6))
@@ -110,10 +110,6 @@ class PtAddUsulanFragment : Fragment() {
         })
         binding.btTAdd.setOnClickListener {
             add()
-//            val pd = PtDashboardFragment()
-//            val mBundle = Bundle()
-//            mBundle.putString("status", "1")
-//            addFragment(pd)
         }
         binding.btTCancel.setOnClickListener { addFragment(PtDashboardFragment()) }
     }
@@ -140,7 +136,10 @@ class PtAddUsulanFragment : Fragment() {
 //        Log.e("sass", p[1])
         viewModel.ptU(p).observeForever {
             Toast.makeText(context, it.message, Toast.LENGTH_SHORT).show()
-            if (it.status == 1) reset()
+            if (it.status == 1) {
+                addFragment(PtDashboardFragment())
+                setAdd(context, 1)
+            }
         }
     }
 

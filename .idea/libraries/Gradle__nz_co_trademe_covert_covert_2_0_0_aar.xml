@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: nz.co.trademe.covert:covert:2.0.0@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f20ad818dfd4e3f4b1d08ea0719dfcfc/jetified-covert-2.0.0/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f20ad818dfd4e3f4b1d08ea0719dfcfc/jetified-covert-2.0.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f20ad818dfd4e3f4b1d08ea0719dfcfc/jetified-covert-2.0.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/64bba1a5b634b8f93c50f4b1b9525f62/jetified-covert-2.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/64bba1a5b634b8f93c50f4b1b9525f62/jetified-covert-2.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/64bba1a5b634b8f93c50f4b1b9525f62/jetified-covert-2.0.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

@@ -31,10 +31,6 @@ import kotlinx.android.synthetic.main.kp_petani_fragment.*
 
 class KpPetaniFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = KpPetaniFragment()
-    }
-
     private lateinit var viewModel: KpPetaniViewModel
     private lateinit var binding: KpPetaniFragmentBinding
 
@@ -62,10 +58,6 @@ class KpPetaniFragment : Fragment() {
         btAdd.setOnClickListener {
             addFragment(KpPetaniAddFragment())
         }
-    }
-
-    override fun onResume() {
-        super.onResume()
     }
 
     private fun showData() {

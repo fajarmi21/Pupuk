@@ -73,8 +73,7 @@ class PtActivity : AppCompatActivity(), AnkoLogger {
                 when(position) {
                     0 -> { if (fragmentManager!!.findFragmentById(R.id.FramePT) !is PtDashboardFragment) addFragment(PtDashboardFragment())}
                     1 -> { if (fragmentManager!!.findFragmentById(R.id.FramePT) !is PtRekapFragment) addFragment(PtRekapFragment())}
-                    2 -> { if (fragmentManager!!.findFragmentById(R.id.FramePT) !is PtAddUsulanFragment) addFragment(PtAddUsulanFragment())}
-                    3 -> {
+                    2 -> {
                         Toast.makeText(context, "Logout Sukses", Toast.LENGTH_LONG).show()
                         startActivity(intentFor<LoginActivity>().clearTask().clearTop())
                         SaveSharedPreference.setLoggedIn(applicationContext, false, null, 0)
@@ -102,10 +101,6 @@ class PtActivity : AppCompatActivity(), AnkoLogger {
             resource = R.drawable.icn_task
             bgColor = R.color.text_color
         }
-        val user = MenuObject("Petani").apply {
-            resource = R.drawable.icn_contact
-            bgColor = R.color.text_color
-        }
         val signout = MenuObject("Sign Out").apply {
             resource = R.drawable.icn_signout
             bgColor = R.color.text_color
@@ -113,7 +108,6 @@ class PtActivity : AppCompatActivity(), AnkoLogger {
 
         add(close)
         add(list)
-        add(user)
         add(signout)
     }
 

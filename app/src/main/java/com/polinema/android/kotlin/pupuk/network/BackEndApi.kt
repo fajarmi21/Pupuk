@@ -1,7 +1,6 @@
 package com.polinema.android.kotlin.pupuk.network
 
 import com.polinema.android.kotlin.pupuk.model.*
-import io.reactivex.Observable
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -70,6 +69,10 @@ interface BackEndApi {
     @POST("poktan/usulanU")
     fun KpReU(@FieldMap id:HashMap<String,String>): Call<UsulanKT>
 
+    @FormUrlEncoded
+    @POST("poktan/rekap")
+    fun Kpre(@Field("poktan") poktan: String): Call<MutableList<Rekap>>
+
     //petani
     @FormUrlEncoded
     @POST("petani")
@@ -91,5 +94,26 @@ interface BackEndApi {
         @Field("organik") organik: String,
         @Field("date") date: String,
         @Field("tahap") tahap: String
+    ): Call<Pesan>
+
+    @FormUrlEncoded
+    @POST("petani/usulanR")
+    fun PTUr(
+        @Field("petani") petani: String
+    ): Call<Usul>
+
+    @FormUrlEncoded
+    @POST("petani/usulanU")
+    fun PTUu(
+        @Field("petani") petani: String,
+        @Field("sektor") sektor: String,
+        @Field("luas") luas: String,
+        @Field("urea") urea: String,
+        @Field("sp36") sp36: String,
+        @Field("za") za: String,
+        @Field("npk") npk: String,
+        @Field("organik") organik: String,
+        @Field("date") date: String,
+        @Field("dateF") dateF: String
     ): Call<Pesan>
 }
