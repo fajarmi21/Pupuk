@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import com.polinema.android.kotlin.pupuk.R
 import com.polinema.android.kotlin.pupuk.ui.login.LoginActivity
 import com.polinema.android.kotlin.pupuk.ui.ppl.fragment.PplDashboardFragment
+import com.polinema.android.kotlin.pupuk.ui.ppl.fragment.PplKpFragment
 import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference
 import com.yalantis.contextmenu.lib.ContextMenuDialogFragment
 import com.yalantis.contextmenu.lib.MenuObject
@@ -30,7 +31,7 @@ class PplActivity : AppCompatActivity(), AnkoLogger {
         setContentView(R.layout.activity_ppl)
         initToolbar()
         initMenuFragment()
-        addFragment(PplDashboardFragment())
+        addFragment(PplKpFragment())
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -75,9 +76,9 @@ class PplActivity : AppCompatActivity(), AnkoLogger {
 //                    1 -> { if (fragmentManager!!.findFragmentById(R.id.FramePPL) !is KpRekapFragment) addFragment(
 //                        KpRekapFragment()
 //                    )}
-//                    2 -> { if (fragmentManager!!.findFragmentById(R.id.FramePPL) !is KpPetaniFragment) addFragment(
-//                        KpPetaniFragment()
-//                    )}
+                    2 -> { if (fragmentManager!!.findFragmentById(R.id.FramePPL) !is PplKpFragment) addFragment(
+                        PplKpFragment()
+                    )}
                     3 -> {
                         Toast.makeText(context, "Logout Sukses", Toast.LENGTH_LONG).show()
                         startActivity(intentFor<LoginActivity>().clearTask().clearTop())
