@@ -50,7 +50,6 @@ interface BackEndApi {
     @POST("poktan/petani")
     fun KpRc(
         @Field("kode") kode: String,
-        @Field("desa") desa: String,
         @Field("poktan") poktan: String,
         @Field("nik") nik: String,
         @Field("petani") petani: String,

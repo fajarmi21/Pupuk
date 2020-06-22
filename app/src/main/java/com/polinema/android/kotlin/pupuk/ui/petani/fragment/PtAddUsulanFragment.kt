@@ -17,6 +17,7 @@ import com.polinema.android.kotlin.pupuk.databinding.PtAddUsulanFragmentBinding
 import com.polinema.android.kotlin.pupuk.util.MinMaxFilter
 import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference
 import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference.setAdd
+import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference.setCode
 import com.polinema.android.kotlin.pupuk.viewmodel.PtAddUsulanViewModel
 import java.math.RoundingMode
 import java.time.LocalDate

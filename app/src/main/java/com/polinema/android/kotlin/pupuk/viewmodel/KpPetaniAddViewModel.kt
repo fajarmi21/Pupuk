@@ -12,7 +12,6 @@ import com.polinema.android.kotlin.pupuk.util.Util
 import retrofit2.*
 
 class KpPetaniAddViewModel : ViewModel() {
-    var desa = "3506222001"
     var poktan = ""
     var nik = ObservableField("")
     var petani = ObservableField("")
@@ -31,7 +30,6 @@ class KpPetaniAddViewModel : ViewModel() {
         val data = MutableLiveData<UserKT>()
         WebServiceClient.client.create(BackEndApi::class.java).KpRc(
             kode = "c",
-            desa = desa,
             poktan = poktan,
             nik = nik.get()!!,
             petani = petani.get()!!,
