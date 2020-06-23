@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:paddingHorizontal="5dp"
+    android:id="@+id/PPLr">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textTgl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:text="Tgl"
+            android:textColor="@color/blackTextColor" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="3dp"
+            android:background="@color/colorBlack" />
+
+        <TextView
+            android:id="@+id/textpoktan"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Poktan"
+            android:textColor="@color/blackTextColor" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="3dp"
+            android:background="@color/colorBlack" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/textstatus"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Status"
+                android:layout_alignParentTop="true"
+                android:textColor="@color/blackTextColor"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"/>
+            <com.github.okdroid.checkablechipview.CheckableChipView
+                android:id="@+id/btnVAPPL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:color="#FFC107"
+                app:ccv_outlineColor="#FFC107"
+                android:layout_centerInParent="true"
+                android:text="All"
+                android:visibility="gone" />
+            <com.lid.lib.LabelTextView
+                android:id="@+id/labelPPL"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:label_backgroundColor="@color/green"
+                app:label_distance="10dp"
+                app:label_orientation="RIGHT_TOP"
+                app:label_text="NEW"
+                app:label_textSize="10dp"
+                android:visibility="gone"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider5"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="2dp"
+        android:layout_weight="1"
+        android:background="@color/blackTextColor" />
+</LinearLayout>

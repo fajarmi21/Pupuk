@@ -106,7 +106,7 @@ class PplActivity : AppCompatActivity(), AnkoLogger {
             resource = R.drawable.icn_close
             bgColor = R.color.text_color
         }
-         val usul = MenuObject("Usulan").apply {
+         val usul = MenuObject("Verifikasi").apply {
             resource = R.drawable.icn_approval
             bgColor = R.color.text_color
         }
