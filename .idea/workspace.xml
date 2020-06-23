@@ -24,22 +24,44 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.5-rc-1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5-rc-1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Pupuk.time" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Pupuk.time" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_experimental_1_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cardview_cardview_1_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_coordinatorlayout_coordinatorlayout_1_1_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_dynamicanimation_dynamicanimation_1_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_transition_transition_1_2_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager2_viewpager2_1_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_beardedhen_androidbootstrap_2_3_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_beardedhen_androidbootstrap_2_3_2_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_diegodobelo_expandingview_expanding_view_0_9_4_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_diegodobelo_expandingview_expanding_view_0_9_4_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_dt_timerbutton_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_dt_timerbutton_0_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_captain_miao_optroundcardview_1_0_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_okdroid_checkablechipview_1_0_3_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_okdroid_checkablechipview_1_0_3_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_sabujak_sabujak_RoundedButton_v0_1_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_sabujak_sabujak_RoundedButton_v0_1_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_material_material_1_3_0_alpha01_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_yalantis_contextmenu_1_0_7_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_yalantis_contextmenu_1_0_7_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__info_androidhive_fontawesome_0_0_5_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__info_androidhive_fontawesome_0_0_5_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_anko_commons_base_0_10_8_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_anko_commons_base_0_10_8_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__pl_com_mmotak_validator_droid_mvvm_validator_1_0_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__pl_com_mmotak_validator_droid_mvvm_validator_1_0_2_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/Pupuk.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/Pupuk.app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/fliptimerviewlibrary/Pupuk.fliptimerviewlibrary.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/fliptimerviewlibrary/Pupuk.fliptimerviewlibrary.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/model/Petani.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/model/Petani.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/network/WebServiceClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/network/WebServiceClient.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/ui/petani/fragment/PtAddUsulanFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/ui/petani/fragment/PtAddUsulanFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/ui/petani/fragment/PtDashboardFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/ui/petani/fragment/PtDashboardFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/ui/petani/fragment/PtEditUsulanFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/ui/petani/fragment/PtEditUsulanFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/viewmodel/PtDashboardViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/viewmodel/PtDashboardViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pt_dashboard_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pt_dashboard_fragment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/ui/ppl/fragment/PplKpFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/ui/ppl/fragment/PplKpFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/ppl_kp_add_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/ppl_kp_add_fragment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/ppl_kp_update_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/ppl_kp_update_fragment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[192.168.43.204:5555]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -98,7 +120,7 @@
     <property name="multi-representation-previewA:/package/kotlin/Pupuk/fliptimerviewlibrary/src/main/java/com/asp/fliptimerviewlibrary/CountdownClock.kt_selected" value="Custom views" />
     <property name="multi-representation-previewA:/package/kotlin/Pupuk/fliptimerviewlibrary/src/main/java/com/asp/fliptimerviewlibrary/CountdownDigit.kt_selected" value="Custom views" />
     <property name="multi-representation-previewC:/Users/fajar/.gradle/caches/modules-2/files-2.1/androidx.appcompat/appcompat/1.1.0/9865019bbd2d95e41dede3d8ebf964aa93f97766/appcompat-1.1.0-sources.jar!/androidx/appcompat/widget/AppCompatEditText.java_selected" value="Custom views" />
-    <property name="project.structure.last.edited" value="Dependencies" />
+    <property name="project.structure.last.edited" value="Suggestions" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="resolutions" value="HDPI&#10;MDPI&#10;XHDPI&#10;XXXHDPI&#10;XXHDPI" />
@@ -295,10 +317,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="361" y="91" key="#Notifications/0.0.1536.864@0.0.1536.864" timestamp="1592407164090" />
-    <state x="286" y="163" key="#PSD" timestamp="1592580211525">
+    <state x="286" y="163" key="#PSD" timestamp="1592892170062">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="286" y="163" key="#PSD/0.0.1536.864@0.0.1536.864" timestamp="1592580211525" />
+    <state x="286" y="163" key="#PSD/0.0.1536.864@0.0.1536.864" timestamp="1592892170062" />
     <state x="488" y="84" key="#Pupuk.app" timestamp="1589548355201">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -343,10 +365,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="544" y="0" width="593" height="864" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1592383962178" />
-    <state x="93" y="93" width="1350" height="678" key="AVDManager" timestamp="1589548425447">
+    <state x="93" y="93" width="1350" height="678" key="AVDManager" timestamp="1592893404813">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="93" y="93" width="1350" height="678" key="AVDManager/0.0.1536.864@0.0.1536.864" timestamp="1589548425447" />
+    <state x="93" y="93" width="1350" height="678" key="AVDManager/0.0.1536.864@0.0.1536.864" timestamp="1592893404813" />
     <state x="349" y="186" key="AndroidCreateResourceDirectoryDialog" timestamp="1590423267438">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -371,22 +393,22 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="186" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1592489149164" />
-    <state width="1491" height="364" key="GridCell.Tab.0.bottom" timestamp="1592883035173">
+    <state width="1491" height="364" key="GridCell.Tab.0.bottom" timestamp="1592897360291">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1491" height="364" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1592883035173" />
-    <state width="1491" height="364" key="GridCell.Tab.0.center" timestamp="1592883035172">
+    <state width="1491" height="364" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1592897360291" />
+    <state width="1491" height="364" key="GridCell.Tab.0.center" timestamp="1592897360291">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1491" height="364" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1592883035172" />
-    <state width="1491" height="364" key="GridCell.Tab.0.left" timestamp="1592883035172">
+    <state width="1491" height="364" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1592897360291" />
+    <state width="1491" height="364" key="GridCell.Tab.0.left" timestamp="1592897360291">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1491" height="364" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1592883035172" />
-    <state width="1491" height="364" key="GridCell.Tab.0.right" timestamp="1592883035172">
+    <state width="1491" height="364" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1592897360291" />
+    <state width="1491" height="364" key="GridCell.Tab.0.right" timestamp="1592897360291">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1491" height="364" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1592883035172" />
+    <state width="1491" height="364" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1592897360291" />
     <state width="1491" height="302" key="GridCell.Tab.1.bottom" timestamp="1592773960925">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

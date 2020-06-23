@@ -3,6 +3,7 @@ package com.polinema.android.kotlin.pupuk.ui.ppl.fragment
 import android.annotation.SuppressLint
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -24,6 +25,7 @@ import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference
 import com.polinema.android.kotlin.pupuk.util.SwipeToDeleteCallback
 import com.polinema.android.kotlin.pupuk.viewmodel.PplKpViewModel
 import kotlinx.android.synthetic.main.ppl_kp_fragment.*
+import java.lang.Exception
 
 class PplKpFragment : Fragment() {
     private lateinit var viewModel: PplKpViewModel
@@ -59,37 +61,41 @@ class PplKpFragment : Fragment() {
     private fun showData() {
         viewModel.poktan = SaveSharedPreference.getUser(context)
         viewModel.ppKp().observe(viewLifecycleOwner, Observer {
-            rvPPL.layoutManager = LinearLayoutManager(this.context)
-            val adapter = UserPKlAdapter(it)
-            rvPPL.adapter = adapter
+            try {
+                rvPPL.layoutManager = LinearLayoutManager(this.context)
+                val adapter = UserPKlAdapter(it)
+                rvPPL.adapter = adapter
 
-            val swipeHandler = object : SwipeToDeleteCallback(this.context!!) {
-                override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                    if (direction == ItemTouchHelper.LEFT) {
-                        MaterialAlertDialogBuilder(context!!)
-                            .setTitle("Delete '${it[viewHolder.adapterPosition].poktan}'")
-                            .setMessage("Are you sure delete this record?")
-                            .setNegativeButton("NO", null)
-                            .setPositiveButton("YES") { _, _ ->
-                                viewModel.ppKpd(it[viewHolder.adapterPosition].poktan).observe(viewLifecycleOwner, Observer { it2 ->
-                                    if (it2.status == 1) {
-                                        onResume()
-                                        Toast.makeText(context, it2.message, Toast.LENGTH_SHORT).show()
-                                    } else { Toast.makeText(context, it2.message, Toast.LENGTH_SHORT).show() }
-                                })
-                            }
-                            .show()
-                    } else {
-                        val frag = PplKpUpdateFragment()
-                        val b = Bundle()
-                        b.putString("poktan", it[viewHolder.adapterPosition].poktan)
-                        frag.arguments = b
-                        addFragment(frag)
+                val swipeHandler = object : SwipeToDeleteCallback(this.context!!) {
+                    override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                        if (direction == ItemTouchHelper.LEFT) {
+                            MaterialAlertDialogBuilder(context!!)
+                                .setTitle("Delete '${it[viewHolder.adapterPosition].poktan}'")
+                                .setMessage("Are you sure delete this record?")
+                                .setNegativeButton("NO", null)
+                                .setPositiveButton("YES") { _, _ ->
+                                    viewModel.ppKpd(it[viewHolder.adapterPosition].poktan).observe(viewLifecycleOwner, Observer { it2 ->
+                                        if (it2.status == 1) {
+                                            onResume()
+                                            Toast.makeText(context, it2.message, Toast.LENGTH_SHORT).show()
+                                        } else { Toast.makeText(context, it2.message, Toast.LENGTH_SHORT).show() }
+                                    })
+                                }
+                                .show()
+                        } else {
+                            val frag = PplKpUpdateFragment()
+                            val b = Bundle()
+                            b.putString("poktan", it[viewHolder.adapterPosition].poktan)
+                            frag.arguments = b
+                            addFragment(frag)
+                        }
                     }
                 }
+                val itemTouchHelper = ItemTouchHelper(swipeHandler)
+                itemTouchHelper.attachToRecyclerView(rvPPL)
+            } catch (e: Exception) {
+                Log.e("ss", e.message!!)
             }
-            val itemTouchHelper = ItemTouchHelper(swipeHandler)
-            itemTouchHelper.attachToRecyclerView(rvPPL)
         })
     }
 
