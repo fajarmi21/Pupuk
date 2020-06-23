@@ -56,67 +56,67 @@ class PtDashboardFragment : Fragment() {
         tx_userNamePT.text = getUser(context)
         tx_userNamePT.paintFlags = Paint.UNDERLINE_TEXT_FLAG
 
-        setAdd(context, 0)
-        if (getAdd(context) == 1) {
-            binding.btnAddUsulanPT.visibility = View.GONE
-            binding.btnEditUsulanPT.visibility = View.VISIBLE
-        } else {
-            binding.btnAddUsulanPT.visibility = View.VISIBLE
-            binding.btnEditUsulanPT.visibility = View.GONE
-        }
-
         viewModel = ViewModelProvider(this).get(PtDashboardViewModel::class.java)
         viewModel.ptD(tx_userNamePT.text.toString()).observe(viewLifecycleOwner, Observer {
             try {
-                when {
-                    it.m3 != null -> {
-                        val m3 = it.m3 as ArrayList<Any>
-                        if (m3.last() == "false") {
-                            binding.ptU.text = it.tahap
-                            binding.ptLL.text = """- /${it.luas_lahan} ha"""
-                            binding.ptTanam.text = "-"
-                        } else {
-                            val getrow = m3.last() as LinkedTreeMap<*, *>
-                            binding.ptU.text = it.tahap
-                            binding.ptLL.text = """${getrow["luas"]}/${it.luas_lahan} ha"""
-                            binding.ptTanam.text = getrow["sektor"].toString()
+                if (it != null) {
+                    when {
+                        it.m3 != null -> {
+                            val m3 = it.m3 as ArrayList<Any>
+                            if (m3.last() == "false") {
+                                binding.ptU.text = it.tahap
+                                binding.ptLL.text = """- /${it.luas_lahan} ha"""
+                                binding.ptTanam.text = "-"
+                            } else {
+                                val getrow = m3.last() as LinkedTreeMap<*, *>
+                                binding.ptU.text = it.tahap
+                                binding.ptLL.text = """${getrow["luas"]}/${it.luas_lahan} ha"""
+                                binding.ptTanam.text = getrow["sektor"].toString()
+                            }
+                        }
+                        it.m2 != null -> {
+                            val m2 = it.m2 as ArrayList<Any>
+                            if (m2.last() == "false") {
+                                binding.ptU.text = it.tahap
+                                binding.ptLL.text = """- /${it.luas_lahan} ha"""
+                                binding.ptTanam.text = "-"
+                            } else {
+                                val getrow = m2.last() as LinkedTreeMap<*, *>
+                                binding.ptU.text = it.tahap
+                                binding.ptLL.text = """${getrow["luas"]}/${it.luas_lahan} ha"""
+                                binding.ptTanam.text = getrow["sektor"].toString()
+                            }
+                        }
+                        it.m1 != null -> {
+                            val m1 = it.m1 as ArrayList<Any>
+                            if (m1.last() == "false") {
+                                binding.ptU.text = it.tahap
+                                binding.ptLL.text = """- /${it.luas_lahan} ha"""
+                                binding.ptTanam.text = "-"
+                            } else {
+                                val getrow = m1.last() as LinkedTreeMap<*, *>
+                                binding.ptU.text = it.tahap
+                                binding.ptLL.text = """${getrow["luas"]}/${it.luas_lahan} ha"""
+                                binding.ptTanam.text = getrow["sektor"].toString()
+                            }
                         }
                     }
-                    it.m2 != null -> {
-                        val m2 = it.m2 as ArrayList<Any>
-                        if (m2.last() == "false") {
-                            binding.ptU.text = it.tahap
-                            binding.ptLL.text = """- /${it.luas_lahan} ha"""
-                            binding.ptTanam.text = "-"
-                        } else {
-                            val getrow = m2.last() as LinkedTreeMap<*, *>
-                            binding.ptU.text = it.tahap
-                            binding.ptLL.text = """${getrow["luas"]}/${it.luas_lahan} ha"""
-                            binding.ptTanam.text = getrow["sektor"].toString()
-                        }
+                    if (it.status_poktan == null || it.status_ppl == null || it.status_admin == null) binding.ptSt.text =
+                            "Diproses"
+                    else if (it.status_poktan == "false" || it.status_ppl == "false" || it.status_admin == "false") binding.ptSt.text =
+                            "Ditolak"
+                    else {
+                        binding.ptSt.text = "Diterima"
                     }
-                    it.m1 != null -> {
-                        val m1 = it.m1 as ArrayList<Any>
-                        if (m1.last() == "false") {
-                            binding.ptU.text = it.tahap
-                            binding.ptLL.text = """- /${it.luas_lahan} ha"""
-                            binding.ptTanam.text = "-"
-                        } else {
-                            val getrow = m1.last() as LinkedTreeMap<*, *>
-                            binding.ptU.text = it.tahap
-                            binding.ptLL.text = """${getrow["luas"]}/${it.luas_lahan} ha"""
-                            binding.ptTanam.text = getrow["sektor"].toString()
-                        }
-                    }
-                }
-                if (it.status_poktan == null || it.status_ppl == null || it.status_admin == null) binding.ptSt.text =
-                    "Diproses"
-                else if (it.status_poktan == "false" || it.status_ppl == "false" || it.status_admin == "false") binding.ptSt.text =
-                    "Ditolak"
-                else {
-                    binding.ptSt.text = "Diterima"
+                } else {
+                    binding.PtPUsul.visibility = View.GONE
+                    binding.ptU.text = "KOSONG"
+                    binding.ptLL.text = "-"
+                    binding.ptTanam.text = "-"
+                    binding.ptSt.text = "-"
                 }
             } catch (e: Exception) {
+                Log.e("e", e.message!!)
 //                Toast.makeText(context, "Data Kosong", Toast.LENGTH_SHORT).show()
             }
         })
@@ -151,6 +151,7 @@ class PtDashboardFragment : Fragment() {
                     0 -> {
                         START_TIME_IN_MILLIS = 40000
                         setCode(context, 1)
+                        setAdd(context, 2)
                     }
                 }
                 onStart()
@@ -170,6 +171,22 @@ class PtDashboardFragment : Fragment() {
             1 -> btnAddUsulanPT.visibility = View.GONE
             0 -> btnAddUsulanPT.visibility = View.VISIBLE
         }
+
+        when {
+            getAdd(context) == 1 -> {
+                binding.btnAddUsulanPT.visibility = View.GONE
+                binding.btnEditUsulanPT.visibility = View.VISIBLE
+            }
+            getAdd(context) == 0 -> {
+                binding.btnAddUsulanPT.visibility = View.VISIBLE
+                binding.btnEditUsulanPT.visibility = View.GONE
+            }
+            else -> {
+                binding.btnAddUsulanPT.visibility = View.GONE
+                binding.btnEditUsulanPT.visibility = View.GONE
+            }
+        }
+
         when {
             mTimerRunning -> {
                 mEndTime = getEnd(context, 0)

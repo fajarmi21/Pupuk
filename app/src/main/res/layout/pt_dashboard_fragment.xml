@@ -3,6 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:flipTimer="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="user"
+            type="com.polinema.android.kotlin.pupuk.viewmodel.PtDashboardViewModel" />
+    </data>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -279,7 +285,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="start new vacation"
+                android:text="Detail"
                 android:fontFamily="@font/roboto_medium"
                 android:textColor="#5E5E5E"
                 android:textSize="18dp" />
@@ -294,126 +300,370 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/PtPUsul"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="150dp"
             android:layout_marginTop="8dp"
             android:orientation="horizontal">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="160dp"
-                android:layout_height="120dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                flipTimer:cardCornerRadius="8dp"
-                flipTimer:cardElevation="2dp">
-
-                <RelativeLayout
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp">
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="8dp">
+                    android:padding="8dp"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pupuk (diusulkan)"
+                            android:textColor="#5E5E5E"
+                            android:textSize="15dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/totPupuk"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:textColor="#5E5E5E"
+                            android:textSize="35sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:text=" / "
+                            android:textColor="#5E5E5E"
+                            android:textSize="35sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{user.luas}"
+                            android:textColor="#5E5E5E"
+                            android:textSize="35sp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Walking"
-                        android:textColor="#5E5E5E"
-                        android:textSize="18dp" />
-                </RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="45sp"
+                            android:gravity="bottom"
+                            android:text="ha"
+                            android:textColor="#5E5E5E"
+                            android:textSize="20sp"
+                            android:textStyle="italic" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-            </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="UREA"
+                                android:gravity="center"
+                                android:textColor="@color/colorBlack" />
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="160dp"
-                android:layout_height="120dp"
-                android:layout_marginLeft="18dp"
-                android:layout_weight="1"
-                flipTimer:cardCornerRadius="8dp"
-                flipTimer:cardElevation="2dp">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:text="@{user.urea}"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="18dp"
+                                android:gravity="center"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="8dp">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="SP36"
+                                android:gravity="center"
+                                android:textColor="@color/colorBlack" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Cycling"
-                        android:textColor="#5E5E5E"
-                        android:textSize="18dp" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:text="@{user.sp36}"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="18dp"
+                                android:gravity="center"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="80dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentBottom="true" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="ZA"
+                                android:gravity="center"
+                                android:textColor="@color/colorBlack" />
 
-                </RelativeLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:text="@{user.za}"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="18dp"
+                                android:gravity="center"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="NPK"
+                                android:gravity="center"
+                                android:textColor="@color/colorBlack" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:text="@{user.npk}"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="18dp"
+                                android:gravity="center"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="ORGANIK"
+                                android:gravity="center"
+                                android:textColor="@color/colorBlack" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:text="@{user.organik}"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="18dp"
+                                android:gravity="center"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:orientation="horizontal">
+            android:layout_height="150dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:visibility='@{user.status ? View.VISIBLE : View.GONE}'>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="160dp"
-                android:layout_height="120dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                flipTimer:cardCornerRadius="8dp"
-                flipTimer:cardElevation="2dp">
-
-                <RelativeLayout
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp">
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="8dp">
+                    android:padding="8dp"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pupuk (diterima)"
+                            android:textColor="#5E5E5E"
+                            android:textSize="15dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:text="10000"
+                            android:textColor="#5E5E5E"
+                            android:textSize="35sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:text=" / "
+                            android:textColor="#5E5E5E"
+                            android:textSize="35sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="10"
+                            android:textColor="#5E5E5E"
+                            android:textSize="35sp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Driving"
-                        android:textColor="#5E5E5E"
-                        android:textSize="18dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="45sp"
+                            android:gravity="bottom"
+                            android:text="ha"
+                            android:textColor="#5E5E5E"
+                            android:textSize="20sp"
+                            android:textStyle="italic" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="80dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentBottom="true" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="UREA"
+                                android:gravity="center"
+                                android:textColor="@color/colorBlack" />
 
-                </RelativeLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:text="@{user.daftar}"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="18dp"
+                                android:gravity="center"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-            </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="SP36"
+                                android:gravity="center"
+                                android:textColor="@color/colorBlack" />
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="160dp"
-                android:layout_height="120dp"
-                android:layout_marginLeft="18dp"
-                android:layout_weight="1"
-                flipTimer:cardCornerRadius="8dp"
-                flipTimer:cardElevation="2dp">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:text="@{user.daftar}"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="18dp"
+                                android:gravity="center"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="8dp">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="ZA"
+                                android:gravity="center"
+                                android:textColor="@color/colorBlack" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Train"
-                        android:textColor="#5E5E5E"
-                        android:textSize="18dp" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:text="@{user.daftar}"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="18dp"
+                                android:gravity="center"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="80dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentBottom="true" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="NPK"
+                                android:gravity="center"
+                                android:textColor="@color/colorBlack" />
 
-                </RelativeLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:text="@{user.daftar}"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="18dp"
+                                android:gravity="center"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="ORGANIK"
+                                android:gravity="center"
+                                android:textColor="@color/colorBlack" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:text="@{user.daftar}"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="18dp"
+                                android:gravity="center"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>
     </LinearLayout>

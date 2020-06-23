@@ -12,6 +12,15 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class PtDashboardViewModel : ViewModel() {
+    var luas = ""
+    var urea = ""
+    var sp36 = ""
+    var za = ""
+    var npk = ""
+    var organik = ""
+    var status = false
+    var daftar = ""
+
     fun ptD(nama_petani: String): MutableLiveData<Petani> {
         val data = MutableLiveData<Petani>()
         WebServiceClient.client.create(BackEndApi::class.java).PTD(nama_petani)

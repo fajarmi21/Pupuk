@@ -31,7 +31,7 @@ class PplActivity : AppCompatActivity(), AnkoLogger {
         setContentView(R.layout.activity_ppl)
         initToolbar()
         initMenuFragment()
-        addFragment(PplDashboardFragment())
+        addFragment(PplKpFragment())
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -73,8 +73,8 @@ class PplActivity : AppCompatActivity(), AnkoLogger {
                     0 -> { if (fragmentManager!!.findFragmentById(R.id.FramePPL) !is PplDashboardFragment) addFragment(
                         PplDashboardFragment()
                     )}
-//                    1 -> { if (fragmentManager!!.findFragmentById(R.id.FramePPL) !is PplKpFragment) addFragment(
-//                        PplKpFragment()
+//                    1 -> { if (fragmentManager!!.findFragmentById(R.id.FramePPL) !is KpRekapFragment) addFragment(
+//                        KpRekapFragment()
 //                    )}
                     2 -> { if (fragmentManager!!.findFragmentById(R.id.FramePPL) !is PplKpFragment) addFragment(
                         PplKpFragment()
