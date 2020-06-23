@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.captain-miao:optroundcardview:1.1.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ffb2cb87d778677ca67eb15fb96aeba3/jetified-optroundcardview-1.1.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ffb2cb87d778677ca67eb15fb96aeba3/jetified-optroundcardview-1.1.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ffb2cb87d778677ca67eb15fb96aeba3/jetified-optroundcardview-1.1.0/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.captain-miao/optroundcardview/1.1.0/db71be165e2a6bf3850897a710fb945e19acb23f/optroundcardview-1.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

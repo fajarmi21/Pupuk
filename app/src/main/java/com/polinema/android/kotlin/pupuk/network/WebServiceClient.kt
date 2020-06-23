@@ -12,7 +12,7 @@ object WebServiceClient {
     private lateinit var interceptor: HttpLoggingInterceptor
     private lateinit var okHttpClient: OkHttpClient
     private var retrofit: Retrofit? = null
-    val http = "https://132938bc445a.ngrok.io"
+    val http = "https://793ee2e60227.ngrok.io"
 
     val client: Retrofit
         get() {
