@@ -10,3 +10,12 @@ data class UserPPL(
     val desa: String,
     val poktan: String
 )
+
+data class PplVerifikasi(
+    val status: Int,
+    val message: String,
+    val id_poktan: String,
+    val desa: String,
+    val timestamp: String,
+    val poktan: String
+)
