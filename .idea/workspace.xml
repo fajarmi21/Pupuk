@@ -13,26 +13,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e730ef78-0169-4c56-a7ed-4b40c67fb318" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5-rc-1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5-rc-1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Pupuk.time" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Pupuk.time" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/Pupuk.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/Pupuk.app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/fliptimerviewlibrary/Pupuk.fliptimerviewlibrary.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/fliptimerviewlibrary/Pupuk.fliptimerviewlibrary.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/network/WebServiceClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/network/WebServiceClient.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/ui/kp/fragment/KpRekapFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/ui/kp/fragment/KpRekapFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/ui/ppl/PplActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/ui/ppl/PplActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/ui/ppl/fragment/PplKpFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/ui/ppl/fragment/PplKpFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -371,22 +356,22 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="186" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1592489149164" />
-    <state width="1491" height="364" key="GridCell.Tab.0.bottom" timestamp="1592918082202">
+    <state width="1491" height="364" key="GridCell.Tab.0.bottom" timestamp="1592919344906">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1491" height="364" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1592918082202" />
-    <state width="1491" height="364" key="GridCell.Tab.0.center" timestamp="1592918082202">
+    <state width="1491" height="364" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1592919344906" />
+    <state width="1491" height="364" key="GridCell.Tab.0.center" timestamp="1592919344906">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1491" height="364" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1592918082202" />
-    <state width="1491" height="364" key="GridCell.Tab.0.left" timestamp="1592918082201">
+    <state width="1491" height="364" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1592919344906" />
+    <state width="1491" height="364" key="GridCell.Tab.0.left" timestamp="1592919344905">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1491" height="364" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1592918082201" />
-    <state width="1491" height="364" key="GridCell.Tab.0.right" timestamp="1592918082202">
+    <state width="1491" height="364" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1592919344905" />
+    <state width="1491" height="364" key="GridCell.Tab.0.right" timestamp="1592919344906">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1491" height="364" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1592918082202" />
+    <state width="1491" height="364" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1592919344906" />
     <state width="1491" height="302" key="GridCell.Tab.1.bottom" timestamp="1592773960925">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
