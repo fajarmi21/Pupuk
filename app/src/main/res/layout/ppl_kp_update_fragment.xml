@@ -20,7 +20,7 @@
         android:background="@android:drawable/screen_background_dark_transparent">
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="470dp"
+            android:layout_height="270dp"
             android:layout_marginHorizontal="20dp"
             app:cardCornerRadius="30dp">
 
@@ -66,6 +66,41 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:text="Email"
+                                android:textColor="@color/blackTextColor" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/atxPPLU"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                app:counterEnabled="true"
+                                app:counterMaxLength="16"
+                                android:enabled="false"
+                                app:counterTextAppearance="@style/counterText"
+                                app:counterOverflowTextAppearance="@style/counterOverride"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/txPPLU"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:maxLength="16"
+                                    tools:ignore="RtlSymmetry"
+                                    android:text="@={viewmodel.email}"
+                                    android:textColor="@color/blackTextColor" />
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -94,9 +129,9 @@
                                     android:id="@+id/tx1PPLU"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:inputType="number"
                                     android:maxLength="16"
                                     tools:ignore="RtlSymmetry"
+                                    android:text="@={viewmodel.nama}"
                                     android:textColor="@color/blackTextColor" />
                             </com.google.android.material.textfield.TextInputLayout>
                         </LinearLayout>

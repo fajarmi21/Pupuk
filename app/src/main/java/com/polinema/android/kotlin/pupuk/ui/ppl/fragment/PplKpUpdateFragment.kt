@@ -12,8 +12,6 @@ import androidx.lifecycle.ViewModelProviders
 import com.polinema.android.kotlin.pupuk.viewmodel.PplKpUpdateViewModel
 import com.polinema.android.kotlin.pupuk.R
 import com.polinema.android.kotlin.pupuk.databinding.PplKpUpdateFragmentBinding
-import kotlinx.android.synthetic.main.kp_petani_update_fragment.*
-import kotlinx.android.synthetic.main.ppl_kp_add_fragment.*
 import kotlinx.android.synthetic.main.ppl_kp_update_fragment.*
 
 class PplKpUpdateFragment : Fragment() {
@@ -39,10 +37,11 @@ class PplKpUpdateFragment : Fragment() {
     }
 
     private fun button() {
-        cancel_button_detailPPL.setOnClickListener {activity!!.supportFragmentManager.popBackStack()}
+        cancel_button_detailPPLU.setOnClickListener {activity!!.supportFragmentManager.popBackStack()}
 
         back_button_detailPPLU.setOnClickListener {
             txDetailPPLU.text = "Detail"
+            atxPPLU.isEnabled = false
             atx1PPLU.isEnabled = false
             showData()
             back_button_detailPPLU.visibility = View.GONE
@@ -52,7 +51,8 @@ class PplKpUpdateFragment : Fragment() {
         }
 
         upgrade_button_detailPPLU.setOnClickListener {
-            txDetailKPU.text = "Update"
+            txDetailPPLU.text = "Update"
+            atxPPLU.isEnabled = true
             atx1PPLU.isEnabled = true
             back_button_detailPPLU.visibility = View.VISIBLE
             update_button_detailPPLU.visibility = View.VISIBLE
@@ -74,8 +74,9 @@ class PplKpUpdateFragment : Fragment() {
     }
     private fun showData() {
         viewModel.show(arguments!!.getString("poktan").toString()).observe(viewLifecycleOwner, Observer {
-            viewModel.poktan.set(it[0].poktan)
-            viewModel.id_poktan.set(it[0].id_poktan)
+            viewModel.poktan = it[0].poktan
+            viewModel.nama = it[0].poktan
+            viewModel.email.set(it[0].email)
         })
     }
 

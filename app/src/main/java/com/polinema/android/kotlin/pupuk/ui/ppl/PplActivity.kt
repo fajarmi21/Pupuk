@@ -73,10 +73,10 @@ class PplActivity : AppCompatActivity(), AnkoLogger {
                     0 -> { if (fragmentManager!!.findFragmentById(R.id.FramePPL) !is PplDashboardFragment) addFragment(
                         PplDashboardFragment()
                     )}
-//                    1 -> { if (fragmentManager!!.findFragmentById(R.id.FramePPL) !is PplUsulFragment) addFragment(
-//                        PplUsulFragment()
+//                    1 -> { if (fragmentManager!!.findFragmentById(R.id.FramePPL) !is PplKpFragment) addFragment(
+//                        PplKpFragment()
 //                    )}
-//                    1 -> { if (fragmentManager!!.findFragmentById(R.id.FramePPL) !is KpRekapFragment) addFragment(
+//                    2 -> { if (fragmentManager!!.findFragmentById(R.id.FramePPL) !is KpRekapFragment) addFragment(
 //                        KpRekapFragment()
 //                    )}
                     3 -> { if (fragmentManager!!.findFragmentById(R.id.FramePPL) !is PplKpFragment) addFragment(
@@ -106,7 +106,7 @@ class PplActivity : AppCompatActivity(), AnkoLogger {
             resource = R.drawable.icn_close
             bgColor = R.color.text_color
         }
-        val usul = MenuObject("Usulan").apply {
+         val usul = MenuObject("Usulan").apply {
             resource = R.drawable.icn_approval
             bgColor = R.color.text_color
         }
@@ -122,6 +122,25 @@ class PplActivity : AppCompatActivity(), AnkoLogger {
             resource = R.drawable.icn_signout
             bgColor = R.color.text_color
         }
+//        val like = MenuObject("Like profile").apply {
+//            bitmap = BitmapFactory.decodeResource(resources, R.drawable.icn_2)
+//            bgColor = R.color.text_color
+//        }
+//        val addFriend = MenuObject("Add to friends").apply {
+//            drawable = BitmapDrawable(
+//                resources,
+//                BitmapFactory.decodeResource(resources, R.drawable.icn_3)
+//            )
+//            bgColor = R.color.text_color
+//        }
+//        val addFavorite = MenuObject("Add to favorites").apply {
+//            resource = R.drawable.icn_4
+//            bgColor = R.color.text_color
+//        }
+//        val block = MenuObject("Block user").apply {
+//            resource = R.drawable.icn_5
+//            bgColor = R.color.text_color
+//        }
 
         add(close)
         add(usul)
