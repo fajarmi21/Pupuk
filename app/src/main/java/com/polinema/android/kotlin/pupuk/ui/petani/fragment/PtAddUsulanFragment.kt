@@ -54,25 +54,19 @@ class PtAddUsulanFragment : Fragment() {
 
         viewModel.ptD(binding.txaIdUser.text.toString()).observe(viewLifecycleOwner, Observer {
             if (it != null) {
-                thp = when(it.tahap) {
-                    "m1" -> "m2"
-                    "m2" -> "m3"
-                    else -> "m1"
-                }
+                if (it.tahap != null) {
+                    thp = when(it.tahap) {
+                        "m1" -> "m2"
+                        "m2" -> "m3"
+                        else -> "m1"
+                    }
+                } else thp = "m1"
 
                 binding.idLuas.helperText = """max : ${it.luas_lahan}/ha"""
                 binding.txaLuas.filters = arrayOf(MinMaxFilter(0.0, it.luas_lahan.toDouble()), InputFilter.LengthFilter(6))
 
                 binding.txaLuas.doOnTextChanged { text, _, _, _ ->
                     if (!text.isNullOrEmpty()) {
-//                        if (text.toString() == "0") {
-//                            binding.txaUrea.setText("0")
-//                            binding.txaSp36.setText("0")
-//                            binding.txaZa.setText("0")
-//                            binding.txaNpk.setText("0")
-//                            binding.txaOrganik.setText("0")
-//                        }
-
                         val urea = roundOfDecimal(text.toString().toDouble() * 300.00)
                         val sp36 = roundOfDecimal(text.toString().toDouble() * 50.00)
                         val za = roundOfDecimal(text.toString().toDouble() * 200.00)
