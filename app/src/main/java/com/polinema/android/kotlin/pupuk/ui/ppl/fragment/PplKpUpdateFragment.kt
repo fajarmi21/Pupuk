@@ -66,7 +66,7 @@ class PplKpUpdateFragment : Fragment() {
                     Toast.makeText(this.context, it.message, Toast.LENGTH_SHORT).show()
                     activity!!.supportFragmentManager
                         .beginTransaction()
-                        .replace(R.id.FrameKP, PplKpFragment(), PplKpFragment().javaClass.simpleName)
+                        .replace(R.id.FramePPL, PplKpFragment(), PplKpFragment().javaClass.simpleName)
                         .commit()
                 } else { Toast.makeText(this.context, it.message, Toast.LENGTH_SHORT).show() }
             })

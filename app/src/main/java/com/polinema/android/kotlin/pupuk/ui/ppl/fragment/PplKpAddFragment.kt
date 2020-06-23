@@ -34,15 +34,14 @@ class PplKpAddFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel.desa = SaveSharedPreference.getUser(context)
         add_button_detailPPL.setOnClickListener {
-            viewModel.pplKp().observe(viewLifecycleOwner, Observer {
+            viewModel.pplKp(SaveSharedPreference.getUser(context)).observe(viewLifecycleOwner, Observer {
                 Log.e("sukses", it.message)
                 if (it.status == 1) {
                     Toast.makeText(this.context, it.message, Toast.LENGTH_SHORT).show()
                     activity!!.supportFragmentManager
                         .beginTransaction()
-                        .replace(R.id.FrameKP, PplKpFragment(), PplKpFragment().javaClass.simpleName)
+                        .replace(R.id.FramePPL, PplKpFragment(), PplKpFragment().javaClass.simpleName)
                         .commit()
                 }
                 else { Toast.makeText(this.context, it.message, Toast.LENGTH_SHORT).show() }

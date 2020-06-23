@@ -15,8 +15,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class PplKpAddViewModel : ViewModel() {
-    var desa = "3506222001"
-    var id = ""
+//    var id_poktan = ""
     var poktan = ""
     var email = ObservableField("")
     var btn = ObservableBoolean(false)
@@ -26,11 +25,11 @@ class PplKpAddViewModel : ViewModel() {
         btn.set(Util.isEmailValid(email.get()!!))
     }
 
-    fun pplKp(): MutableLiveData<UserPKl> {
+    fun pplKp(desa: String): MutableLiveData<UserPKl> {
         val data = MutableLiveData<UserPKl>()
         WebServiceClient.client.create(BackEndApi::class.java).PpKpc(
-            id_poktan = id,
             id_desa = desa,
+            email = email.get()!!,
             poktan = poktan
         )
             .enqueue(object : Callback<UserPKl> {
