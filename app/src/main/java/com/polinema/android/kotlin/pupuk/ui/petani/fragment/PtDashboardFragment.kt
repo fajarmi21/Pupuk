@@ -74,17 +74,17 @@ class PtDashboardFragment : Fragment() {
                                 binding.ptLL.text = """${getrow["luas"]}/${it.luas_lahan} ha"""
                                 binding.ptTanam.text = getrow["sektor"].toString()
 
-                                viewModel.luas = getrow["luas"].toString()
-                                viewModel.urea = getrow["urea"].toString()
-                                viewModel.sp36 = getrow["sp36"].toString()
-                                viewModel.za = getrow["za"].toString()
-                                viewModel.npk = getrow["npk"].toString()
-                                viewModel.organik = getrow["organik"].toString()
-                                viewModel.total = (getrow["urea"].toString().toDouble()
+                                binding.ptdluas.text = getrow["luas"].toString()
+                                binding.ptdurea.text = String.format("%.2f", getrow["urea"].toString().toDouble()).replace(",", ".")
+                                binding.ptdsp36.text = String.format("%.2f", getrow["sp36"].toString().toDouble()).replace(",", ".")
+                                binding.ptdza.text = String.format("%.2f", getrow["za"].toString().toDouble()).replace(",", ".")
+                                binding.ptdnpk.text = String.format("%.2f", getrow["npk"].toString().toDouble()).replace(",", ".")
+                                binding.ptdorganik.text = String.format("%.2f", getrow["organik"].toString().toDouble()).replace(",", ".")
+                                binding.ptdtotal.text = String.format("%.2f", (getrow["urea"].toString().toDouble()
                                         + getrow["sp36"].toString().toDouble()
                                         + getrow["za"].toString().toDouble()
                                         + getrow["npk"].toString().toDouble()
-                                        + getrow["organik"].toString().toDouble()).toString()
+                                        + getrow["organik"].toString().toDouble())).replace(",", ".")
                             }
                         }
                         it.m2 != null -> {
@@ -99,17 +99,17 @@ class PtDashboardFragment : Fragment() {
                                 binding.ptLL.text = """${getrow["luas"]}/${it.luas_lahan} ha"""
                                 binding.ptTanam.text = getrow["sektor"].toString()
 
-                                viewModel.luas = getrow["luas"].toString()
-                                viewModel.urea = getrow["urea"].toString()
-                                viewModel.sp36 = getrow["sp36"].toString()
-                                viewModel.za = getrow["za"].toString()
-                                viewModel.npk = getrow["npk"].toString()
-                                viewModel.organik = getrow["organik"].toString()
-                                viewModel.total = (getrow["urea"].toString().toDouble()
+                                binding.ptdluas.text = getrow["luas"].toString()
+                                binding.ptdurea.text = String.format("%.2f", getrow["urea"].toString().toDouble()).replace(",", ".")
+                                binding.ptdsp36.text = String.format("%.2f", getrow["sp36"].toString().toDouble()).replace(",", ".")
+                                binding.ptdza.text = String.format("%.2f", getrow["za"].toString().toDouble()).replace(",", ".")
+                                binding.ptdnpk.text = String.format("%.2f", getrow["npk"].toString().toDouble()).replace(",", ".")
+                                binding.ptdorganik.text = String.format("%.2f", getrow["organik"].toString().toDouble()).replace(",", ".")
+                                binding.ptdtotal.text = String.format("%.2f", (getrow["urea"].toString().toDouble()
                                         + getrow["sp36"].toString().toDouble()
                                         + getrow["za"].toString().toDouble()
                                         + getrow["npk"].toString().toDouble()
-                                        + getrow["organik"].toString().toDouble()).toString()
+                                        + getrow["organik"].toString().toDouble())).replace(",", ".")
                             }
                         }
                         it.m1 != null -> {

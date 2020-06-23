@@ -12,13 +12,6 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class PtDashboardViewModel : ViewModel() {
-    var luas = "0"
-    var urea = ""
-    var sp36 = ""
-    var za = ""
-    var npk = ""
-    var organik = ""
-    var total = ""
     var status = false
     var daftar = ""
 

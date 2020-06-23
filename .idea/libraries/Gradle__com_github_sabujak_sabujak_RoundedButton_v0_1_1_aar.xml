@@ -1,15 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.sabujak-sabujak:RoundedButton:v0.1.1@aar">
     <CLASSES>
-<<<<<<< HEAD
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/25eeada5a2ad760d03edbbba223a3dd8/jetified-RoundedButton-v0.1.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/25eeada5a2ad760d03edbbba223a3dd8/jetified-RoundedButton-v0.1.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/25eeada5a2ad760d03edbbba223a3dd8/jetified-RoundedButton-v0.1.1/AndroidManifest.xml" />
-=======
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1284ed0bf2cc3aa60252f5c325fbb46d/jetified-RoundedButton-v0.1.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1284ed0bf2cc3aa60252f5c325fbb46d/jetified-RoundedButton-v0.1.1/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1284ed0bf2cc3aa60252f5c325fbb46d/jetified-RoundedButton-v0.1.1/res" />
->>>>>>> 911c14526f28e0979f9221d35890891d36bddf33
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1284ed0bf2cc3aa60252f5c325fbb46d/jetified-RoundedButton-v0.1.1/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

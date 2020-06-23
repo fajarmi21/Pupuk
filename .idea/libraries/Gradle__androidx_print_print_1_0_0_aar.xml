@@ -1,24 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.print:print:1.0.0@aar">
     <ANNOTATIONS>
-<<<<<<< HEAD
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8d07ac10c67d32777b61a9dde6c48e89/print-1.0.0/annotations.zip!/" />
-    </ANNOTATIONS>
-    <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8d07ac10c67d32777b61a9dde6c48e89/print-1.0.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8d07ac10c67d32777b61a9dde6c48e89/print-1.0.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8d07ac10c67d32777b61a9dde6c48e89/print-1.0.0/AndroidManifest.xml" />
-=======
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c45de7c3bd10133051a867601fc2617f/print-1.0.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8d07ac10c67d32777b61a9dde6c48e89/print-1.0.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c45de7c3bd10133051a867601fc2617f/print-1.0.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5ed0e85577be75f8d1fad7b67689086d/print-1.0.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/05cfe29b01c21ef1c4eaf751be8dd7fc/print-1.0.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c45de7c3bd10133051a867601fc2617f/print-1.0.0/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c45de7c3bd10133051a867601fc2617f/print-1.0.0/jars/classes.jar!/" />
->>>>>>> 911c14526f28e0979f9221d35890891d36bddf33
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c45de7c3bd10133051a867601fc2617f/print-1.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c45de7c3bd10133051a867601fc2617f/print-1.0.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
