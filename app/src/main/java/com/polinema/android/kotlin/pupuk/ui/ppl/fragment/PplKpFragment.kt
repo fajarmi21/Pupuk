@@ -42,7 +42,7 @@ class PplKpFragment : Fragment() {
     private fun addFragment(fragment: Fragment) {
         activity!!.supportFragmentManager
             .beginTransaction()
-            .add(R.id.FrameKP, fragment, fragment.javaClass.simpleName)
+            .add(R.id.FramePPL, fragment, fragment.javaClass.simpleName)
             .addToBackStack("PplKpFragment")
             .commit()
     }

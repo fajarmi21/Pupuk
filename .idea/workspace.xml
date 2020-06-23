@@ -11,6 +11,24 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="e730ef78-0169-4c56-a7ed-4b40c67fb318" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/6.5-rc-1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5-rc-1/executionHistory/executionHistory.bin" afterDir="false" />
@@ -23,16 +41,27 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.5-rc-1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5-rc-1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5-rc-1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5-rc-1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Pupuk.time" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Pupuk.time" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/ui/petani/fragment/PtDashboardFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/ui/petani/fragment/PtDashboardFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/network/BackEndApi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/network/BackEndApi.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/network/WebServiceClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/network/WebServiceClient.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/ui/ppl/fragment/PplKpAddFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/ui/ppl/fragment/PplKpAddFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/ui/ppl/fragment/PplKpFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/ui/ppl/fragment/PplKpFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/ui/ppl/fragment/PplKpUpdateFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/ui/ppl/fragment/PplKpUpdateFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/viewmodel/PplKpAddViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/viewmodel/PplKpAddViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/viewmodel/PplKpViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/polinema/android/kotlin/pupuk/viewmodel/PplKpViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/ppl_kp_add_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/ppl_kp_add_fragment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/ppl_kp_update_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/ppl_kp_update_fragment.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[192.168.43.70:5555]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -72,6 +101,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ResourceManagerPrefKey.ResourceType" value="COLOR" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="algorithm" value="Scalr" />
@@ -84,7 +114,7 @@
     <property name="format" value="PNG" />
     <property name="lastFolderRoot" value="$USER_HOME$/Desktop/New folder/icons8_approval_100px_1.png" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="memory.settings.postsync.last.time.stamp" value="1588034920747" />
     <property name="method" value="Automatic" />
     <property name="multi-representation-previewA:/package/kotlin/Pupuk/app/src/main/java/com/polinema/android/kotlin/pupuk/ui/kp/fragment/KpRekap.kt_selected" value="Compose" />
@@ -107,10 +137,10 @@
   <component name="RecentsManager">
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="com.polinema.android.kotlin.pupuk.viewmodel" />
+      <recent name="com.polinema.android.kotlin.pupuk.ui.ppl.fragment" />
       <recent name="com.polinema.android.kotlin.pupuk.util" />
       <recent name="com.polinema.android.kotlin.pupuk.ui.kp.fragment" />
       <recent name="com.polinema.android.kotlin.pupuk.model" />
-      <recent name="com.polinema.android.kotlin.pupuk.ui.login" />
     </key>
     <key name="android.template.1560595260">
       <recent name="com.polinema.android.kotlin.pupuk.ui.kp.fragment" />
@@ -275,6 +305,17 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
     <state x="728" y="253" width="389" height="201" key="#Custom_Plugin_Repositories" timestamp="1590716503980">
       <screen x="0" y="0" width="1536" height="864" />
@@ -296,10 +337,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="488" y="84" key="#Pupuk.app/0.0.1536.864@0.0.1536.864" timestamp="1589548355201" />
-    <state x="223" y="88" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592830713991">
+    <state x="223" y="88" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589960451520">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="223" y="88" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1592830713991" />
+    <state x="223" y="88" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1589960451520" />
     <state x="518" y="223" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1590411925608">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -332,9 +373,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="499" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864@0.0.1536.864" timestamp="1592114426596" />
-    <state x="544" y="0" width="593" height="864" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1592383962178">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="484" y="0" width="530" height="728" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1592841123154">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="484" y="0" width="530" height="728" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1592841123154" />
     <state x="544" y="0" width="593" height="864" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1592383962178" />
     <state x="93" y="93" width="1350" height="678" key="AVDManager" timestamp="1589548425447">
       <screen x="0" y="0" width="1536" height="864" />
@@ -344,9 +386,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="349" y="186" key="AndroidCreateResourceDirectoryDialog/0.0.1536.864@0.0.1536.864" timestamp="1590423267438" />
-    <state x="354" y="242" key="AndroidCreateResourceFileDialog" timestamp="1592396699434">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="315" y="204" key="AndroidCreateResourceFileDialog" timestamp="1592833436532">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="315" y="204" key="AndroidCreateResourceFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1592833436532" />
     <state x="354" y="242" key="AndroidCreateResourceFileDialog/0.0.1536.864@0.0.1536.864" timestamp="1592396699434" />
     <state x="604" y="232" key="AndroidCreateXmlResourceDialog" timestamp="1591034035782">
       <screen x="0" y="0" width="1536" height="864" />
@@ -364,37 +407,45 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="186" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1592489149164" />
-    <state width="1491" height="364" key="GridCell.Tab.0.bottom" timestamp="1592841903055">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1323" height="302" key="GridCell.Tab.0.bottom" timestamp="1592901622584">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1491" height="364" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1592841903055" />
-    <state width="1491" height="364" key="GridCell.Tab.0.center" timestamp="1592841903055">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1323" height="302" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592901622584" />
+    <state width="1491" height="302" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1592773960924" />
+    <state width="1323" height="302" key="GridCell.Tab.0.center" timestamp="1592901622583">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1491" height="364" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1592841903055" />
-    <state width="1491" height="364" key="GridCell.Tab.0.left" timestamp="1592841903055">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1323" height="302" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1592901622583" />
+    <state width="1491" height="302" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1592773960924" />
+    <state width="1323" height="302" key="GridCell.Tab.0.left" timestamp="1592901622582">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1491" height="364" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1592841903055" />
-    <state width="1491" height="364" key="GridCell.Tab.0.right" timestamp="1592841903055">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1323" height="302" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1592901622582" />
+    <state width="1491" height="302" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1592773960924" />
+    <state width="1323" height="302" key="GridCell.Tab.0.right" timestamp="1592901622584">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1491" height="364" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1592841903055" />
-    <state width="1491" height="302" key="GridCell.Tab.1.bottom" timestamp="1592773960925">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1323" height="302" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1592901622584" />
+    <state width="1491" height="302" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1592773960924" />
+    <state width="1323" height="302" key="GridCell.Tab.1.bottom" timestamp="1592901622587">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="302" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1592901622587" />
     <state width="1491" height="302" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1592773960925" />
-    <state width="1491" height="302" key="GridCell.Tab.1.center" timestamp="1592773960925">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1323" height="302" key="GridCell.Tab.1.center" timestamp="1592901622586">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="302" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1592901622586" />
     <state width="1491" height="302" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1592773960925" />
-    <state width="1491" height="302" key="GridCell.Tab.1.left" timestamp="1592773960924">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1323" height="302" key="GridCell.Tab.1.left" timestamp="1592901622585">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="302" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1592901622585" />
     <state width="1491" height="302" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1592773960924" />
-    <state width="1491" height="302" key="GridCell.Tab.1.right" timestamp="1592773960925">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1323" height="302" key="GridCell.Tab.1.right" timestamp="1592901622586">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="302" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1592901622586" />
     <state width="1491" height="302" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1592773960925" />
     <state x="349" y="174" key="IDE.errors.dialog" timestamp="1592407175597">
       <screen x="0" y="0" width="1536" height="864" />
@@ -424,9 +475,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="453" y="154" width="686" height="556" key="find.popup/0.0.1536.864@0.0.1536.864" timestamp="1586703421207" />
-    <state x="425" y="197" key="run.anything.popup" timestamp="1588167477495">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="378" y="166" key="run.anything.popup" timestamp="1592900798117">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="378" y="166" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1592900798117" />
     <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1588167477495" />
     <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1592223343458">
       <screen x="0" y="0" width="1536" height="864" />

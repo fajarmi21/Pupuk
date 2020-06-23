@@ -21,13 +21,15 @@ interface BackEndApi {
 
     @FormUrlEncoded
     @POST("ppl/PplKpC")
-    fun PpKpc(@Field("id_poktan") id_poktan: String,
-              @Field("id_desa") id_desa: String,
+    fun PpKpc(@Field("nama_desa") id_desa: String,
+              @Field("email") email: String,
               @Field("poktan") poktan: String): Call<UserPKl>
 
     @FormUrlEncoded
     @POST("ppl/PplKpU")
     fun PpKpu(@Field("id_poktan") id_poktan: String,
+              @Field("email") email: String,
+              @Field("nama") nama: String,
               @Field("id_desa") id_desa: String,
               @Field("poktan") poktan: String): Call<UserPKl>
 

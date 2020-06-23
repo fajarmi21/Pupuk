@@ -30,7 +30,7 @@ class PplKpViewModel : ViewModel() {
             })
         return data
     }
-
+    
     fun ppKpd(poktan: String): MutableLiveData<UserPKl> {
         val data = MutableLiveData<UserPKl>()
         WebServiceClient.client.create(BackEndApi::class.java).PpKpd(poktan = poktan!!)
