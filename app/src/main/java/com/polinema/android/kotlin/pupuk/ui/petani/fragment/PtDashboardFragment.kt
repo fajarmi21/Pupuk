@@ -116,6 +116,7 @@ class PtDashboardFragment : Fragment() {
                     binding.ptSt.text = "-"
                 }
             } catch (e: Exception) {
+                Log.e("e", e.message!!)
 //                Toast.makeText(context, "Data Kosong", Toast.LENGTH_SHORT).show()
             }
         })
