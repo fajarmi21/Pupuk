@@ -4,6 +4,9 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8186385768484a77ce135bd1f3c90c36/jetified-fontawesome-0.0.5/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8186385768484a77ce135bd1f3c90c36/jetified-fontawesome-0.0.5/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8186385768484a77ce135bd1f3c90c36/jetified-fontawesome-0.0.5/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ff08f9115e79d8e34ac78904432058f0/jetified-fontawesome-0.0.5/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ff08f9115e79d8e34ac78904432058f0/jetified-fontawesome-0.0.5/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ff08f9115e79d8e34ac78904432058f0/jetified-fontawesome-0.0.5/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/info.androidhive/fontawesome/0.0.5/1d5502a3c271f6e21b253acbfa91517b83498b5b/fontawesome-0.0.5-javadoc.jar!/" />
