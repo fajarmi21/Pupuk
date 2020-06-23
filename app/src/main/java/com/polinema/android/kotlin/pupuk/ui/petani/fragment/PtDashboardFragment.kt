@@ -45,7 +45,9 @@ class PtDashboardFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.pt_dashboard_fragment, container, false)
+        viewModel = ViewModelProvider(this).get(PtDashboardViewModel::class.java)
         binding.lifecycleOwner = this
+        binding.user = viewModel
         return binding.root
     }
 
@@ -56,48 +58,83 @@ class PtDashboardFragment : Fragment() {
         tx_userNamePT.text = getUser(context)
         tx_userNamePT.paintFlags = Paint.UNDERLINE_TEXT_FLAG
 
-        viewModel = ViewModelProvider(this).get(PtDashboardViewModel::class.java)
         viewModel.ptD(tx_userNamePT.text.toString()).observe(viewLifecycleOwner, Observer {
             try {
-                if (it != null) {
+                if (it.tahap != null) {
                     when {
                         it.m3 != null -> {
-                            val m3 = it.m3 as ArrayList<Any>
-                            if (m3.last() == "false") {
+                            if (it.m3.last() == "false") {
                                 binding.ptU.text = it.tahap
                                 binding.ptLL.text = """- /${it.luas_lahan} ha"""
                                 binding.ptTanam.text = "-"
+                                binding.PtPUsul.visibility = View.GONE
                             } else {
-                                val getrow = m3.last() as LinkedTreeMap<*, *>
+                                val getrow = it.m3.last() as LinkedTreeMap<*, *>
                                 binding.ptU.text = it.tahap
                                 binding.ptLL.text = """${getrow["luas"]}/${it.luas_lahan} ha"""
                                 binding.ptTanam.text = getrow["sektor"].toString()
+
+                                viewModel.luas = getrow["luas"].toString()
+                                viewModel.urea = getrow["urea"].toString()
+                                viewModel.sp36 = getrow["sp36"].toString()
+                                viewModel.za = getrow["za"].toString()
+                                viewModel.npk = getrow["npk"].toString()
+                                viewModel.organik = getrow["organik"].toString()
+                                viewModel.total = (getrow["urea"].toString().toDouble()
+                                        + getrow["sp36"].toString().toDouble()
+                                        + getrow["za"].toString().toDouble()
+                                        + getrow["npk"].toString().toDouble()
+                                        + getrow["organik"].toString().toDouble()).toString()
                             }
                         }
                         it.m2 != null -> {
-                            val m2 = it.m2 as ArrayList<Any>
-                            if (m2.last() == "false") {
+                            if (it.m2.last() == "false") {
                                 binding.ptU.text = it.tahap
                                 binding.ptLL.text = """- /${it.luas_lahan} ha"""
                                 binding.ptTanam.text = "-"
+                                binding.PtPUsul.visibility = View.GONE
                             } else {
-                                val getrow = m2.last() as LinkedTreeMap<*, *>
+                                val getrow = it.m2.last() as LinkedTreeMap<*, *>
                                 binding.ptU.text = it.tahap
                                 binding.ptLL.text = """${getrow["luas"]}/${it.luas_lahan} ha"""
                                 binding.ptTanam.text = getrow["sektor"].toString()
+
+                                viewModel.luas = getrow["luas"].toString()
+                                viewModel.urea = getrow["urea"].toString()
+                                viewModel.sp36 = getrow["sp36"].toString()
+                                viewModel.za = getrow["za"].toString()
+                                viewModel.npk = getrow["npk"].toString()
+                                viewModel.organik = getrow["organik"].toString()
+                                viewModel.total = (getrow["urea"].toString().toDouble()
+                                        + getrow["sp36"].toString().toDouble()
+                                        + getrow["za"].toString().toDouble()
+                                        + getrow["npk"].toString().toDouble()
+                                        + getrow["organik"].toString().toDouble()).toString()
                             }
                         }
                         it.m1 != null -> {
-                            val m1 = it.m1 as ArrayList<Any>
-                            if (m1.last() == "false") {
+                            if (it.m1.last() == "false") {
                                 binding.ptU.text = it.tahap
                                 binding.ptLL.text = """- /${it.luas_lahan} ha"""
                                 binding.ptTanam.text = "-"
+                                binding.PtPUsul.visibility = View.GONE
                             } else {
-                                val getrow = m1.last() as LinkedTreeMap<*, *>
+                                val getrow = it.m1.last() as LinkedTreeMap<*,*>
                                 binding.ptU.text = it.tahap
                                 binding.ptLL.text = """${getrow["luas"]}/${it.luas_lahan} ha"""
                                 binding.ptTanam.text = getrow["sektor"].toString()
+
+                                binding.ptdluas.text = getrow["luas"].toString()
+                                binding.ptdurea.text = String.format("%.2f", getrow["urea"].toString().toDouble()).replace(",", ".")
+                                binding.ptdsp36.text = String.format("%.2f", getrow["sp36"].toString().toDouble()).replace(",", ".")
+                                binding.ptdza.text = String.format("%.2f", getrow["za"].toString().toDouble()).replace(",", ".")
+                                binding.ptdnpk.text = String.format("%.2f", getrow["npk"].toString().toDouble()).replace(",", ".")
+                                binding.ptdorganik.text = String.format("%.2f", getrow["organik"].toString().toDouble()).replace(",", ".")
+                                binding.ptdtotal.text = String.format("%.2f", (getrow["urea"].toString().toDouble()
+                                        + getrow["sp36"].toString().toDouble()
+                                        + getrow["za"].toString().toDouble()
+                                        + getrow["npk"].toString().toDouble()
+                                        + getrow["organik"].toString().toDouble())).replace(",", ".")
                             }
                         }
                     }
@@ -144,12 +181,12 @@ class PtDashboardFragment : Fragment() {
                 reset(context)
                 when(mCode) {
                     1 -> {
-                        START_TIME_IN_MILLIS = 30000
+                        START_TIME_IN_MILLIS = 240000
                         setCode(context, 0)
                         setAdd(context, 0)
                     }
                     0 -> {
-                        START_TIME_IN_MILLIS = 40000
+                        START_TIME_IN_MILLIS = 120000
                         setCode(context, 1)
                         setAdd(context, 2)
                     }

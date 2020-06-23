@@ -12,27 +12,28 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class PtDashboardViewModel : ViewModel() {
-    var luas = ""
+    var luas = "0"
     var urea = ""
     var sp36 = ""
     var za = ""
     var npk = ""
     var organik = ""
+    var total = ""
     var status = false
     var daftar = ""
 
     fun ptD(nama_petani: String): MutableLiveData<Petani> {
         val data = MutableLiveData<Petani>()
         WebServiceClient.client.create(BackEndApi::class.java).PTD(nama_petani)
-                .enqueue(object : Callback<Petani>{
-                    override fun onFailure(call: Call<Petani>, t: Throwable) {
-                        Log.e("gagal", t.message!!)
-                    }
+            .enqueue(object : Callback<Petani>{
+                override fun onFailure(call: Call<Petani>, t: Throwable) {
+                    Log.e("gagal", t.message!!)
+                }
 
-                    override fun onResponse(call: Call<Petani>, response: Response<Petani>) {
-                        data.value = response.body()
-                    }
-                })
+                override fun onResponse(call: Call<Petani>, response: Response<Petani>) {
+                    data.value = response.body()
+                }
+            })
         return data
     }
 }

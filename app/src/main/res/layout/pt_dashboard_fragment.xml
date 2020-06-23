@@ -334,7 +334,7 @@
                         android:gravity="center"
                         android:orientation="horizontal">
                         <TextView
-                            android:id="@+id/totPupuk"
+                            android:id="@+id/ptdtotal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="end"
@@ -348,9 +348,9 @@
                             android:textColor="#5E5E5E"
                             android:textSize="35sp" />
                         <TextView
+                            android:id="@+id/ptdluas"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@{user.luas}"
                             android:textColor="#5E5E5E"
                             android:textSize="35sp" />
 
@@ -369,7 +369,7 @@
                         android:layout_weight="1"
                         android:orientation="horizontal">
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:orientation="vertical">
@@ -382,16 +382,15 @@
                                 android:textColor="@color/colorBlack" />
 
                             <TextView
+                                android:id="@+id/ptdurea"
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:text="@{user.urea}"
-                                android:textColor="@color/colorBlack"
-                                android:textSize="18dp"
+                                android:textSize="15dp"
                                 android:gravity="center"/>
                         </LinearLayout>
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:orientation="vertical">
@@ -404,16 +403,15 @@
                                 android:textColor="@color/colorBlack" />
 
                             <TextView
+                                android:id="@+id/ptdsp36"
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:text="@{user.sp36}"
-                                android:textColor="@color/colorBlack"
-                                android:textSize="18dp"
+                                android:textSize="15dp"
                                 android:gravity="center"/>
                         </LinearLayout>
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:orientation="vertical">
@@ -426,16 +424,15 @@
                                 android:textColor="@color/colorBlack" />
 
                             <TextView
+                                android:id="@+id/ptdza"
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:text="@{user.za}"
-                                android:textColor="@color/colorBlack"
-                                android:textSize="18dp"
+                                android:textSize="15dp"
                                 android:gravity="center"/>
                         </LinearLayout>
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:orientation="vertical">
@@ -448,16 +445,15 @@
                                 android:textColor="@color/colorBlack" />
 
                             <TextView
+                                android:id="@+id/ptdnpk"
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:text="@{user.npk}"
-                                android:textColor="@color/colorBlack"
-                                android:textSize="18dp"
+                                android:textSize="15dp"
                                 android:gravity="center"/>
                         </LinearLayout>
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:orientation="vertical">
@@ -470,12 +466,11 @@
                                 android:textColor="@color/colorBlack" />
 
                             <TextView
+                                android:id="@+id/ptdorganik"
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:text="@{user.organik}"
-                                android:textColor="@color/colorBlack"
-                                android:textSize="18dp"
+                                android:textSize="15dp"
                                 android:gravity="center"/>
                         </LinearLayout>
                     </LinearLayout>
