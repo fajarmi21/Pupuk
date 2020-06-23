@@ -1,9 +1,18 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.vectordrawable:vectordrawable:1.1.0@aar">
     <CLASSES>
+<<<<<<< HEAD
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/64a707674b6b2d893c881f4ea7238d80/vectordrawable-1.1.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/64a707674b6b2d893c881f4ea7238d80/vectordrawable-1.1.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/64a707674b6b2d893c881f4ea7238d80/vectordrawable-1.1.0/AndroidManifest.xml" />
+=======
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/64a707674b6b2d893c881f4ea7238d80/vectordrawable-1.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/689e32c4a82f6e3e82d51d0dc02c7785/vectordrawable-1.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/95131313a4f1d98ee9ee8d00aee14d3e/vectordrawable-1.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c21557f8edb465f94f55286ac586cee1/vectordrawable-1.1.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/689e32c4a82f6e3e82d51d0dc02c7785/vectordrawable-1.1.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/689e32c4a82f6e3e82d51d0dc02c7785/vectordrawable-1.1.0/AndroidManifest.xml" />
+>>>>>>> 911c14526f28e0979f9221d35890891d36bddf33
     </CLASSES>
     <JAVADOC />
     <SOURCES>

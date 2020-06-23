@@ -1,9 +1,15 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.captain-miao:optroundcardview:1.1.0@aar">
     <CLASSES>
+<<<<<<< HEAD
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/28d232fd632863de3cba08f0f8d9c3d3/jetified-optroundcardview-1.1.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/28d232fd632863de3cba08f0f8d9c3d3/jetified-optroundcardview-1.1.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/28d232fd632863de3cba08f0f8d9c3d3/jetified-optroundcardview-1.1.0/AndroidManifest.xml" />
+=======
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ffb2cb87d778677ca67eb15fb96aeba3/jetified-optroundcardview-1.1.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ffb2cb87d778677ca67eb15fb96aeba3/jetified-optroundcardview-1.1.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ffb2cb87d778677ca67eb15fb96aeba3/jetified-optroundcardview-1.1.0/jars/classes.jar!/" />
+>>>>>>> 911c14526f28e0979f9221d35890891d36bddf33
     </CLASSES>
     <JAVADOC />
     <SOURCES>

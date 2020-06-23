@@ -169,7 +169,7 @@ class KpRekapFragment : Fragment(), View.OnClickListener {
                 }
                 binding.rvRKP.adapter = RekapKTAdapter(x)
             } catch (e: Exception) {
-                Log.e("ss", e.message)
+                Log.e("ss", e.message!!)
             }
         }
 //        binding.rvRKP.addOnScrollListener(object : HeaderedRecyclerViewListener(context!!) {
