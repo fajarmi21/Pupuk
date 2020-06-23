@@ -17,25 +17,23 @@ interface BackEndApi {
 
     @FormUrlEncoded
     @POST("ppl/PplKpR")
-    fun PpKpr(@Field("poktan") poktan: String): Call<MutableList<UserPKl>>
+    fun PpKpr(@Field("poktan") poktan: String): Call<MutableList<UserPPL>>
 
     @FormUrlEncoded
     @POST("ppl/PplKpC")
     fun PpKpc(@Field("nama_desa") id_desa: String,
               @Field("email") email: String,
-              @Field("poktan") poktan: String): Call<UserPKl>
+              @Field("poktan") poktan: String): Call<UserPPL>
 
     @FormUrlEncoded
     @POST("ppl/PplKpU")
-    fun PpKpu(@Field("id_poktan") id_poktan: String,
-              @Field("email") email: String,
+    fun PpKpu(@Field("email") email: String,
               @Field("nama") nama: String,
-              @Field("id_desa") id_desa: String,
-              @Field("poktan") poktan: String): Call<UserPKl>
+              @Field("poktan") poktan: String): Call<UserPPL>
 
     @FormUrlEncoded
     @POST("ppl/PplKpD")
-    fun PpKpd(@Field("poktan") poktan: String): Call<UserPKl>
+    fun PpKpd(@Field("poktan") poktan: String): Call<UserPPL>
 
 
     //kelompoktani

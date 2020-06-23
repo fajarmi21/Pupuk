@@ -73,13 +73,16 @@ class PplActivity : AppCompatActivity(), AnkoLogger {
                     0 -> { if (fragmentManager!!.findFragmentById(R.id.FramePPL) !is PplDashboardFragment) addFragment(
                         PplDashboardFragment()
                     )}
-//                    1 -> { if (fragmentManager!!.findFragmentById(R.id.FramePPL) !is KpRekapFragment) addFragment(
+//                    1 -> { if (fragmentManager!!.findFragmentById(R.id.FramePPL) !is PplKpFragment) addFragment(
+//                        PplKpFragment()
+//                    )}
+//                    2 -> { if (fragmentManager!!.findFragmentById(R.id.FramePPL) !is KpRekapFragment) addFragment(
 //                        KpRekapFragment()
 //                    )}
-                    2 -> { if (fragmentManager!!.findFragmentById(R.id.FramePPL) !is PplKpFragment) addFragment(
+                    3 -> { if (fragmentManager!!.findFragmentById(R.id.FramePPL) !is PplKpFragment) addFragment(
                         PplKpFragment()
                     )}
-                    3 -> {
+                    4 -> {
                         Toast.makeText(context, "Logout Sukses", Toast.LENGTH_LONG).show()
                         startActivity(intentFor<LoginActivity>().clearTask().clearTop())
                         SaveSharedPreference.setLoggedIn(applicationContext, false, null, 0)
@@ -101,6 +104,10 @@ class PplActivity : AppCompatActivity(), AnkoLogger {
     private val menu = mutableListOf<MenuObject>().apply {
         val close = MenuObject().apply {
             resource = R.drawable.icn_close
+            bgColor = R.color.text_color
+        }
+         val usul = MenuObject("Usulan").apply {
+            resource = R.drawable.icn_approval
             bgColor = R.color.text_color
         }
         val list = MenuObject("Rekap").apply {
@@ -136,6 +143,7 @@ class PplActivity : AppCompatActivity(), AnkoLogger {
 //        }
 
         add(close)
+        add(usul)
         add(list)
         add(user)
         add(signout)

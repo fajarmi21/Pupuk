@@ -20,7 +20,7 @@ import com.beardedhen.androidbootstrap.TypefaceProvider
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.polinema.android.kotlin.pupuk.R
 import com.polinema.android.kotlin.pupuk.databinding.PplKpFragmentBinding
-import com.polinema.android.kotlin.pupuk.model.UserPKl
+import com.polinema.android.kotlin.pupuk.model.UserPPL
 import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference
 import com.polinema.android.kotlin.pupuk.util.SwipeToDeleteCallback
 import com.polinema.android.kotlin.pupuk.viewmodel.PplKpViewModel
@@ -63,7 +63,7 @@ class PplKpFragment : Fragment() {
         viewModel.ppKp().observe(viewLifecycleOwner, Observer {
             try {
                 rvPPL.layoutManager = LinearLayoutManager(this.context)
-                val adapter = UserPKlAdapter(it)
+                val adapter = UserPPLAdapter(it)
                 rvPPL.adapter = adapter
 
                 val swipeHandler = object : SwipeToDeleteCallback(this.context!!) {
@@ -99,21 +99,21 @@ class PplKpFragment : Fragment() {
         })
     }
 
-    inner class UserPKlAdapter(val dataUser: List<UserPKl>) :
-        RecyclerView.Adapter<UserPKlAdapter.HolderUserPKl>() {
-        inner class HolderUserPKl(iv: View): RecyclerView.ViewHolder(iv) {
+    inner class UserPPLAdapter(val dataUser: List<UserPPL>) :
+        RecyclerView.Adapter<UserPPLAdapter.HolderUserPPL>() {
+        inner class HolderUserPPL(iv: View): RecyclerView.ViewHolder(iv) {
             val no = iv.findViewById<TextView>(R.id.textView)
             val nama = iv.findViewById<TextView>(R.id.textView2)
         }
 
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HolderUserPKl {
-            return HolderUserPKl(LayoutInflater.from(parent.context).inflate(R.layout.ppl_kp_item, parent, false))
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HolderUserPPL {
+            return HolderUserPPL(LayoutInflater.from(parent.context).inflate(R.layout.ppl_kp_item, parent, false))
         }
 
         override fun getItemCount(): Int = dataUser.size
 
         @SuppressLint("ResourceType", "RtlHardcoded")
-        override fun onBindViewHolder(holder: HolderUserPKl, position: Int) {
+        override fun onBindViewHolder(holder: HolderUserPPL, position: Int) {
             var x = ""
             x = if ((dataUser.size - position) < 10) """0${dataUser.size - position}"""
             else {
