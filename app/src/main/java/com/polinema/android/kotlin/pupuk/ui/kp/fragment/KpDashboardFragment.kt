@@ -2,6 +2,7 @@ package com.polinema.android.kotlin.pupuk.ui.kp.fragment
 
 import android.graphics.Paint
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -45,7 +46,7 @@ class KpDashboardFragment : Fragment() {
                 binding.user = it
                 binding.totPupuk.text = (it.urea.toDouble() + it.sp36.toDouble() + it.za.toDouble() + it.npk.toDouble() + it.organik.toDouble()).toString()
             } catch (e: Exception){
-
+                Log.e("ss", e.message!!)
             }
         })
         cv1.setOnClickListener {

@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.yalantis:contextmenu:1.0.7@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ce87a8d270080f02de499e9a705c7e79/jetified-contextmenu-1.0.7/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ce87a8d270080f02de499e9a705c7e79/jetified-contextmenu-1.0.7/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ce87a8d270080f02de499e9a705c7e79/jetified-contextmenu-1.0.7/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/01b256ad006eae64b07b7e9f1dc4b23a/jetified-contextmenu-1.0.7/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/01b256ad006eae64b07b7e9f1dc4b23a/jetified-contextmenu-1.0.7/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/01b256ad006eae64b07b7e9f1dc4b23a/jetified-contextmenu-1.0.7/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.yalantis/contextmenu/1.0.7/6cfc83c635785f884c71b635416c578937438a55/contextmenu-1.0.7-javadoc.jar!/" />
