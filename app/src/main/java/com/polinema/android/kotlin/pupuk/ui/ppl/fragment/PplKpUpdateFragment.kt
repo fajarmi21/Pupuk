@@ -1,6 +1,7 @@
 package com.polinema.android.kotlin.pupuk.ui.ppl.fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -73,11 +74,12 @@ class PplKpUpdateFragment : Fragment() {
         }
     }
     private fun showData() {
-        viewModel.show(arguments!!.getString("poktan").toString()).observe(viewLifecycleOwner, Observer {
+        viewModel.show(arguments!!.getString("poktan").toString()).observeForever {
+            Log.e("xx", it.toString())
             viewModel.poktan = it[0].poktan
             viewModel.nama = it[0].poktan
             viewModel.email.set(it[0].email)
-        })
+        }
     }
 
 }

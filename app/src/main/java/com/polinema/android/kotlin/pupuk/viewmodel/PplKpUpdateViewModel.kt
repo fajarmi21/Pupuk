@@ -25,7 +25,7 @@ class PplKpUpdateViewModel : ViewModel() {
 
     fun show(poktan : String): MutableLiveData<MutableList<UserPPL>> {
         val data = MutableLiveData<MutableList<UserPPL>>()
-        WebServiceClient.client.create(BackEndApi::class.java).PpKpr(poktan = poktan!!)
+        WebServiceClient.client.create(BackEndApi::class.java).PpKpr(poktan = poktan)
             .enqueue(object : Callback<MutableList<UserPPL>> {
                 override fun onFailure(call: Call<MutableList<UserPPL>>, t: Throwable) {
                     Log.e("gagal", t.message!!)
