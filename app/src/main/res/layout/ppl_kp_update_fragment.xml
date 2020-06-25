@@ -84,18 +84,13 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                app:counterEnabled="true"
-                                app:counterMaxLength="16"
                                 android:enabled="false"
-                                app:counterTextAppearance="@style/counterText"
-                                app:counterOverflowTextAppearance="@style/counterOverride"
                                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
                                 <com.google.android.material.textfield.TextInputEditText
                                     android:id="@+id/txPPLU"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:maxLength="16"
                                     tools:ignore="RtlSymmetry"
                                     android:text="@={viewmodel.email}"
                                     android:textColor="@color/blackTextColor" />
@@ -118,20 +113,15 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                app:counterEnabled="true"
-                                app:counterMaxLength="16"
                                 android:enabled="false"
-                                app:counterTextAppearance="@style/counterText"
-                                app:counterOverflowTextAppearance="@style/counterOverride"
                                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
                                 <com.google.android.material.textfield.TextInputEditText
                                     android:id="@+id/tx1PPLU"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:maxLength="16"
                                     tools:ignore="RtlSymmetry"
-                                    android:text="@={viewmodel.nama}"
+                                    android:text="@={viewmodel.poktan}"
                                     android:textColor="@color/blackTextColor" />
                             </com.google.android.material.textfield.TextInputLayout>
                         </LinearLayout>

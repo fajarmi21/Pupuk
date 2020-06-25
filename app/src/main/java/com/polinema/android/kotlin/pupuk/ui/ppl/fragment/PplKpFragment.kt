@@ -59,7 +59,7 @@ class PplKpFragment : Fragment() {
     }
 
     private fun showData() {
-        viewModel.poktan = SaveSharedPreference.getUser(context)
+//        viewModel.poktan = SaveSharedPreference.getUser(context)
         viewModel.ppKp().observe(viewLifecycleOwner, Observer {
             try {
                 rvPPL.layoutManager = LinearLayoutManager(this.context)
