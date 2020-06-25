@@ -82,8 +82,9 @@
                         android:id="@+id/rvPPLV"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="true"
                         app:layout_constrainedHeight="true"
-                        android:nestedScrollingEnabled="true"/>
+                        tools:listitem="@layout/ppl_usul_item" />
 
                     <include layout="@layout/ppl_usul_footer" />
                 </LinearLayout>

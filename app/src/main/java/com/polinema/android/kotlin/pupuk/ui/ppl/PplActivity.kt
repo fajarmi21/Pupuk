@@ -13,6 +13,7 @@ import com.polinema.android.kotlin.pupuk.R
 import com.polinema.android.kotlin.pupuk.ui.login.LoginActivity
 import com.polinema.android.kotlin.pupuk.ui.ppl.fragment.PplDashboardFragment
 import com.polinema.android.kotlin.pupuk.ui.ppl.fragment.PplKpFragment
+import com.polinema.android.kotlin.pupuk.ui.ppl.fragment.PplUsulFragment
 import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference
 import com.yalantis.contextmenu.lib.ContextMenuDialogFragment
 import com.yalantis.contextmenu.lib.MenuObject
@@ -73,9 +74,9 @@ class PplActivity : AppCompatActivity(), AnkoLogger {
                     0 -> { if (fragmentManager!!.findFragmentById(R.id.FramePPL) !is PplDashboardFragment) addFragment(
                         PplDashboardFragment()
                     )}
-//                    1 -> { if (fragmentManager!!.findFragmentById(R.id.FramePPL) !is PplKpFragment) addFragment(
-//                        PplKpFragment()
-//                    )}
+                    1 -> { if (fragmentManager!!.findFragmentById(R.id.FramePPL) !is PplUsulFragment) addFragment(
+                        PplUsulFragment()
+                    )}
 //                    2 -> { if (fragmentManager!!.findFragmentById(R.id.FramePPL) !is KpRekapFragment) addFragment(
 //                        KpRekapFragment()
 //                    )}

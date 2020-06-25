@@ -1,6 +1,7 @@
 package com.polinema.android.kotlin.pupuk.ui.ppl.fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -62,6 +63,7 @@ class PplKpUpdateFragment : Fragment() {
 
         update_button_detailPPLU.setOnClickListener {
             viewModel.updatePpl(arguments!!.getString("poktan").toString()).observe(viewLifecycleOwner, Observer {
+
                 if (it.status == 1) {
                     Toast.makeText(this.context, it.message, Toast.LENGTH_SHORT).show()
                     activity!!.supportFragmentManager
@@ -73,10 +75,14 @@ class PplKpUpdateFragment : Fragment() {
         }
     }
     private fun showData() {
+        Log.e("bvvg", arguments!!.getString("poktan").toString())
         viewModel.show(arguments!!.getString("poktan").toString()).observe(viewLifecycleOwner, Observer {
-            viewModel.poktan = it[0].poktan
-            viewModel.nama = it[0].poktan
-            viewModel.email.set(it[0].email)
+            try {
+                binding.tx1PPLU.setText(it[0].poktan)
+                binding.txPPLU.setText(it[0].email)
+            } catch (e: Exception) {
+                Log.e("xx", e.message!!)
+            }
         })
     }
 

@@ -17,5 +17,17 @@ data class PplVerifikasi(
     val id_poktan: String,
     val desa: String,
     val timestamp: String,
-    val poktan: String
+    val poktan: String,
+    val id_usulan: String,
+    val nama_petani: String,
+    val luas_lahan: String,
+    val tahap: String,
+    val m1: Any,
+    val m2: Any,
+    val m3: Any,
+    var status_poktan: Any,
+    val status_ppl: Any,
+    val status_admin: Any,
+    val keterangan: String,
+    var isSelected: Boolean = false
 )

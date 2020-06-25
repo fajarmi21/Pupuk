@@ -14,8 +14,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class PplKpUpdateViewModel : ViewModel() {
-    var poktan = ""
-    var nama = ""
+    var poktan = ObservableField("")
     var email = ObservableField("")
     var btn = ObservableBoolean(false)
 
@@ -23,9 +22,9 @@ class PplKpUpdateViewModel : ViewModel() {
         btn.set(Util.isEmailValid(email.get()!!))
     }
 
-    fun show(poktan : String): MutableLiveData<MutableList<UserPPL>> {
+    fun show(nama : String): MutableLiveData<MutableList<UserPPL>> {
         val data = MutableLiveData<MutableList<UserPPL>>()
-        WebServiceClient.client.create(BackEndApi::class.java).PpKpr(poktan = poktan!!)
+        WebServiceClient.client.create(BackEndApi::class.java).PpKpr(poktan = nama)
             .enqueue(object : Callback<MutableList<UserPPL>> {
                 override fun onFailure(call: Call<MutableList<UserPPL>>, t: Throwable) {
                     Log.e("gagal", t.message!!)
@@ -41,12 +40,12 @@ class PplKpUpdateViewModel : ViewModel() {
         return data
     }
 
-    fun updatePpl(poktan: String): MutableLiveData<UserPPL> {
+    fun updatePpl(nama: String): MutableLiveData<UserPPL> {
         val data = MutableLiveData<UserPPL>()
         WebServiceClient.client.create(BackEndApi::class.java).PpKpu(
             email = email.get()!!,
-            nama = poktan,
-            poktan = poktan
+            nama = nama,
+            poktan = poktan.get()!!
         )
             .enqueue(object : Callback<UserPPL>{
                 override fun onFailure(call: Call<UserPPL>, t: Throwable) {

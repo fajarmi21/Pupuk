@@ -20,14 +20,8 @@ import com.lid.lib.LabelTextView
 import com.polinema.android.kotlin.pupuk.viewmodel.PplUsulViewModel
 import com.polinema.android.kotlin.pupuk.R
 import com.polinema.android.kotlin.pupuk.model.PplVerifikasi
-import com.polinema.android.kotlin.pupuk.model.UsulanKT
-import com.polinema.android.kotlin.pupuk.ui.kp.fragment.KpDetailUsulFragment
 import com.polinema.android.kotlin.pupuk.util.DummySwipeRepository
 import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference
-import kotlinx.android.synthetic.main.kp_usul_footer.*
-import kotlinx.android.synthetic.main.kp_usul_fragment.*
-import kotlinx.android.synthetic.main.kp_usul_item.*
-import kotlinx.android.synthetic.main.kp_usul_item.textView4
 import kotlinx.android.synthetic.main.ppl_usul_footer.*
 import kotlinx.android.synthetic.main.ppl_usul_fragment.*
 import kotlinx.android.synthetic.main.ppl_usul_item.*
@@ -56,7 +50,7 @@ class PplUsulFragment : Fragment() {
             try {
                 list = it
                 rvPPLV.layoutManager = LinearLayoutManager(context)
-//                rvPPLV.adapter = RekapKTAdapter(list)
+                rvPPLV.adapter = PPLVAdapter(list)
                 var total = 0.0
 
                 txTotalVPPL.text = total.toString()
@@ -142,31 +136,29 @@ class PplUsulFragment : Fragment() {
             var i = 0
 
             //GAK GENAH IKI GAE OPO JEM
-//            when(dataUsulan[position].tahap) {
-//                "m1" -> if (dataUsulan[position].m1 != null && dataUsulan[position].m1 != "false") thp = dataUsulan[position].m1  as ArrayList<*>
-//                "m2" -> if (dataUsulan[position].m2 != null && dataUsulan[position].m2 != "false") thp = dataUsulan[position].m2  as ArrayList<*>
-//                "m3" -> if (dataUsulan[position].m3 != null && dataUsulan[position].m3 != "false") thp = dataUsulan[position].m3  as ArrayList<*>
-//            }
-//            if (thp is ArrayList<*>) {
-//                val getrow = thp.last() as LinkedTreeMap<*, *>
-//                holder.luasUsul.text = getrow["sektor"].toString()
-//                all = 1
-//            } else {
-//                holder.luasUsul.text = "-"
-//                holder.stat.text = "can't\nverified"
-//                if(all == 0) all = 0
-//            }
+            when(dataUsulan[position].tahap) {
+                "m1" -> if (dataUsulan[position].m1 != null && dataUsulan[position].m1 != "false") thp = dataUsulan[position].m1  as ArrayList<*>
+                "m2" -> if (dataUsulan[position].m2 != null && dataUsulan[position].m2 != "false") thp = dataUsulan[position].m2  as ArrayList<*>
+                "m3" -> if (dataUsulan[position].m3 != null && dataUsulan[position].m3 != "false") thp = dataUsulan[position].m3  as ArrayList<*>
+            }
+            if (thp is ArrayList<*>) {
+                val getrow = thp.last() as LinkedTreeMap<*, *>
+                all = 1
+            } else {
+                holder.stat.text = "can't\nverified"
+                if(all == 0) all = 0
+            }
 //
-//            if (dataUsulan[position].status_poktan != null) {
-//                val sp = dataUsulan[position].status_poktan as ArrayList<ArrayList<String>>
-//                sp.forEach {
-//                    if (it.containsAll(listOf(dataUsulan[position].tahap, LocalDate.now().year.toString()))) {
-//                        holder.stat.text = "verified"
-//                        holder.label.visibility = View.GONE
-//                        all = 0
-//                    }
-//                }
-//            }
+            if (dataUsulan[position].status_poktan != null) {
+                val sp = dataUsulan[position].status_poktan as ArrayList<ArrayList<String>>
+                sp.forEach {
+                    if (it.containsAll(listOf(dataUsulan[position].tahap, LocalDate.now().year.toString()))) {
+                        holder.stat.text = "verified"
+                        holder.label.visibility = View.GONE
+                        all = 0
+                    }
+                }
+            }
 
             if (holder.stat.text != "verified" && holder.stat.text != "can't\nverified") {
                 if (show == 0) {
