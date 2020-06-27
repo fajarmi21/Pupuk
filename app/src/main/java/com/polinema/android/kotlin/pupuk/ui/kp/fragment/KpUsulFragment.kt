@@ -55,11 +55,6 @@ class KpUsulFragment : Fragment() {
                 list = it
                 rvKPR.layoutManager = LinearLayoutManager(context)
                 rvKPR.adapter = RekapKTAdapter(list)
-                var total = 0.0
-                for (i in it){
-                    total += i.luas_lahan.toDouble()
-                }
-                txTotalRKP.text = total.toString()
             } catch (e: Exception) {
                 Log.e("ss", e.message!!)
             }
@@ -103,6 +98,7 @@ class KpUsulFragment : Fragment() {
                 if (it.status == 1) {
                     id.mapValues { it2->
                         rvKPR.findViewHolderForAdapterPosition(it2.value.toInt() - 1)!!.itemView.findViewById<CheckableChipView>(R.id.btnVARKP).visibility = View.GONE
+                        rvKPR.findViewHolderForAdapterPosition(it2.value.toInt() - 1)!!.itemView.findViewById<TextView>(R.id.labelKPU).visibility = View.GONE
                         rvKPR.findViewHolderForAdapterPosition(it2.value.toInt() - 1)!!.itemView.findViewById<TextView>(R.id.textView4).visibility = View.VISIBLE
                         rvKPR.findViewHolderForAdapterPosition(it2.value.toInt() - 1)!!.itemView.findViewById<TextView>(R.id.textView4).text = "verified"
                         list[it2.value.toInt() - 1].status_poktan = "true"
@@ -154,6 +150,7 @@ class KpUsulFragment : Fragment() {
             } else {
                 holder.luasUsul.text = "-"
                 holder.stat.text = "can't\nverified"
+                holder.label.visibility = View.GONE
                 if(all == 0) all = 0
             }
 

@@ -84,8 +84,6 @@
                         android:layout_height="wrap_content"
                         app:layout_constrainedHeight="true"
                         android:nestedScrollingEnabled="true"/>
-
-                    <include layout="@layout/kp_usul_footer" />
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>

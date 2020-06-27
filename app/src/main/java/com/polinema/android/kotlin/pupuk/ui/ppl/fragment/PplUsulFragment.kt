@@ -14,6 +14,7 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.beardedhen.androidbootstrap.TypefaceProvider
 import com.github.okdroid.checkablechipview.CheckableChipView
 import com.google.gson.internal.LinkedTreeMap
 import com.lid.lib.LabelTextView
@@ -40,6 +41,7 @@ class PplUsulFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        TypefaceProvider.registerDefaultIconSets()
         return inflater.inflate(R.layout.ppl_usul_fragment, container, false)
     }
 
