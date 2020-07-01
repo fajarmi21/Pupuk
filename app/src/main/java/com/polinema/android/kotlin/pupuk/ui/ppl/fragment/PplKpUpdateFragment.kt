@@ -76,7 +76,7 @@ class PplKpUpdateFragment : Fragment() {
     private fun showData() {
         viewModel.show(arguments!!.getString("poktan").toString()).observeForever {
             Log.e("xx", it.toString())
-            viewModel.poktan = it[0].poktan
+            viewModel.poktan.set(it[0].poktan)
             viewModel.nama = it[0].poktan
             viewModel.email.set(it[0].email)
         }

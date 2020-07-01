@@ -20,7 +20,7 @@
             android:layout_gravity="center"
             android:layout_weight="0.5"
             android:gravity="center"
-            android:text="Tgl"
+            android:text="No"
             android:textColor="@color/blackTextColor" />
 
         <View
@@ -86,4 +86,9 @@
         android:layout_marginHorizontal="2dp"
         android:layout_weight="1"
         android:background="@color/blackTextColor" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"></LinearLayout>
 </LinearLayout>

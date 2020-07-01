@@ -51,9 +51,12 @@
                 android:src="@drawable/ic_person" />
 
             <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="17dp"
+                android:background="#00ce8f"
+                app:boxBackgroundMode="none"
                 android:hint="@string/email">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -65,7 +68,6 @@
                     android:text="@={viewmodel.email}"
                     android:textColor="#383838"
                     android:textSize="20sp"
-                    app:backgroundTint="#00ce8f"
                     tools:ignore="RtlSymmetry" />
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
@@ -82,10 +84,13 @@
                 android:src="@drawable/ic_lock" />
 
             <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="17dp"
                 app:passwordToggleEnabled="true"
+                android:background="#00ce8f"
+                app:boxBackgroundMode="none"
                 android:hint="@string/password">
 
                 <com.google.android.material.textfield.TextInputEditText

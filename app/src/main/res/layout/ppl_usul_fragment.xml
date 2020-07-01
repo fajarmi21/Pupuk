@@ -70,13 +70,19 @@
                 android:background="@drawable/border_black"
                 android:orientation="vertical">
 
+                <RelativeLayout
+                    android:id="@+id/containerPPL"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:padding="10dp">
+                    android:padding="10dp"
+                    android:visibility="gone">
 
-                    <include layout="@layout/ppl_usul_item" />
+                    <include layout="@layout/ppl_usul_item_header" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rvPPLV"
@@ -85,8 +91,6 @@
                         android:nestedScrollingEnabled="true"
                         app:layout_constrainedHeight="true"
                         tools:listitem="@layout/ppl_usul_item" />
-
-                    <include layout="@layout/ppl_usul_footer" />
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -94,12 +98,12 @@
         <com.beardedhen.androidbootstrap.BootstrapButton
             android:id="@+id/btCheckPPL"
             style="@style/wrapping_button"
+            android:layout_above="@id/cv1"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="16dp"
-            app:bootstrapText="check {fa_check_square_o}"
-            android:layout_above="@id/cv1"
             android:layout_marginBottom="-10dp"
             app:bootstrapBrand="primary"
+            app:bootstrapText="check {fa_check_square_o}"
             app:roundedCorners="true"
             app:showOutline="false" />
     </RelativeLayout>

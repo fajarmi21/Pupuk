@@ -32,7 +32,7 @@ class PplActivity : AppCompatActivity(), AnkoLogger {
         setContentView(R.layout.activity_ppl)
         initToolbar()
         initMenuFragment()
-        addFragment(PplDashboardFragment())
+        addFragment(PplUsulFragment())
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

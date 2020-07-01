@@ -10,8 +10,7 @@ data class KelompokTani(
         val sp36: String,
         val za: String,
         val npk: String,
-        val organik: String,
-        val status: Boolean
+        val organik: String
 )
 
 data class UserKT(

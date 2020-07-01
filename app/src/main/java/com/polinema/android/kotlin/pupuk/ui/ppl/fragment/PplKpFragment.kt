@@ -76,7 +76,7 @@ class PplKpFragment : Fragment() {
                                 .setPositiveButton("YES") { _, _ ->
                                     viewModel.ppKpd(it[viewHolder.adapterPosition].poktan).observe(viewLifecycleOwner, Observer { it2 ->
                                         if (it2.status == 1) {
-                                            onResume()
+                                            addFragment(PplKpFragment())
                                             Toast.makeText(context, it2.message, Toast.LENGTH_SHORT).show()
                                         } else { Toast.makeText(context, it2.message, Toast.LENGTH_SHORT).show() }
                                     })

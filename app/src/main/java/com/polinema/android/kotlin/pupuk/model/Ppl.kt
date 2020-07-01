@@ -12,22 +12,15 @@ data class UserPPL(
 )
 
 data class PplVerifikasi(
-    val status: Int,
-    val message: String,
-    val id_poktan: String,
-    val desa: String,
-    val timestamp: String,
-    val poktan: String,
-    val id_usulan: String,
-    val nama_petani: String,
-    val luas_lahan: String,
-    val tahap: String,
-    val m1: Any,
-    val m2: Any,
-    val m3: Any,
-    var status_poktan: Any,
-    val status_ppl: Any,
-    val status_admin: Any,
-    val keterangan: String,
-    var isSelected: Boolean = false
+        val poktan: String,
+        val luas: String,
+        val data: ArrayList<data>
+)
+data class data(
+        val petani: String,
+        val verifikasi: Boolean)
+
+data class response(
+        val status: Int,
+        val message: String
 )

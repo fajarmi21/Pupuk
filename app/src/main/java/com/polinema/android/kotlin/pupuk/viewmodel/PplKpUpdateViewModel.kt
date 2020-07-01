@@ -14,7 +14,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class PplKpUpdateViewModel : ViewModel() {
-    var poktan = ""
+    var poktan = ObservableField("")
     var nama = ""
     var email = ObservableField("")
     var btn = ObservableBoolean(false)
@@ -41,12 +41,12 @@ class PplKpUpdateViewModel : ViewModel() {
         return data
     }
 
-    fun updatePpl(poktan: String): MutableLiveData<UserPPL> {
+    fun updatePpl(pok: String): MutableLiveData<UserPPL> {
         val data = MutableLiveData<UserPPL>()
         WebServiceClient.client.create(BackEndApi::class.java).PpKpu(
             email = email.get()!!,
-            nama = poktan,
-            poktan = poktan
+            nama = pok,
+            poktan = poktan.get()!!
         )
             .enqueue(object : Callback<UserPPL>{
                 override fun onFailure(call: Call<UserPPL>, t: Throwable) {

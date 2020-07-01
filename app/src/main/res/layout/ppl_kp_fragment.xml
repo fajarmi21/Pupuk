@@ -52,9 +52,8 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cv1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_below="@id/ll"
-            android:layout_alignParentBottom="true"
             android:layout_marginBottom="-30dp"
             app:cardBackgroundColor="#FAEBD7"
             app:cardCornerRadius="30dp"
@@ -62,12 +61,11 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="bottom"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="40dp">
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:orientation="vertical"
                     android:layout_marginHorizontal="10dp"
@@ -75,7 +73,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:orientation="vertical"
                         android:padding="10dp">
 
@@ -84,7 +82,7 @@
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/rvPPL"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:nestedScrollingEnabled="true"/>
                     </LinearLayout>
                 </LinearLayout>

@@ -140,10 +140,22 @@ class PtDashboardFragment : Fragment() {
                     }
                     if (it.status_poktan == null || it.status_ppl == null || it.status_admin == null) binding.ptSt.text =
                             "Diproses"
-                    else if (it.status_poktan == "false" || it.status_ppl == "false" || it.status_admin == "false") binding.ptSt.text =
+                    else if (it.status_poktan == "false" || it.status_ppl == "false" || !it.status_admin.status) binding.ptSt.text =
                             "Ditolak"
                     else {
                         binding.ptSt.text = "Diterima"
+                        binding.PtPDiterima.visibility = View.VISIBLE
+                        binding.pttluas.text = binding.ptdluas.text
+                        binding.ptturea.text = String.format("%.2f", it.status_admin.verifikasi.urea).replace(",", ".")
+                        binding.pttsp36.text = String.format("%.2f", it.status_admin.verifikasi.sp36).replace(",", ".")
+                        binding.pttza.text = String.format("%.2f", it.status_admin.verifikasi.za).replace(",", ".")
+                        binding.pttnpk.text = String.format("%.2f", it.status_admin.verifikasi.npk).replace(",", ".")
+                        binding.pttorganik.text = String.format("%.2f", it.status_admin.verifikasi.organik).replace(",", ".")
+                        binding.ptttotal.text = String.format("%.2f", (binding.ptturea.text.toString().toDouble() +
+                                binding.pttsp36.text.toString().toDouble() +
+                                binding.pttza.text.toString().toDouble() +
+                                binding.pttnpk.text.toString().toDouble() +
+                                binding.pttorganik.text.toString().toDouble())).replace(",", ".")
                     }
                 } else {
                     binding.PtPUsul.visibility = View.GONE

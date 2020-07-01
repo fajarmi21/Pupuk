@@ -479,11 +479,11 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/PtPDiterima"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_marginTop="8dp"
-            android:orientation="horizontal"
-            android:visibility='@{user.status ? View.VISIBLE : View.GONE}'>
+            android:orientation="horizontal">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -516,7 +516,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="end"
-                            android:text="10000"
+                            android:id="@+id/ptttotal"
                             android:textColor="#5E5E5E"
                             android:textSize="35sp" />
                         <TextView
@@ -529,7 +529,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="10"
+                            android:id="@+id/pttluas"
                             android:textColor="#5E5E5E"
                             android:textSize="35sp" />
 
@@ -564,8 +564,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:text="@{user.daftar}"
-                                android:textColor="@color/colorBlack"
+                                android:id="@+id/ptturea"
                                 android:textSize="18dp"
                                 android:gravity="center"/>
                         </LinearLayout>
@@ -586,8 +585,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:text="@{user.daftar}"
-                                android:textColor="@color/colorBlack"
+                                android:id="@+id/pttsp36"
                                 android:textSize="18dp"
                                 android:gravity="center"/>
                         </LinearLayout>
@@ -608,8 +606,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:text="@{user.daftar}"
-                                android:textColor="@color/colorBlack"
+                                android:id="@+id/pttza"
                                 android:textSize="18dp"
                                 android:gravity="center"/>
                         </LinearLayout>
@@ -630,8 +627,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:text="@{user.daftar}"
-                                android:textColor="@color/colorBlack"
+                                android:id="@+id/pttnpk"
                                 android:textSize="18dp"
                                 android:gravity="center"/>
                         </LinearLayout>
@@ -652,8 +648,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:text="@{user.daftar}"
-                                android:textColor="@color/colorBlack"
+                                android:id="@+id/pttorganik"
                                 android:textSize="18dp"
                                 android:gravity="center"/>
                         </LinearLayout>

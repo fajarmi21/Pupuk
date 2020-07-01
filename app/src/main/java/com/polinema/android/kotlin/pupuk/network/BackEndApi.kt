@@ -37,12 +37,11 @@ interface BackEndApi {
 
     @FormUrlEncoded
     @POST("ppl/verifikasi")
-    fun PpV(@Field("poktan") poktan: String): Call<MutableList<PplVerifikasi>>
+    fun PpV(@Field("desa") desa: String): Call<MutableList<PplVerifikasi>>
 
     @FormUrlEncoded
-    @POST("ppl/verifikasi")
-    fun PpVU(@FieldMap id:HashMap<String,String>): Call<PplVerifikasi>
-
+    @POST("ppl/verifikasiU")
+    fun PpVU(@FieldMap id:HashMap<String,String>): Call<response>
 
     //kelompoktani
     @FormUrlEncoded
