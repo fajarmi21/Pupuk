@@ -32,7 +32,7 @@ class PplActivity : AppCompatActivity(), AnkoLogger {
         setContentView(R.layout.activity_ppl)
         initToolbar()
         initMenuFragment()
-        addFragment(PplUsulFragment())
+        addFragment(PplDashboardFragment())
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -80,10 +80,10 @@ class PplActivity : AppCompatActivity(), AnkoLogger {
 //                    2 -> { if (fragmentManager!!.findFragmentById(R.id.FramePPL) !is KpRekapFragment) addFragment(
 //                        KpRekapFragment()
 //                    )}
-                    3 -> { if (fragmentManager!!.findFragmentById(R.id.FramePPL) !is PplKpFragment) addFragment(
+                    2 -> { if (fragmentManager!!.findFragmentById(R.id.FramePPL) !is PplKpFragment) addFragment(
                         PplKpFragment()
                     )}
-                    4 -> {
+                    3 -> {
                         Toast.makeText(context, "Logout Sukses", Toast.LENGTH_LONG).show()
                         startActivity(intentFor<LoginActivity>().clearTask().clearTop())
                         SaveSharedPreference.setLoggedIn(applicationContext, false, null, 0)
@@ -111,10 +111,10 @@ class PplActivity : AppCompatActivity(), AnkoLogger {
             resource = R.drawable.icn_approval
             bgColor = R.color.text_color
         }
-        val list = MenuObject("Rekap").apply {
-            resource = R.drawable.icn_task
-            bgColor = R.color.text_color
-        }
+//        val list = MenuObject("Rekap").apply {
+//            resource = R.drawable.icn_task
+//            bgColor = R.color.text_color
+//        }
         val user = MenuObject("Kelompok Tani").apply {
             resource = R.drawable.icn_contact
             bgColor = R.color.text_color
@@ -145,8 +145,9 @@ class PplActivity : AppCompatActivity(), AnkoLogger {
 
         add(close)
         add(usul)
-        add(list)
+//        add(list)
         add(user)
+
         add(signout)
 //        add(like)
 //        add(addFriend)

@@ -62,7 +62,6 @@ class KpActivity : AppCompatActivity(), AnkoLogger {
             menuObjects = menu
             isClosableOutside = false
             animationDuration = 500
-            animationDelay = 50
         }
 
         contextMenuDialogFragment = ContextMenuDialogFragment.newInstance(menu).apply {
@@ -70,7 +69,7 @@ class KpActivity : AppCompatActivity(), AnkoLogger {
                 when(position) {
                     0 -> { if (fragmentManager!!.findFragmentById(R.id.FrameKP) !is KpDashboardFragment) addFragment(KpDashboardFragment())}
                     1 -> { if (fragmentManager!!.findFragmentById(R.id.FrameKP) !is KpUsulFragment) addFragment(KpUsulFragment())}
-                    2 -> { if (fragmentManager!!.findFragmentById(R.id.FrameKP) !is KpPetaniFragment) addFragment(KpRekapFragment())}
+                    2 -> { if (fragmentManager!!.findFragmentById(R.id.FrameKP) !is KpRekapFragment) addFragment(KpRekapFragment())}
                     3 -> { if (fragmentManager!!.findFragmentById(R.id.FrameKP) !is KpPetaniFragment) addFragment(KpPetaniFragment())}
                     4 -> {
                         Toast.makeText(context, "Logout Sukses", Toast.LENGTH_LONG).show()

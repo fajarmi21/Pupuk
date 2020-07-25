@@ -1,38 +1,33 @@
 package com.polinema.android.kotlin.pupuk.ui.ppl.fragment
 
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.beardedhen.androidbootstrap.BootstrapButton
 import com.beardedhen.androidbootstrap.TypefaceProvider
+import com.example.flatdialoglibrary.dialog.FlatDialog
 import com.polinema.android.kotlin.pupuk.R
 import com.polinema.android.kotlin.pupuk.model.PplVerifikasi
 import com.polinema.android.kotlin.pupuk.model.data
-import com.polinema.android.kotlin.pupuk.util.DummySwipeRepository
 import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference
-import com.polinema.android.kotlin.pupuk.util.holder.IconTreeItemHolder
-import com.polinema.android.kotlin.pupuk.util.holder.IconTreeItemHolder.IconTreeItem
-import com.polinema.android.kotlin.pupuk.util.holder.ProfileHolder
-import com.polinema.android.kotlin.pupuk.util.holder.SelectableHeaderHolder
-import com.polinema.android.kotlin.pupuk.util.holder.SelectableItemHolder
 import com.polinema.android.kotlin.pupuk.viewmodel.PplUsulViewModel
-import com.unnamed.b.atv.model.TreeNode
-import com.unnamed.b.atv.view.AndroidTreeView
+import kotlinx.android.synthetic.main.ppl_usul_fragment.*
 
 class PplUsulFragment : Fragment() {
     private lateinit var viewModel: PplUsulViewModel
-    private val repository = DummySwipeRepository()
-    private var show = 1
-    private var all = 0
-    private var btn = 0
-    private lateinit var list : MutableList<PplVerifikasi>
-
-    private var tView: AndroidTreeView? = null
-    private var selectionModeEnabled = false
+    private var show = 0
+    private var all = 1
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,75 +38,139 @@ class PplUsulFragment : Fragment() {
         return inflater.inflate(R.layout.ppl_usul_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-    }
-
     override fun onStart() {
         super.onStart()
         init()
     }
 
     private fun init() {
-        val containerView =
-                view!!.findViewById(R.id.containerPPL) as ViewGroup
-        val root = TreeNode.root()
-        val ar = ArrayList<TreeNode>()
-        val av = ArrayList<ArrayList<data>>()
         viewModel.PplUsul(SaveSharedPreference.getUser(context)).observeForever {
             try {
-                it.forEach {
-                    ar.add(TreeNode(IconTreeItem(R.string.ic_person, it.poktan, it.luas)).setViewHolder(activity?.let { SelectableHeaderHolder(it) }))
-                    av.add(it.data)
-                }
-                for (i in 0 until ar.size) {
-                    fillFolder(ar[i], av[i])
-                }
-                root.addChildren(ar)
-
-                tView = AndroidTreeView(activity, root)
-                tView!!.setDefaultAnimation(true)
-                containerView.addView(tView!!.view)
+                rvPPLV.layoutManager = LinearLayoutManager(context)
+                val adapter = PrcAdapter(it)
+                rvPPLV.adapter = adapter
             } catch (e: Exception) {
                 Log.e("ss", e.message!!)
             }
         }
 
-        val selectionModeButton: View = view!!.findViewById(R.id.btCheckPPL)
-        selectionModeButton.setOnClickListener {
-            if (tView!!.selected.isNullOrEmpty()) {
-                selectionModeEnabled = !selectionModeEnabled
-                tView!!.isSelectionModeEnabled = selectionModeEnabled
+        btCheckPPL.setOnClickListener {
+            if (all == 1) {
+                if (show == 1) show = 0 else show = 1
+                rvPPLV.adapter!!.notifyDataSetChanged()
             } else {
-                var ar = HashMap<String,String>()
-                tView!!.selected.forEach {
-                    val x = it.value as data
-                    if (!x.verifikasi) ar["""id[${ar.size}]"""] = x.petani
-                }
-                Log.e("xx", ar.toString())
-                viewModel.PplUsulU(ar).observeForever {
-                    try {
-                        if (it.status == 1) {
-                            tView!!.deselectAll()
-                            tView!!.collapseAll()
-                            selectionModeButton.performClick()
-                        }
-                        Toast.makeText(this.context, it.message, Toast.LENGTH_SHORT).show()
-                    } catch (e: Exception) {
-                        Log.e("error", e.message!!)
-                    }
-                }
+                show = 0
             }
         }
     }
 
-    private fun fillFolder(folder : TreeNode, av: ArrayList<data>) {
-        av.forEach {
-            folder.addChildren(TreeNode(it).setViewHolder(SelectableItemHolder(activity)))
+    inner class PrcAdapter (val dataPrc:List<PplVerifikasi>):
+            RecyclerView.Adapter<PrcAdapter.HolderPrcA>(){
+        inner class HolderPrcA(iv: View): RecyclerView.ViewHolder(iv){
+            var no = iv.findViewById<TextView>(R.id.DetailnoUsulPpl)
+            var nama = iv.findViewById<TextView>(R.id.DetailUsulPplNama)
+            var luas = iv.findViewById<TextView>(R.id.DetailUsulPplLuas)
+            var btnGr = iv.findViewById<LinearLayout>(R.id.btnGVARPPL)
+            var btnGt = iv.findViewById<LinearLayout>(R.id.btnGVTRPPL)
+            var btnTl = iv.findViewById<BootstrapButton>(R.id.btnVARPPL)
+            var btnTm = iv.findViewById<BootstrapButton>(R.id.btntVARPPL)
+            var card = iv.findViewById<CardView>(R.id.UsulPplItem)
+            var status = iv.findViewById<TextView>(R.id.txStatusPPL)
         }
-//        val file1 = TreeNode("File1").setViewHolder(SelectableItemHolder(activity))
-//        val file2 = TreeNode("File2").setViewHolder(SelectableItemHolder(activity))
-//        val file3 = TreeNode("File3").setViewHolder(SelectableItemHolder(activity))
-//        folder.addChildren(file1, file2, file3)
+
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PrcAdapter.HolderPrcA {
+            return HolderPrcA(LayoutInflater.from(parent.context).inflate(R.layout.item_ppl_usul_fragment, parent, false))
+        }
+
+        override fun getItemCount(): Int = dataPrc.size
+
+        override fun onBindViewHolder(holder: PrcAdapter.HolderPrcA, position: Int) {
+            holder.no.text = (position + 1).toString()
+            holder.nama.text = dataPrc[position].poktan
+            holder.luas.text = String.format("%.2f", dataPrc[position].luas.toDouble()).replace(",", ".")
+
+            var id = HashMap<String,String>()
+            var i = 0
+            var x = 0
+            dataPrc[position].data.forEach {
+                if (it.status_poktan && !it.verifikasi) {
+                    id["""id[$i]"""] = it.id
+                    x += 1
+                }
+                i += 1
+            }
+
+            if (dataPrc[position].data.filter { s -> s.status_poktan && s.verifikasi && s.admin }.count() == dataPrc[position].data.size) {
+                holder.status.text = "Diterima ADMIN"
+            } else if (dataPrc[position].data.filter { s -> s.status_poktan && s.verifikasi != null}.count() == dataPrc[position].data.size) {
+                holder.status.text = "Diverifikasi"
+            }
+
+            if (x > 0) {
+                if (show == 1) holder.btnGr.visibility = View.VISIBLE else holder.btnGr.visibility = View.GONE
+            } else {
+                holder.btnGt.visibility = View.VISIBLE
+            }
+//            Log.e("xx", id.toString())
+            holder.btnTl.setOnClickListener {
+                viewModel.PplUsulU(id).observeForever {
+                    Toast.makeText(context, it.message, Toast.LENGTH_SHORT).show()
+                    if (it.status == 1) {
+                        btCheckPPL.performClick()
+                        init()
+                    }
+                }
+            }
+            holder.btnTm.setOnClickListener {
+                val flatDialog = FlatDialog(context)
+                flatDialog.setTitle("Konfirmasi")
+                        .setSubtitle("""Apakah anda yakin ingin menolak usulan dari ${dataPrc[position].poktan}?""")
+                        .setBackgroundColor(Color.parseColor("#1a2849"))
+                        .setFirstButtonColor(Color.parseColor("#d3f6f3"))
+                        .setSecondButtonColor(Color.parseColor("#fbd1b7"))
+                        .setTitleColor(Color.parseColor("#ffffff"))
+                        .setSubtitleColor(Color.parseColor("#ffffff"))
+                        .setFirstTextFieldHintColor(Color.parseColor("#A9A9A9"))
+                        .setFirstTextFieldBorderColor(Color.parseColor("#ffffff"))
+                        .setFirstTextFieldTextColor(Color.parseColor("#ffffff"))
+                        .setFirstButtonTextColor(Color.parseColor("#000000"))
+                        .setSecondButtonTextColor(Color.parseColor("#000000"))
+                        .setFirstTextFieldHint("alasan")
+                        .setFirstButtonText("OK")
+                        .setSecondButtonText("BATAL")
+                        .withFirstButtonListner {
+                            if (!flatDialog.firstTextField.isNullOrBlank()) {
+                                viewModel.PplUsulT(id, flatDialog.firstTextField).observeForever {
+                                    Toast.makeText(context, it.message, Toast.LENGTH_SHORT).show()
+                                    if (it.status == 1) {
+                                        flatDialog.dismiss()
+                                        notifyItemChanged(position)
+                                        btCheckPPL.performClick()
+                                        init()
+//                                        if (dataPrc.filter { it.data.filter { it.verifikasi == null }.count() == 0 }.count() == 0) {
+////                                            all = 0
+////                                            btCheckPPL.performClick()
+//                                        }
+                                    }
+                                }
+                            } else {
+                                Toast.makeText(context, "Alasan tidak boleh kosong", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                        .withSecondButtonListner { flatDialog.dismiss() }
+                        .show()
+            }
+            holder.card.setOnClickListener {
+                val fragment = PplUsulDetailFragment()
+                val b = Bundle()
+                b.putString("poktan", dataPrc[position].poktan)
+                fragment.arguments = b
+                activity!!.supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.FramePPL, fragment, fragment.javaClass.simpleName)
+                    .addToBackStack("PplUsulFragment")
+                    .commit()
+            }
+        }
     }
 }

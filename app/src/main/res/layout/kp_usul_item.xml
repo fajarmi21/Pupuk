@@ -20,7 +20,7 @@
             android:layout_gravity="center"
             android:layout_weight="0.5"
             android:gravity="center"
-            android:text="Tgl"
+            tools:text="12\n08\n2020"
             android:textColor="@color/blackTextColor" />
 
         <View
@@ -73,15 +73,42 @@
                 android:textColor="@color/blackTextColor"
                 android:gravity="center"
                 android:layout_centerHorizontal="true"/>
-            <com.github.okdroid.checkablechipview.CheckableChipView
-                android:id="@+id/btnVARKP"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:color="#FFC107"
-                app:ccv_outlineColor="#FFC107"
-                android:layout_centerInParent="true"
-                android:text="All"
-                android:visibility="gone" />
+            <LinearLayout
+                android:id="@+id/btnGVARKP"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:visibility="gone">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center">
+                    <com.beardedhen.androidbootstrap.BootstrapButton
+                        android:id="@+id/btnVARKP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:bootstrapText="{fa_check_square_o}"
+                        app:bootstrapBrand="primary"
+                        app:roundedCorners="true"
+                        app:showOutline="true" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center">
+                    <com.beardedhen.androidbootstrap.BootstrapButton
+                        android:id="@+id/btntVARKP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:bootstrapText="{fa_pencil_square_o}"
+                        app:bootstrapBrand="danger"
+                        app:roundedCorners="true"
+                        app:showOutline="true" />
+                </LinearLayout>
+            </LinearLayout>
             <com.lid.lib.LabelTextView
                 android:id="@+id/labelKPU"
                 android:layout_width="match_parent"

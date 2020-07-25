@@ -44,7 +44,25 @@ class KpDashboardFragment : Fragment() {
         viewModel.KpD().observe(viewLifecycleOwner, Observer {
             try {
                 binding.user = it
+                binding.kpdl.text = String.format("%.2f", it.luas.toDouble()).replace(",", ".")
                 binding.totPupuk.text = (it.urea.toDouble() + it.sp36.toDouble() + it.za.toDouble() + it.npk.toDouble() + it.organik.toDouble()).toString()
+
+                if (it.belum.toInt() > 0) binding.labelKPD.visibility = View.VISIBLE
+
+                if (it.admin.verifikasi.urea != 0.0) {
+                    binding.llkpdt.visibility = View.VISIBLE
+                    binding.kpdtl.text = it.luas
+                    binding.kpdtu.text = String.format("%.2f", it.admin.verifikasi.urea).replace(",", ".")
+                    binding.kpdts.text = String.format("%.2f", it.admin.verifikasi.sp36).replace(",", ".")
+                    binding.kpdtz.text = String.format("%.2f", it.admin.verifikasi.za).replace(",", ".")
+                    binding.kpdtn.text = String.format("%.2f", it.admin.verifikasi.npk).replace(",", ".")
+                    binding.kpdto.text = String.format("%.2f", it.admin.verifikasi.organik).replace(",", ".")
+                    binding.kpdtt.text = String.format("%.2f", (binding.kpdtu.text.toString().toDouble() +
+                            binding.kpdts.text.toString().toDouble() +
+                            binding.kpdtz.text.toString().toDouble() +
+                            binding.kpdtn.text.toString().toDouble() +
+                            binding.kpdto.text.toString().toDouble())).replace(",", ".")
+                }
             } catch (e: Exception){
                 Log.e("ss", e.message!!)
             }

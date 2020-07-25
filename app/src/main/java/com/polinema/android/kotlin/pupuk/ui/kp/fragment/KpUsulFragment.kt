@@ -1,6 +1,7 @@
 package com.polinema.android.kotlin.pupuk.ui.kp.fragment
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -9,27 +10,28 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.beardedhen.androidbootstrap.BootstrapButton
 import com.beardedhen.androidbootstrap.TypefaceProvider
+import com.example.flatdialoglibrary.dialog.FlatDialog
 import com.github.okdroid.checkablechipview.CheckableChipView
 import com.google.gson.internal.LinkedTreeMap
 import com.lid.lib.LabelTextView
 import com.polinema.android.kotlin.pupuk.R
+import com.polinema.android.kotlin.pupuk.model.Sp
 import com.polinema.android.kotlin.pupuk.model.UsulanKT
 import com.polinema.android.kotlin.pupuk.util.DummySwipeRepository
 import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference
 import com.polinema.android.kotlin.pupuk.viewmodel.KpUsulViewModel
-import kotlinx.android.synthetic.main.kp_usul_footer.*
 import kotlinx.android.synthetic.main.kp_usul_fragment.*
-import kotlinx.android.synthetic.main.kp_usul_item.*
-import java.lang.Exception
+import kotlinx.android.synthetic.main.kp_usul_header.*
 import java.text.SimpleDateFormat
 import java.time.LocalDate
-import java.time.format.DateTimeFormatter
 
 
 class KpUsulFragment : Fragment() {
@@ -50,6 +52,7 @@ class KpUsulFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(KpUsulViewModel::class.java)
+        Log.e("xx", SaveSharedPreference.getUser(context))
         viewModel.rekap(SaveSharedPreference.getUser(context)).observe(viewLifecycleOwner, Observer {
             try {
                 list = it
@@ -87,21 +90,23 @@ class KpUsulFragment : Fragment() {
             var id = HashMap<String,String>()
             for (i in 0 until rvKPR.adapter!!.itemCount) {
                 val text = rvKPR.findViewHolderForAdapterPosition(i)!!.itemView.findViewById<TextView>(R.id.textView4)
-                if (text.text.toString() != "verificated" && text.text.toString() != "can't\n" +
-                        "verificated") {
-                    id["""id[$i]"""] = (i + 1).toString()
+                if (text.text.toString() != "Diterima" && text.text.toString() != "Ditolak") {
+//                    Log.e("idxx", list[i].id_petani)
+                    id["""id[$i]"""] = list[i].id_petani
                 }
             }
+//            Log.e("id", id.toString())
 //            rvKPR.findViewHolderForAdapterPosition(1)!!.itemView.findViewById<TextView>(R.id.textView)
             viewModel.verifikasi(id).observe(viewLifecycleOwner, Observer {
                 Toast.makeText(this.context, it.message, Toast.LENGTH_SHORT).show()
                 if (it.status == 1) {
-                    id.mapValues { it2->
-                        rvKPR.findViewHolderForAdapterPosition(it2.value.toInt() - 1)!!.itemView.findViewById<CheckableChipView>(R.id.btnVARKP).visibility = View.GONE
-                        rvKPR.findViewHolderForAdapterPosition(it2.value.toInt() - 1)!!.itemView.findViewById<TextView>(R.id.labelKPU).visibility = View.GONE
-                        rvKPR.findViewHolderForAdapterPosition(it2.value.toInt() - 1)!!.itemView.findViewById<TextView>(R.id.textView4).visibility = View.VISIBLE
-                        rvKPR.findViewHolderForAdapterPosition(it2.value.toInt() - 1)!!.itemView.findViewById<TextView>(R.id.textView4).text = "verified"
-                        list[it2.value.toInt() - 1].status_poktan = "true"
+                    var x = 0
+                    id.mapValues {
+                        rvKPR.findViewHolderForAdapterPosition(x)!!.itemView.findViewById<LinearLayout>(R.id.btnGVARKP).visibility = View.GONE
+                        rvKPR.findViewHolderForAdapterPosition(x)!!.itemView.findViewById<TextView>(R.id.labelKPU).visibility = View.GONE
+                        rvKPR.findViewHolderForAdapterPosition(x)!!.itemView.findViewById<TextView>(R.id.textView4).visibility = View.VISIBLE
+                        rvKPR.findViewHolderForAdapterPosition(x)!!.itemView.findViewById<TextView>(R.id.textView4).text = "Diterima"
+                        x += 1
                     }
                     all = 0
                     btCheck.performClick()
@@ -118,7 +123,9 @@ class KpUsulFragment : Fragment() {
             val nama = iv.findViewById<TextView>(R.id.textView2)
             val luasUsul = iv.findViewById<TextView>(R.id.textView3)
             val stat = iv.findViewById<TextView>(R.id.textView4)
-            val btn = iv.findViewById<CheckableChipView>(R.id.btnVARKP)
+            val btnG = iv.findViewById<LinearLayout>(R.id.btnGVARKP)
+            val btn = iv.findViewById<BootstrapButton>(R.id.btnVARKP)
+            val btnt = iv.findViewById<BootstrapButton>(R.id.btntVARKP)
             val kpr = iv.findViewById<LinearLayout>(R.id.KPr)
             val label = iv.findViewById<LabelTextView>(R.id.labelKPU)
         }
@@ -131,13 +138,10 @@ class KpUsulFragment : Fragment() {
 
         @SuppressLint("ResourceType", "RtlHardcoded", "SimpleDateFormat")
         override fun onBindViewHolder(holder: HolderRekapKT, position: Int) {
-            holder.btn.text = "Verifikasi"
-            holder.no.text = SimpleDateFormat("dd/\nMM/\nyy").format(SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse(dataUsulan[position].timestamp)!!)
             holder.nama.text = dataUsulan[position].nama_petani
             holder.stat.text = dataUsulan[position].luas_lahan
             holder.label.visibility = View.VISIBLE
             var thp = Any()
-            var i = 0
             when(dataUsulan[position].tahap) {
                 "m1" -> if (dataUsulan[position].m1 != null && dataUsulan[position].m1 != "false") thp = dataUsulan[position].m1 as ArrayList<*>
                 "m2" -> if (dataUsulan[position].m2 != null && dataUsulan[position].m2 != "false") thp = dataUsulan[position].m2  as ArrayList<*>
@@ -146,47 +150,56 @@ class KpUsulFragment : Fragment() {
             if (thp is ArrayList<*>) {
                 val getrow = thp.last() as LinkedTreeMap<*, *>
                 holder.luasUsul.text = getrow["sektor"].toString()
+                holder.no.text = SimpleDateFormat("dd/\nMM/\nyy").format(SimpleDateFormat("dd-MM-yyyy").parse(getrow["date"].toString())!!)
                 all = 1
             } else {
                 holder.luasUsul.text = "-"
-                holder.stat.text = "can't\nverified"
+                holder.stat.text = "Ditolak"
                 holder.label.visibility = View.GONE
                 if(all == 0) all = 0
             }
 
             if (dataUsulan[position].status_poktan != null) {
-                val sp = dataUsulan[position].status_poktan as ArrayList<ArrayList<String>>
-                sp.forEach {
-                   if (it.containsAll(listOf(dataUsulan[position].tahap, LocalDate.now().year.toString()))) {
-                       holder.stat.text = "verified"
-                       holder.label.visibility = View.GONE
-                       all = 0
-                   }
+                when {
+                    dataUsulan[position].status_poktan.status == "true" -> {
+                        holder.stat.text = "Diterima"
+                        holder.label.visibility = View.GONE
+                    }
+                    dataUsulan[position].status_poktan.status == "false" -> {
+                        holder.stat.text = "Ditolak"
+                        holder.label.visibility = View.GONE
+                    }
                 }
             }
+            if (dataUsulan.filter { s -> s.status_poktan == null }.count() == 0) {
+                all = 0
+            }
 
-            if (holder.stat.text != "verified" && holder.stat.text != "can't\nverified") {
+            if (holder.stat.text != "Diterima" && holder.stat.text != "Ditolak") {
                 if (show == 0) {
                     holder.stat.visibility = View.GONE
-                    holder.btn.visibility = View.VISIBLE
+                    holder.btnG.visibility = View.VISIBLE
                 } else {
                     holder.stat.visibility = View.VISIBLE
-                    holder.btn.visibility = View.GONE
+                    holder.btnG.visibility = View.GONE
                 }
             }
 
             holder.btn.setOnClickListener {
                 var id = HashMap<String,String>()
-                id["id[0]"] = (position + 1).toString()
+                id["id[0]"] = dataUsulan[position].id_petani
+                Log.e("id", id.toString())
                 viewModel.verifikasi(id).observe(viewLifecycleOwner, Observer {
                     Toast.makeText(this@KpUsulFragment.context, it.message, Toast.LENGTH_SHORT).show()
                     if (it.status == 1) {
-                        dataUsulan[position].status_poktan = "true"
-                        holder.stat.text = "verified"
+                        dataUsulan[position].status_poktan = Sp("true", "","","")
                         holder.stat.visibility = View.VISIBLE
-                        holder.btn.visibility = View.GONE
+                        holder.btnG.visibility = View.GONE
+                        holder.label.visibility = View.GONE
+                        holder.stat.text = "Diterima"
                         notifyItemChanged(position)
-                        if (dataUsulan.filter { s -> s.status_poktan != "true" && s.m1 != "false" }.count() == 0) {
+                        Log.e("xxx", dataUsulan.filter { _ -> false }.count().toString())
+                        if (dataUsulan.filter { s -> s.status_poktan == null }.count() == 0) {
                             all = 0
                             btCheck.performClick()
                         }
@@ -194,6 +207,50 @@ class KpUsulFragment : Fragment() {
 //                    Log.e("count", dataUsulan.filter { s -> s.status_poktan != "true" && s.m1 != "false" }.count().toString())
                 })
             }
+
+            holder.btnt.setOnClickListener {
+                val flatDialog = FlatDialog(context)
+                flatDialog.setTitle("Konfirmasi")
+                    .setSubtitle("""Apakah anda yakin ingin menolak usulan dari ${dataUsulan[position].nama_petani}?""")
+                    .setBackgroundColor(Color.parseColor("#1a2849"))
+                    .setFirstButtonColor(Color.parseColor("#d3f6f3"))
+                    .setSecondButtonColor(Color.parseColor("#fbd1b7"))
+                    .setTitleColor(Color.parseColor("#ffffff"))
+                    .setSubtitleColor(Color.parseColor("#ffffff"))
+                    .setFirstTextFieldHintColor(Color.parseColor("#A9A9A9"))
+                    .setFirstTextFieldBorderColor(Color.parseColor("#ffffff"))
+                    .setFirstTextFieldTextColor(Color.parseColor("#ffffff"))
+                    .setFirstButtonTextColor(Color.parseColor("#000000"))
+                    .setSecondButtonTextColor(Color.parseColor("#000000"))
+                    .setFirstTextFieldHint("alasan")
+                    .setFirstButtonText("OK")
+                    .setSecondButtonText("BATAL")
+                    .withFirstButtonListner {
+                        if (!flatDialog.firstTextField.isNullOrBlank()) {
+                            viewModel.verifikasiT(dataUsulan[position].id_petani, flatDialog.firstTextField).observeForever {
+                                Toast.makeText(context, it.message, Toast.LENGTH_SHORT).show()
+                                if (it.status == 1) {
+                                    dataUsulan[position].status_poktan = Sp("false", "","","")
+                                    holder.stat.visibility = View.VISIBLE
+                                    holder.btnG.visibility = View.GONE
+                                    holder.label.visibility = View.GONE
+                                    holder.stat.text = "Ditolak"
+                                    flatDialog.dismiss()
+                                    notifyItemChanged(position)
+                                    if (dataUsulan.filter { s -> s.status_poktan == null}.count() == 0) {
+                                        all = 0
+                                        btCheck.performClick()
+                                    }
+                                }
+                            }
+                        } else {
+                            Toast.makeText(context, "Alasan tidak boleh kosong", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                    .withSecondButtonListner { flatDialog.dismiss() }
+                    .show()
+            }
+
             holder.kpr.setOnClickListener {
                 if (thp is ArrayList<*>) {
                     val get = thp.last() as LinkedTreeMap<*, *>
@@ -207,6 +264,7 @@ class KpUsulFragment : Fragment() {
                     b.putString("5", get["za"].toString())
                     b.putString("6", get["npk"].toString())
                     b.putString("7", get["organik"].toString())
+                    b.putString("8", dataUsulan[position].nama_petani)
                     f.arguments = b
                     addFragment(f)
                 }

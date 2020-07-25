@@ -10,7 +10,8 @@ data class KelompokTani(
         val sp36: String,
         val za: String,
         val npk: String,
-        val organik: String
+        val organik: String,
+        val admin: Verif
 )
 
 data class UserKT(
@@ -32,18 +33,24 @@ data class UsulanKT(
     val status: Int,
     val message: String,
     val id_usulan: String,
+    val id_petani: String,
     val nama_petani: String,
     val luas_lahan: String,
     val tahap: String,
     val m1: Any,
     val m2: Any,
     val m3: Any,
-    var status_poktan: Any,
-    val status_ppl: Any,
-    val status_admin: Any,
-    val keterangan: String,
-    val timestamp: String,
+    var status_poktan: Sp,
+    val status_ppl: Sp,
+    val status_admin: Sp,
     var isSelected: Boolean = false
+)
+
+data class Sp(
+    var status: String,
+    var alasan: String,
+    var tahap: String,
+    var tahun: String
 )
 
 data class Rekap(
@@ -63,8 +70,6 @@ data class Rekap(
     val status_poktan: List<List<String>>,
     val status_ppl: Any,
     val status_admin: Any,
-    val keterangan: Any,
-    val timestamp: String,
     val kode_desa: String,
     val nama_desa: String,
     val id_poktan: String,

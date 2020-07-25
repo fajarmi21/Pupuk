@@ -39,7 +39,7 @@ class SelectableItemHolder(context: Context?) : BaseNodeViewHolder<data>(context
 
 
     override fun toggleSelectionMode(editModeEnabled: Boolean) {
-        nodeSelector!!.visibility = if (bool && editModeEnabled) View.VISIBLE else View.GONE
+        nodeSelector!!.visibility = View.GONE
         nodeSelector!!.isChecked = mNode.isSelected
     }
 }

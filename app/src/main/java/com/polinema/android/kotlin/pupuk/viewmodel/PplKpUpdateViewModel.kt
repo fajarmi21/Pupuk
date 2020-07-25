@@ -17,11 +17,6 @@ class PplKpUpdateViewModel : ViewModel() {
     var poktan = ObservableField("")
     var nama = ""
     var email = ObservableField("")
-    var btn = ObservableBoolean(false)
-
-    fun onEmailChanged(s: CharSequence, start: Int, befor: Int, count: Int) {
-        btn.set(Util.isEmailValid(email.get()!!))
-    }
 
     fun show(poktan : String): MutableLiveData<MutableList<UserPPL>> {
         val data = MutableLiveData<MutableList<UserPPL>>()

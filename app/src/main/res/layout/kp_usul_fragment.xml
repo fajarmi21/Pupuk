@@ -76,14 +76,15 @@
                     android:orientation="vertical"
                     android:padding="10dp">
 
-                    <include layout="@layout/kp_usul_item" />
+                    <include layout="@layout/kp_usul_header" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rvKPR"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         app:layout_constrainedHeight="true"
-                        android:nestedScrollingEnabled="true"/>
+                        android:nestedScrollingEnabled="true"
+                        tools:listitem="@layout/kp_usul_item"/>
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>

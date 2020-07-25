@@ -18,14 +18,15 @@ data class Petani(
     val poktan: String,
     val sektor: String,
     val status_admin: Verif,
-    val status_poktan: Any,
-    val status_ppl: Any,
+    val status_poktan: Verif,
+    val status_ppl: Verif,
     val tahap: String,
     val timestamp: String
 )
 
 class Verif(
     val status: Boolean,
+    val alasan: String,
     val tahap: String,
     val tahun: String,
     val verifikasi: Verifikasi
@@ -37,6 +38,11 @@ class Verifikasi(
     val za: Double,
     val npk: Double,
     val organik: Double
+)
+
+class Tahap(
+    val tahap: String,
+    val bulan: String
 )
 
 class Sektor(

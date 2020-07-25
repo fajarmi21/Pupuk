@@ -18,7 +18,7 @@ class KpDetailUsulFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        txaId_userDK.setText(SaveSharedPreference.getUser(context))
+        txaId_userDK.setText(arguments!!.get("8").toString())
         txDateDK.text = arguments!!.get("0").toString()
         txa_sektorDK.setText(arguments!!.get("1").toString())
         txa_luasDK.setText(arguments!!.get("2").toString())

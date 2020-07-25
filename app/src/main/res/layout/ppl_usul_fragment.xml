@@ -70,27 +70,26 @@
                 android:background="@drawable/border_black"
                 android:orientation="vertical">
 
-                <RelativeLayout
-                    android:id="@+id/containerPPL"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+<!--                <RelativeLayout-->
+<!--                    android:id="@+id/containerPPL"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"/>-->
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:padding="10dp"
-                    android:visibility="gone">
+                    android:padding="10dp">
 
-                    <include layout="@layout/ppl_usul_item_header" />
+<!--                    <include layout="@layout/ppl_usul_item_header" />-->
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rvPPLV"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:nestedScrollingEnabled="true"
                         app:layout_constrainedHeight="true"
-                        tools:listitem="@layout/ppl_usul_item" />
+                        tools:listitem="@layout/item_ppl_usul_fragment" />
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>

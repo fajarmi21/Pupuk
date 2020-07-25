@@ -156,7 +156,6 @@
                                     android:layout_height="wrap_content"
                                     tools:ignore="RtlSymmetry"
                                     android:inputType="textEmailAddress"
-                                    android:onTextChanged="@{viewmodel::onEmailChanged}"
                                     android:text="@={viewmodel.email}"
                                     android:textColor="@color/blackTextColor" />
                             </com.google.android.material.textfield.TextInputLayout>

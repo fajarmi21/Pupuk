@@ -115,7 +115,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Daftar"
+                            android:text="Diterima"
                             android:gravity="center"
                             android:textColor="#ffff" />
 
@@ -130,7 +130,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:orientation="vertical">
@@ -138,18 +138,37 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Belum"
+                            android:text="Diproses"
                             android:textColor="#ffff"
                             android:gravity="center" />
 
-                        <TextView
-                            android:id="@+id/UBelum"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@{user.belum}"
-                            android:textColor="#ffff"
-                            android:textSize="18dp"
-                            android:gravity="center" />
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/UBelum"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@{user.belum}"
+                                android:textColor="#ffff"
+                                android:textSize="18dp"
+                                android:gravity="center" />
+
+                            <com.lid.lib.LabelTextView
+                                android:id="@+id/labelKPD"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignBottom="@id/UBelum"
+                                android:layout_alignTop="@id/UBelum"
+                                android:layout_alignParentEnd="true"
+                                app:label_backgroundColor="@color/green"
+                                app:label_distance="5dp"
+                                app:label_orientation="RIGHT_TOP"
+                                app:label_text="NEW"
+                                app:label_textSize="7sp"
+                                android:visibility="gone"/>
+
+                        </RelativeLayout>
                     </LinearLayout>
 
                     <LinearLayout
@@ -161,7 +180,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Tidak"
+                            android:text="Ditolak"
                             android:textColor="#ffff"
                             android:gravity="center" />
 
@@ -252,9 +271,9 @@
                             android:textColor="#5E5E5E"
                             android:textSize="35sp" />
                         <TextView
+                            android:id="@+id/kpdl"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@{user.luas}"
                             android:textColor="#5E5E5E"
                             android:textSize="35sp" />
 
@@ -386,7 +405,9 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>
+
         <LinearLayout
+            android:id="@+id/llkpdt"
             android:layout_width="match_parent"
             android:layout_height="175dp"
             android:layout_marginTop="8dp"
@@ -421,10 +442,10 @@
                         android:gravity="center"
                         android:orientation="horizontal">
                         <TextView
+                            android:id="@+id/kpdtt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="end"
-                            android:text="10000"
                             android:textColor="#5E5E5E"
                             android:textSize="35sp" />
                         <TextView
@@ -435,9 +456,9 @@
                             android:textColor="#5E5E5E"
                             android:textSize="35sp" />
                         <TextView
+                            android:id="@+id/kpdtl"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="10"
                             android:textColor="#5E5E5E"
                             android:textSize="35sp" />
 
@@ -469,10 +490,10 @@
                                 android:textColor="@color/colorBlack" />
 
                             <TextView
+                                android:id="@+id/kpdtu"
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:text="@{user.daftar}"
                                 android:textColor="@color/colorBlack"
                                 android:textSize="18dp"
                                 android:gravity="center"/>
@@ -491,10 +512,10 @@
                                 android:textColor="@color/colorBlack" />
 
                             <TextView
+                                android:id="@+id/kpdts"
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:text="@{user.daftar}"
                                 android:textColor="@color/colorBlack"
                                 android:textSize="18dp"
                                 android:gravity="center"/>
@@ -513,10 +534,10 @@
                                 android:textColor="@color/colorBlack" />
 
                             <TextView
+                                android:id="@+id/kpdtz"
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:text="@{user.daftar}"
                                 android:textColor="@color/colorBlack"
                                 android:textSize="18dp"
                                 android:gravity="center"/>
@@ -535,10 +556,10 @@
                                 android:textColor="@color/colorBlack" />
 
                             <TextView
+                                android:id="@+id/kpdtn"
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:text="@{user.daftar}"
                                 android:textColor="@color/colorBlack"
                                 android:textSize="18dp"
                                 android:gravity="center"/>
@@ -557,10 +578,10 @@
                                 android:textColor="@color/colorBlack" />
 
                             <TextView
+                                android:id="@+id/kpdto"
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:text="@{user.daftar}"
                                 android:textColor="@color/colorBlack"
                                 android:textSize="18dp"
                                 android:gravity="center"/>

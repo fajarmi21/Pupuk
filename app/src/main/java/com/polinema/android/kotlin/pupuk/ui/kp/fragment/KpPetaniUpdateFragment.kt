@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.polinema.android.kotlin.pupuk.R
 import com.polinema.android.kotlin.pupuk.databinding.KpPetaniUpdateFragmentBinding
 import com.polinema.android.kotlin.pupuk.viewmodel.KpPetaniUpdateViewModel
+import kotlinx.android.synthetic.main.kp_petani_fragment.*
 import kotlinx.android.synthetic.main.kp_petani_update_fragment.*
 import java.util.*
 
@@ -79,8 +80,8 @@ class KpPetaniUpdateFragment : Fragment() {
                     Toast.makeText(this.context, it.message, Toast.LENGTH_SHORT).show()
                     activity!!.supportFragmentManager
                         .beginTransaction()
-                        .replace(R.id.FrameKP, KpPetaniFragment(), KpPetaniFragment().javaClass.simpleName)
-                        .commit()
+                            .replace(R.id.FrameKP, KpPetaniFragment(), KpPetaniFragment().javaClass.simpleName)
+                            .commit()
                 } else { Toast.makeText(this.context, it.message, Toast.LENGTH_SHORT).show() }
             })
         }

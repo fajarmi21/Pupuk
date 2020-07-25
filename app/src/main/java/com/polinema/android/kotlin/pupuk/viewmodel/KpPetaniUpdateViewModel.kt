@@ -22,13 +22,6 @@ class KpPetaniUpdateViewModel : ViewModel(){
     var sektor = ObservableField("")
     var luas = ObservableField("")
     var email = ObservableField("")
-    var btn = ObservableBoolean(false)
-    var password = "user"
-
-    fun onEmailChanged(s: CharSequence, start: Int, befor: Int, count: Int) {
-        btn.set(Util.isEmailValid(email.get()!!))
-    }
-
     fun show(nama: String): MutableLiveData<MutableList<UserKT>> {
         val data = MutableLiveData<MutableList<UserKT>>()
         WebServiceClient.client.create(BackEndApi::class.java).KpRr(kode = "r", poktan = poktan, petani = nama)

@@ -1,11 +1,13 @@
         package com.polinema.android.kotlin.pupuk.ui.kp.fragment
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Paint
 import android.graphics.PorterDuff
 import android.graphics.PorterDuffXfermode
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,11 +29,12 @@ import com.polinema.android.kotlin.pupuk.util.SaveSharedPreference.getUser
 import com.polinema.android.kotlin.pupuk.util.SwipeToDeleteCallback
 import com.polinema.android.kotlin.pupuk.viewmodel.KpPetaniViewModel
 import kotlinx.android.synthetic.main.kp_petani_fragment.*
+import okhttp3.internal.notify
 
 
 class KpPetaniFragment : Fragment() {
 
-    private lateinit var viewModel: KpPetaniViewModel
+    private var viewModel: KpPetaniViewModel? = null
     private lateinit var binding: KpPetaniFragmentBinding
 
     override fun onCreateView(
@@ -41,6 +44,7 @@ class KpPetaniFragment : Fragment() {
         TypefaceProvider.registerDefaultIconSets()
         binding = DataBindingUtil.inflate(inflater, R.layout.kp_petani_fragment, container, false)
         viewModel = ViewModelProviders.of(this).get(KpPetaniViewModel::class.java)
+        binding.lifecycleOwner = this
         return binding.root
     }
 
@@ -61,8 +65,8 @@ class KpPetaniFragment : Fragment() {
     }
 
     private fun showData() {
-        viewModel.poktan = getUser(context)
-        viewModel.ptKr().observe(viewLifecycleOwner, Observer {
+        viewModel!!.poktan = getUser(context)
+        viewModel!!.ptKr().observe(viewLifecycleOwner, Observer {
             rvKPP.layoutManager = LinearLayoutManager(this.context)
             val adapter = UserKTAdapter(it)
             rvKPP.adapter = adapter
@@ -75,9 +79,9 @@ class KpPetaniFragment : Fragment() {
                             .setMessage("Are you sure delete this record?")
                             .setNegativeButton("NO", null)
                             .setPositiveButton("YES") { _, _ ->
-                                viewModel.ptKd(it[viewHolder.adapterPosition].nama_petani).observe(viewLifecycleOwner, Observer { it2 ->
+                                viewModel!!.ptKd(it[viewHolder.adapterPosition].nama_petani).observe(viewLifecycleOwner, Observer { it2 ->
                                     if (it2.status == 1) {
-                                        onResume()
+                                        adapter.notifyDataSetChanged()
                                         Toast.makeText(context, it2.message, Toast.LENGTH_SHORT).show()
                                     } else { Toast.makeText(context, it2.message, Toast.LENGTH_SHORT).show() }
                                 })

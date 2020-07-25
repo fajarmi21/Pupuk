@@ -61,7 +61,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="10dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:visibility="gone">
             <com.asp.fliptimerviewlibrary.CountDownClock
                 android:id="@+id/timer"
                 android:layout_width="match_parent"
@@ -84,29 +85,6 @@
                 flipTimer:splitterPadding="0dp"
                 android:gravity="center"
                 />
-
-<!--            <com.asp.fliptimerviewlibrary.CountDownClock-->
-<!--                android:id="@+id/timer2"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:visibility="gone"-->
-<!--                android:layout_alignParentEnd="true"-->
-<!--                android:layout_gravity="center"-->
-<!--                android:clipChildren="false"-->
-<!--                android:clipToPadding="false"-->
-<!--                flipTimer:almostFinishedCallbackTimeInSeconds="5"-->
-<!--                flipTimer:animationDuration="850"-->
-<!--                flipTimer:countdownTickInterval="1000"-->
-<!--                flipTimer:digitBottomDrawable="@drawable/background_bottom"-->
-<!--                flipTimer:digitDividerColor="@color/transparent"-->
-<!--                flipTimer:digitTextColor="@color/black"-->
-<!--                flipTimer:digitTextSize="24sp"-->
-<!--                flipTimer:digitTopDrawable="@drawable/background_top"-->
-<!--                flipTimer:digitWidth="28dp"-->
-<!--                flipTimer:halfDigitHeight="22dp"-->
-<!--                flipTimer:resetSymbol="0"-->
-<!--                flipTimer:splitterPadding="0dp"-->
-<!--                />-->
         </LinearLayout>
 
         <androidx.cardview.widget.CardView
@@ -271,6 +249,39 @@
                             android:gravity="center" />
                     </LinearLayout>
                 </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ptA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:visibility="gone">
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.7dp"
+                        android:layout_weight="1"
+                        android:layout_marginHorizontal="50dp"
+                        android:background="@color/whiteTextColor" />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#ffff"
+                            android:textSize="18dp"
+                            android:text="alasan : "
+                            android:gravity="center"/>
+                        <TextView
+                            android:id="@+id/ptStA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#ffff"
+                            android:textSize="18dp"
+                            android:gravity="center"/>
+                    </LinearLayout>
+                </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -302,9 +313,10 @@
         <LinearLayout
             android:id="@+id/PtPUsul"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="175dp"
             android:layout_marginTop="8dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="gone">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -386,7 +398,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:textSize="15dp"
+                                android:textSize="18dp"
                                 android:gravity="center"/>
                         </LinearLayout>
                         <LinearLayout
@@ -407,7 +419,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:textSize="15dp"
+                                android:textSize="18dp"
                                 android:gravity="center"/>
                         </LinearLayout>
                         <LinearLayout
@@ -428,7 +440,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:textSize="15dp"
+                                android:textSize="18dp"
                                 android:gravity="center"/>
                         </LinearLayout>
                         <LinearLayout
@@ -449,7 +461,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:textSize="15dp"
+                                android:textSize="18dp"
                                 android:gravity="center"/>
                         </LinearLayout>
                         <LinearLayout
@@ -470,7 +482,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:textSize="15dp"
+                                android:textSize="18dp"
                                 android:gravity="center"/>
                         </LinearLayout>
                     </LinearLayout>
@@ -481,9 +493,10 @@
         <LinearLayout
             android:id="@+id/PtPDiterima"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="175dp"
             android:layout_marginTop="8dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="gone">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"

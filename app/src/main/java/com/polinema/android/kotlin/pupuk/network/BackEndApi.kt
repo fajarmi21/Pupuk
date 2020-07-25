@@ -13,7 +13,7 @@ interface BackEndApi {
     //PPL
     @FormUrlEncoded
     @POST("ppl")
-    fun PD(@Field("desa") desa: String): Call<PPL>
+    fun PD(@Field("desa") desa: String): Call<Ppl>
 
     @FormUrlEncoded
     @POST("ppl/PplKpR")
@@ -42,6 +42,13 @@ interface BackEndApi {
     @FormUrlEncoded
     @POST("ppl/verifikasiU")
     fun PpVU(@FieldMap id:HashMap<String,String>): Call<response>
+
+    @FormUrlEncoded
+    @POST("ppl/verifikasiT")
+    fun PpVUT(
+        @FieldMap id:HashMap<String,String>,
+        @Field("alasan") alasan: String
+    ): Call<response>
 
     //kelompoktani
     @FormUrlEncoded
@@ -97,6 +104,13 @@ interface BackEndApi {
     fun KpReU(@FieldMap id:HashMap<String,String>): Call<UsulanKT>
 
     @FormUrlEncoded
+    @POST("poktan/usulanT")
+    fun KpReT(
+        @Field("id") id: String,
+        @Field("alasan") alasan: String
+    ): Call<UsulanKT>
+
+    @FormUrlEncoded
     @POST("poktan/rekap")
     fun Kpre(@Field("poktan") poktan: String): Call<MutableList<Rekap>>
 
@@ -104,6 +118,9 @@ interface BackEndApi {
     @FormUrlEncoded
     @POST("petani")
     fun PTD(@Field("nama_petani") nama_petani: String): Call<Petani>
+
+    @GET("petani/tahap")
+    fun PTT(): Call<MutableList<Tahap>>
 
     @GET("petani/sektor")
     fun PTS(): Call<MutableList<Sektor>>

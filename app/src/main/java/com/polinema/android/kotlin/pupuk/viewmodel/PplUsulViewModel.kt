@@ -34,7 +34,24 @@ class PplUsulViewModel : ViewModel() {
     fun PplUsulU(id : HashMap<String,String>): MutableLiveData<response> {
         Log.e("yy", id.toString())
         val data = MutableLiveData<response>()
-        WebServiceClient.client.create(BackEndApi::class.java).PpVU(id = id)
+        WebServiceClient.client.create(BackEndApi::class.java).PpVU(id)
+            .enqueue(object : Callback<response>{
+                override fun onFailure(call: Call<response>, t: Throwable) {
+                    Log.e("gagal", t.message!!)
+                }
+
+                override fun onResponse(call: Call<response>, response: Response<response>) {
+                    data.value = response.body()
+                }
+
+            })
+        return data
+    }
+
+    fun PplUsulT(id : HashMap<String,String>, alasan : String): MutableLiveData<response> {
+        Log.e("yy", id.toString())
+        val data = MutableLiveData<response>()
+        WebServiceClient.client.create(BackEndApi::class.java).PpVUT(id, alasan)
             .enqueue(object : Callback<response>{
                 override fun onFailure(call: Call<response>, t: Throwable) {
                     Log.e("gagal", t.message!!)

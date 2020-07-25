@@ -92,9 +92,10 @@ dependencies {
     implementation 'com.paulrybitskyi.persistentsearchview:persistentsearchview:1.1.2'
     //label
     implementation 'com.github.linger1216:labelview:v1.1.2'
-    //cardview
+    //card view
     implementation 'com.github.captain-miao:optroundcardview:1.1.0'
-    //treeview
+    //else
     implementation 'com.github.bmelnychuk:atv:1.2.9'
     implementation 'com.github.johnkil.print:print:1.3.1'
+    implementation 'com.github.mejdi14:Flat-Dialog-Android:1.0.5'
 }

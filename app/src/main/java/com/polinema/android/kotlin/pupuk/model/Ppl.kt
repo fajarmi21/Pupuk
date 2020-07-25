@@ -1,6 +1,24 @@
 package com.polinema.android.kotlin.pupuk.model
 
-data class PPL(val all: String, val daftar: String, val belum: String, val tidak: String)
+data class Ppl(
+    val all: Int,
+    val daftar: Int,
+    val belum: Int,
+    val tidak: Int,
+    val luas: Double,
+    val urea: Double,
+    val sp36: Double,
+    val za: Double,
+    val npk: Double,
+    val organik: Double,
+    val tpupuk: Double,
+    val durea: Double,
+    val dsp36: Double,
+    val dza: Double,
+    val dnpk: Double,
+    val dorganik: Double,
+    val tdpupuk: Double
+)
 
 data class UserPPL(
     val status: Int,
@@ -12,15 +30,19 @@ data class UserPPL(
 )
 
 data class PplVerifikasi(
-        val poktan: String,
-        val luas: String,
-        val data: ArrayList<data>
+    val poktan: String,
+    val luas: String,
+    var data: ArrayList<data>
 )
 data class data(
-        val petani: String,
-        val verifikasi: Boolean)
+    var id: String,
+    var petani: String,
+    var status_poktan: Boolean,
+    var verifikasi: Boolean,
+    var admin: Boolean
+)
 
 data class response(
-        val status: Int,
-        val message: String
+    val status: Int,
+    val message: String
 )
